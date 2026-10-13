@@ -4,7 +4,7 @@ Which LLM / AI assistants are behind works in the [Hexagon](https://hexagonmath.
 mathematics archive? A reproducible scan of its public API, counting models from both
 the structured tool declarations and the free-text provenance statements.
 
-Read the report: **`hexagon-llm-models.html`** (self-contained; open in a browser).
+Read the report: **[winstoncheong.github.io/hexagon-llm-analysis](https://winstoncheong.github.io/hexagon-llm-analysis/)** (`hexagon-llm-models.html` also works standalone).
 
 ## Reproduce
 
