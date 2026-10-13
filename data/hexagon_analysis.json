@@ -1,0 +1,4552 @@
+{
+ "snapshot": {
+  "fetched_at": "2026-10-13T18:23:49+00:00",
+  "total_reported": 139,
+  "n_works": 139,
+  "details_fetched_at": "2026-10-13T18:23:49+00:00",
+  "n_detail_records": 139
+ },
+ "coverage": {
+  "n_works": 139,
+  "works_with_any_tools": 90,
+  "works_with_llm": 89,
+  "works_no_tools": 49,
+  "pct_with_llm": 64.0,
+  "pct_no_tools": 35.3,
+  "works_with_llm_combined": 120,
+  "pct_with_llm_combined": 86.3
+ },
+ "authorshipMode": {
+  "no-human-author-claimed": 79,
+  "human": 17,
+  "mixed": 43
+ },
+ "humanUnderstanding": {
+  "none": 20,
+  "some": 68,
+  "all": 50,
+  "?": 1
+ },
+ "llm_by_authorship": {
+  "no-human-author-claimed": 59,
+  "mixed": 24,
+  "human": 6
+ },
+ "provenance": {
+  "works_with_provenance": 139,
+  "works_naming_specific_system": 107,
+  "works_unspecified_ai_only": 8
+ },
+ "disclosure_gap": {
+  "prov_llm_but_no_structured_llm": 31,
+  "ids": [
+   "2609.00102",
+   "2609.00105",
+   "2609.00110",
+   "2609.00111",
+   "2609.00112",
+   "2609.00116",
+   "2609.00118",
+   "2609.00119",
+   "2609.00124",
+   "2609.00126",
+   "2609.00138",
+   "2609.00143",
+   "2609.00145",
+   "2609.00146",
+   "2610.00012",
+   "2610.00013",
+   "2610.00023",
+   "2610.00025",
+   "2610.00029",
+   "2610.00031",
+   "2610.00032",
+   "2610.00083",
+   "2610.00138",
+   "2610.00143",
+   "2610.00147",
+   "2610.00160",
+   "2610.00171",
+   "2610.00173",
+   "2610.00194",
+   "2610.00203",
+   "2610.00208"
+  ]
+ },
+ "family_works": [
+  {
+   "family": "OpenAI ChatGPT",
+   "works": 56,
+   "pct_of_all": 40.3,
+   "mentions": 75,
+   "prov_works": 89,
+   "prov_mentions": 89,
+   "combined_works": 96,
+   "combined_pct": 69.1
+  },
+  {
+   "family": "Anthropic Claude Opus",
+   "works": 24,
+   "pct_of_all": 17.3,
+   "mentions": 24,
+   "prov_works": 34,
+   "prov_mentions": 34,
+   "combined_works": 36,
+   "combined_pct": 25.9
+  },
+  {
+   "family": "OpenAI Codex",
+   "works": 28,
+   "pct_of_all": 20.1,
+   "mentions": 32,
+   "prov_works": 21,
+   "prov_mentions": 21,
+   "combined_works": 35,
+   "combined_pct": 25.2
+  },
+  {
+   "family": "Anthropic Claude Fable",
+   "works": 10,
+   "pct_of_all": 7.2,
+   "mentions": 14,
+   "prov_works": 10,
+   "prov_mentions": 10,
+   "combined_works": 12,
+   "combined_pct": 8.6
+  },
+  {
+   "family": "Anthropic Claude Code",
+   "works": 3,
+   "pct_of_all": 2.2,
+   "mentions": 3,
+   "prov_works": 5,
+   "prov_mentions": 5,
+   "combined_works": 8,
+   "combined_pct": 5.8
+  },
+  {
+   "family": "Google",
+   "works": 4,
+   "pct_of_all": 2.9,
+   "mentions": 4,
+   "prov_works": 3,
+   "prov_mentions": 3,
+   "combined_works": 5,
+   "combined_pct": 3.6
+  },
+  {
+   "family": "Harmonic",
+   "works": 3,
+   "pct_of_all": 2.2,
+   "mentions": 3,
+   "prov_works": 3,
+   "prov_mentions": 3,
+   "combined_works": 3,
+   "combined_pct": 2.2
+  },
+  {
+   "family": "Quora Poe (aggregator)",
+   "works": 3,
+   "pct_of_all": 2.2,
+   "mentions": 3,
+   "prov_works": 3,
+   "prov_mentions": 3,
+   "combined_works": 3,
+   "combined_pct": 2.2
+  },
+  {
+   "family": "Danus",
+   "works": 0,
+   "pct_of_all": 0.0,
+   "mentions": 0,
+   "prov_works": 3,
+   "prov_mentions": 3,
+   "combined_works": 3,
+   "combined_pct": 2.2
+  },
+  {
+   "family": "Anthropic Claude Sonnet",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1,
+   "prov_works": 0,
+   "prov_mentions": 0,
+   "combined_works": 1,
+   "combined_pct": 0.7
+  },
+  {
+   "family": "Local/open",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1,
+   "prov_works": 1,
+   "prov_mentions": 1,
+   "combined_works": 1,
+   "combined_pct": 0.7
+  },
+  {
+   "family": "xAI",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1,
+   "prov_works": 1,
+   "prov_mentions": 1,
+   "combined_works": 1,
+   "combined_pct": 0.7
+  },
+  {
+   "family": "AxiomMath",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1,
+   "prov_works": 1,
+   "prov_mentions": 1,
+   "combined_works": 1,
+   "combined_pct": 0.7
+  },
+  {
+   "family": "Meta",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1,
+   "prov_works": 1,
+   "prov_mentions": 1,
+   "combined_works": 1,
+   "combined_pct": 0.7
+  }
+ ],
+ "model_works": [
+  {
+   "family": "Anthropic Claude Opus",
+   "model": "Opus 5.5",
+   "works": 23,
+   "pct_of_all": 16.5,
+   "mentions": 23
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT 6 Astra",
+   "works": 15,
+   "pct_of_all": 10.8,
+   "mentions": 15
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT 6.1",
+   "works": 14,
+   "pct_of_all": 10.1,
+   "mentions": 14
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT 5.6 Sol",
+   "works": 11,
+   "pct_of_all": 7.9,
+   "mentions": 11
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT 6",
+   "works": 11,
+   "pct_of_all": 7.9,
+   "mentions": 11
+  },
+  {
+   "family": "OpenAI Codex",
+   "model": "Codex 6 Astra",
+   "works": 7,
+   "pct_of_all": 5.0,
+   "mentions": 7
+  },
+  {
+   "family": "Anthropic Claude Fable",
+   "model": "Fable 5.1",
+   "works": 7,
+   "pct_of_all": 5.0,
+   "mentions": 7
+  },
+  {
+   "family": "OpenAI Codex",
+   "model": "Codex 6 Luna",
+   "works": 7,
+   "pct_of_all": 5.0,
+   "mentions": 7
+  },
+  {
+   "family": "OpenAI Codex",
+   "model": "Codex 6.1",
+   "works": 7,
+   "pct_of_all": 5.0,
+   "mentions": 7
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT 5.6",
+   "works": 6,
+   "pct_of_all": 4.3,
+   "mentions": 6
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT",
+   "works": 5,
+   "pct_of_all": 3.6,
+   "mentions": 5
+  },
+  {
+   "family": "Anthropic Claude Fable",
+   "model": "Fable 5",
+   "works": 5,
+   "pct_of_all": 3.6,
+   "mentions": 5
+  },
+  {
+   "family": "Harmonic",
+   "model": "Aristotle",
+   "works": 3,
+   "pct_of_all": 2.2,
+   "mentions": 3
+  },
+  {
+   "family": "Anthropic Claude Code",
+   "model": "Claude Code",
+   "works": 3,
+   "pct_of_all": 2.2,
+   "mentions": 3
+  },
+  {
+   "family": "Quora Poe (aggregator)",
+   "model": "Poe (model unspecified)",
+   "works": 3,
+   "pct_of_all": 2.2,
+   "mentions": 3
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT 5.5",
+   "works": 3,
+   "pct_of_all": 2.2,
+   "mentions": 3
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT 6 Pro",
+   "works": 2,
+   "pct_of_all": 1.4,
+   "mentions": 2
+  },
+  {
+   "family": "OpenAI Codex",
+   "model": "Codex Astra",
+   "works": 2,
+   "pct_of_all": 1.4,
+   "mentions": 2
+  },
+  {
+   "family": "OpenAI Codex",
+   "model": "Codex",
+   "works": 2,
+   "pct_of_all": 1.4,
+   "mentions": 2
+  },
+  {
+   "family": "Anthropic Claude Fable",
+   "model": "Fable",
+   "works": 2,
+   "pct_of_all": 1.4,
+   "mentions": 2
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT 5.6Pro",
+   "works": 2,
+   "pct_of_all": 1.4,
+   "mentions": 2
+  },
+  {
+   "family": "Google",
+   "model": "Gemini",
+   "works": 2,
+   "pct_of_all": 1.4,
+   "mentions": 2
+  },
+  {
+   "family": "OpenAI Codex",
+   "model": "Codex 6",
+   "works": 2,
+   "pct_of_all": 1.4,
+   "mentions": 2
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT 6 Astra Pro",
+   "works": 2,
+   "pct_of_all": 1.4,
+   "mentions": 2
+  },
+  {
+   "family": "AxiomMath",
+   "model": "AxiomProver",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT Pro",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "Anthropic Claude Sonnet",
+   "model": "Sonnet",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT 5.4",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "Local/open",
+   "model": "Qwen (local)",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT 5.4, 5.5, 5.6, 6.0",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "OpenAI Codex",
+   "model": "Codex 6 Astra.1",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "Google",
+   "model": "Gemini 3.8",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "Google",
+   "model": "Gemini 3.1 Pro",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "xAI",
+   "model": "Grok 4.7",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "Meta",
+   "model": "Muse Spark",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT Sol 5.6",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "OpenAI Codex",
+   "model": "Codex 5.6 Sol",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "OpenAI Codex",
+   "model": "Codex Astra Medium",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "OpenAI Codex",
+   "model": "Codex 5",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "OpenAI Codex",
+   "model": "Codex Historical assistance; precise model versions unspecified",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  },
+  {
+   "family": "Anthropic Claude Opus",
+   "model": "Opus",
+   "works": 1,
+   "pct_of_all": 0.7,
+   "mentions": 1
+  }
+ ],
+ "raw_triples": [
+  {
+   "provider": "Anthropic",
+   "name": "Claude Opus",
+   "version": "5.5",
+   "mentions": 20
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "6",
+   "mentions": 10
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "5.6 Sol",
+   "mentions": 8
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "6.1",
+   "mentions": 7
+  },
+  {
+   "provider": "Anthropic",
+   "name": "Claude Fable",
+   "version": "5.1",
+   "mentions": 7
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "GPT 6.1 (manuscript)",
+   "mentions": 7
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "5.6",
+   "mentions": 6
+  },
+  {
+   "provider": "Lean",
+   "name": "Lean",
+   "version": "4.35.0-rc2",
+   "mentions": 6
+  },
+  {
+   "provider": "Anthropic",
+   "name": "Claude Fable",
+   "version": "5",
+   "mentions": 5
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "6 Astra",
+   "mentions": 5
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "GPT-6.1",
+   "mentions": 5
+  },
+  {
+   "provider": "Lean",
+   "name": "Lean",
+   "version": "v4.28.0",
+   "mentions": 4
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "gpt-6-luna (historical proof engineering)",
+   "mentions": 4
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "GPT-6 Astra",
+   "mentions": 3
+  },
+  {
+   "provider": "Anthropic",
+   "name": "Claude Opus",
+   "version": "Opus 5.5",
+   "mentions": 3
+  },
+  {
+   "provider": "Anthropic",
+   "name": "Claude Code",
+   "version": "",
+   "mentions": 3
+  },
+  {
+   "provider": "Harmonic",
+   "name": "Aristotle",
+   "version": "",
+   "mentions": 3
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "GPT-6-Astra",
+   "mentions": 3
+  },
+  {
+   "provider": "Quora",
+   "name": "Poe",
+   "version": "",
+   "mentions": 3
+  },
+  {
+   "provider": "Lean",
+   "name": "Lean",
+   "version": "4.34.1",
+   "mentions": 3
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "Astra 6",
+   "mentions": 3
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "5.5",
+   "mentions": 3
+  },
+  {
+   "provider": "Lean",
+   "name": "Lean",
+   "version": "4.35.0-rc2 (registered artifact)",
+   "mentions": 3
+  },
+  {
+   "provider": "Lean",
+   "name": "Lean",
+   "version": "4.33.0 (registered artifact)",
+   "mentions": 3
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "GPT-6-Luna (repository-reported formalization assistance)",
+   "mentions": 3
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "Astra",
+   "mentions": 2
+  },
+  {
+   "provider": "Lean",
+   "name": "Mathlib",
+   "version": "",
+   "mentions": 2
+  },
+  {
+   "provider": "Python",
+   "name": "Python",
+   "version": "3.13",
+   "mentions": 2
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "",
+   "mentions": 2
+  },
+  {
+   "provider": "Lean",
+   "name": "Lean",
+   "version": "4",
+   "mentions": 2
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "6 Astra",
+   "mentions": 2
+  },
+  {
+   "provider": "OpenAI",
+   "name": "GPT",
+   "version": "6 Astra",
+   "mentions": 2
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "5.6Pro",
+   "mentions": 2
+  },
+  {
+   "provider": "PARI Group",
+   "name": "PARI/GP",
+   "version": "2.17.3",
+   "mentions": 2
+  },
+  {
+   "provider": "Google",
+   "name": "Gemini",
+   "version": "",
+   "mentions": 2
+  },
+  {
+   "provider": "Lean",
+   "name": "Lean",
+   "version": "4.33.0 (historical pinned proofs)",
+   "mentions": 2
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "GPT-6.1 (manuscript)",
+   "mentions": 2
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "Astra 6 Pro",
+   "mentions": 2
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "GPT-6 Pro",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "GPT-6 Astra",
+   "mentions": 1
+  },
+  {
+   "provider": "Magma",
+   "name": "Magma",
+   "version": "V2.29-4",
+   "mentions": 1
+  },
+  {
+   "provider": "SageMath",
+   "name": "SageMath",
+   "version": "10.7",
+   "mentions": 1
+  },
+  {
+   "provider": "NumPy developers",
+   "name": "NumPy",
+   "version": "2.4.6",
+   "mentions": 1
+  },
+  {
+   "provider": "SymPy development team",
+   "name": "SymPy",
+   "version": "1.14.0",
+   "mentions": 1
+  },
+  {
+   "provider": "Alex Martelli, Case Van Horsen and contributors",
+   "name": "gmpy2",
+   "version": "2.3.1",
+   "mentions": 1
+  },
+  {
+   "provider": "FLINT development team",
+   "name": "FLINT",
+   "version": "3.4.0",
+   "mentions": 1
+  },
+  {
+   "provider": "GNU GMP developers",
+   "name": "GMP",
+   "version": "6.3.0",
+   "mentions": 1
+  },
+  {
+   "provider": "The GAP Group",
+   "name": "GAP",
+   "version": "4.16.1",
+   "mentions": 1
+  },
+  {
+   "provider": "Siu-Hung Ng, Yilong Wang, Samuel Wilson",
+   "name": "SL2Reps",
+   "version": "1.1",
+   "mentions": 1
+  },
+  {
+   "provider": "SciPy developers",
+   "name": "SciPy",
+   "version": "1.16.2",
+   "mentions": 1
+  },
+  {
+   "provider": "Fredrik Johansson and contributors",
+   "name": "mpmath",
+   "version": "1.4.1",
+   "mentions": 1
+  },
+  {
+   "provider": "Python",
+   "name": "Python",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "Singular",
+   "name": "Singular",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "Macaulay2",
+   "name": "Macaulay2",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "Python Software Foundation",
+   "name": "Python",
+   "version": "3",
+   "mentions": 1
+  },
+  {
+   "provider": "AxiomMath",
+   "name": "AxiomProver",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "GPT6",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "Pro",
+   "mentions": 1
+  },
+  {
+   "provider": "Lean",
+   "name": "Lean",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "Z3 and Python",
+   "name": "SMT and Horn clause solvers",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "GPT-Astra",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "Anthropic",
+   "name": "Claude Sonnet",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "5.4",
+   "mentions": 1
+  },
+  {
+   "provider": "Local LLM (llama-swap)",
+   "name": "Qwen 3.8 27B",
+   "version": "27B local inference",
+   "mentions": 1
+  },
+  {
+   "provider": "Anthropic",
+   "name": "Claude Fable",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "Astra",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "5.4, 5.5, 5.6, 6.0",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "Astra 6.1",
+   "mentions": 1
+  },
+  {
+   "provider": "Python Software Foundation",
+   "name": "Python (python-flint/Arb, NumPy, SciPy, SymPy, mpmath)",
+   "version": "3.12",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "5.6 sol",
+   "mentions": 1
+  },
+  {
+   "provider": "Google",
+   "name": "Gemini",
+   "version": "3.8",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "GPT-6-Astra",
+   "mentions": 1
+  },
+  {
+   "provider": "SageMath",
+   "name": "SageMath",
+   "version": "10.9",
+   "mentions": 1
+  },
+  {
+   "provider": "GAP Group",
+   "name": "GAP",
+   "version": "4.15.1",
+   "mentions": 1
+  },
+  {
+   "provider": "Python Software Foundation",
+   "name": "Python (python-flint/Arb, SymPy, mpmath)",
+   "version": "3.12",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "GPT-5.6 Sol",
+   "mentions": 1
+  },
+  {
+   "provider": "Google",
+   "name": "Gemini",
+   "version": "3.1 Pro",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "6 Pro",
+   "mentions": 1
+  },
+  {
+   "provider": "XAi",
+   "name": "Grok",
+   "version": "4.7",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT",
+   "version": "Sol 5.6",
+   "mentions": 1
+  },
+  {
+   "provider": "Meta",
+   "name": "Muse",
+   "version": "Spark 1.3 Contributor",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "GPT-5.6 Sol",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "Astra Medium",
+   "mentions": 1
+  },
+  {
+   "provider": "Lean",
+   "name": "Lean",
+   "version": "4.35.0-rc2 (registered artifacts)",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "GPT-5 (historical proof assistance)",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "GPT-6 (historical proof engineering)",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "Historical assistance; precise model versions unspecified",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "gpt-6-astra (pinned repository-reported formalization assistance)",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "Codex",
+   "version": "6",
+   "mentions": 1
+  },
+  {
+   "provider": "Rethlas",
+   "name": "https://github.com/frenzymath/Rethlas",
+   "version": "commit 887cc46427636bbdd235160a112f9a30ae81d040",
+   "mentions": 1
+  },
+  {
+   "provider": "OSVerify",
+   "name": "OSVerify",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "SageMath",
+   "name": "SageMath",
+   "version": "10.10.beta9",
+   "mentions": 1
+  },
+  {
+   "provider": "University of New Mexico",
+   "name": "Mace4",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "University of New Mexico",
+   "name": "Prover9",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "GPT",
+   "version": "5.6 Sol",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "ChatGPT 5.6 Sol",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "GPT-5.5 Pro",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "OpenAI",
+   "name": "codex CLI",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "Anthropic",
+   "name": "Claude Opus 4.8",
+   "version": "",
+   "mentions": 1
+  },
+  {
+   "provider": "Anthropic",
+   "name": "Claude Fable 5",
+   "version": "",
+   "mentions": 1
+  }
+ ],
+ "n_raw_triples": 101,
+ "non_llm_tools": {
+  "by_works": {
+   "Magma": 1,
+   "SageMath": 3,
+   "GAP": 2,
+   "Domain package": 1,
+   "Python/scientific stack": 8,
+   "Singular": 1,
+   "Lean/Mathlib": 25,
+   "Macaulay2": 1,
+   "PARI/GP": 2,
+   "OSVerify": 1,
+   "Rethlas": 1,
+   "Mace4/Prover9": 1
+  },
+  "by_mentions": {
+   "Magma": 1,
+   "SageMath": 3,
+   "Python/scientific stack": 14,
+   "GAP": 2,
+   "Domain package": 1,
+   "Lean/Mathlib": 27,
+   "Singular": 1,
+   "Macaulay2": 1,
+   "PARI/GP": 2,
+   "Rethlas": 1,
+   "OSVerify": 1,
+   "Mace4/Prover9": 2
+  },
+  "works_also_listing_llm": {
+   "Magma": 1,
+   "SageMath": 3,
+   "Singular": 1,
+   "Macaulay2": 1,
+   "Python/scientific stack": 7,
+   "Lean/Mathlib": 25,
+   "PARI/GP": 2,
+   "GAP": 1,
+   "OSVerify": 1,
+   "Rethlas": 1,
+   "Mace4/Prover9": 1
+  }
+ },
+ "cooccurrence": [
+  {
+   "a": "Anthropic Claude Opus",
+   "b": "OpenAI ChatGPT",
+   "works": 14
+  },
+  {
+   "a": "OpenAI ChatGPT",
+   "b": "OpenAI Codex",
+   "works": 9
+  },
+  {
+   "a": "Anthropic Claude Fable",
+   "b": "OpenAI ChatGPT",
+   "works": 7
+  },
+  {
+   "a": "Anthropic Claude Opus",
+   "b": "OpenAI Codex",
+   "works": 6
+  },
+  {
+   "a": "Anthropic Claude Fable",
+   "b": "Anthropic Claude Opus",
+   "works": 4
+  },
+  {
+   "a": "OpenAI ChatGPT",
+   "b": "Quora Poe (aggregator)",
+   "works": 3
+  },
+  {
+   "a": "Anthropic Claude Code",
+   "b": "Harmonic",
+   "works": 2
+  },
+  {
+   "a": "Anthropic Claude Fable",
+   "b": "Quora Poe (aggregator)",
+   "works": 2
+  },
+  {
+   "a": "Anthropic Claude Fable",
+   "b": "OpenAI Codex",
+   "works": 2
+  },
+  {
+   "a": "Anthropic Claude Code",
+   "b": "OpenAI ChatGPT",
+   "works": 1
+  },
+  {
+   "a": "Anthropic Claude Code",
+   "b": "OpenAI Codex",
+   "works": 1
+  },
+  {
+   "a": "Anthropic Claude Opus",
+   "b": "Quora Poe (aggregator)",
+   "works": 1
+  },
+  {
+   "a": "Anthropic Claude Sonnet",
+   "b": "OpenAI ChatGPT",
+   "works": 1
+  },
+  {
+   "a": "Harmonic",
+   "b": "OpenAI ChatGPT",
+   "works": 1
+  },
+  {
+   "a": "Google",
+   "b": "OpenAI ChatGPT",
+   "works": 1
+  },
+  {
+   "a": "Anthropic Claude Opus",
+   "b": "xAI",
+   "works": 1
+  },
+  {
+   "a": "OpenAI ChatGPT",
+   "b": "xAI",
+   "works": 1
+  },
+  {
+   "a": "Anthropic Claude Opus",
+   "b": "Meta",
+   "works": 1
+  },
+  {
+   "a": "Meta",
+   "b": "OpenAI ChatGPT",
+   "works": 1
+  }
+ ],
+ "subjects": [
+  {
+   "subject": "math.NT",
+   "works": 24,
+   "llm_works": 19,
+   "llm_share_pct": 79.2,
+   "prov_llm_works": 21
+  },
+  {
+   "subject": "math.CO",
+   "works": 18,
+   "llm_works": 11,
+   "llm_share_pct": 61.1,
+   "prov_llm_works": 16
+  },
+  {
+   "subject": "math.PR",
+   "works": 11,
+   "llm_works": 8,
+   "llm_share_pct": 72.7,
+   "prov_llm_works": 7
+  },
+  {
+   "subject": "math.QA",
+   "works": 10,
+   "llm_works": 0,
+   "llm_share_pct": 0.0,
+   "prov_llm_works": 7
+  },
+  {
+   "subject": "math.AG",
+   "works": 9,
+   "llm_works": 6,
+   "llm_share_pct": 66.7,
+   "prov_llm_works": 6
+  },
+  {
+   "subject": "math.LO",
+   "works": 8,
+   "llm_works": 8,
+   "llm_share_pct": 100.0,
+   "prov_llm_works": 6
+  },
+  {
+   "subject": "math.MG",
+   "works": 7,
+   "llm_works": 6,
+   "llm_share_pct": 85.7,
+   "prov_llm_works": 7
+  },
+  {
+   "subject": "math.AC",
+   "works": 6,
+   "llm_works": 3,
+   "llm_share_pct": 50.0,
+   "prov_llm_works": 4
+  },
+  {
+   "subject": "math.RT",
+   "works": 6,
+   "llm_works": 3,
+   "llm_share_pct": 50.0,
+   "prov_llm_works": 4
+  },
+  {
+   "subject": "math.RA",
+   "works": 5,
+   "llm_works": 1,
+   "llm_share_pct": 20.0,
+   "prov_llm_works": 5
+  },
+  {
+   "subject": "math.OC",
+   "works": 5,
+   "llm_works": 5,
+   "llm_share_pct": 100.0,
+   "prov_llm_works": 5
+  },
+  {
+   "subject": "cs.DS",
+   "works": 4,
+   "llm_works": 4,
+   "llm_share_pct": 100.0,
+   "prov_llm_works": 2
+  },
+  {
+   "subject": "math.AT",
+   "works": 4,
+   "llm_works": 1,
+   "llm_share_pct": 25.0,
+   "prov_llm_works": 3
+  },
+  {
+   "subject": "math.GR",
+   "works": 3,
+   "llm_works": 3,
+   "llm_share_pct": 100.0,
+   "prov_llm_works": 2
+  },
+  {
+   "subject": "math.FA",
+   "works": 2,
+   "llm_works": 0,
+   "llm_share_pct": 0.0,
+   "prov_llm_works": 0
+  },
+  {
+   "subject": "cs.LO",
+   "works": 2,
+   "llm_works": 1,
+   "llm_share_pct": 50.0,
+   "prov_llm_works": 1
+  },
+  {
+   "subject": "math.OA",
+   "works": 2,
+   "llm_works": 2,
+   "llm_share_pct": 100.0,
+   "prov_llm_works": 0
+  },
+  {
+   "subject": "math.CA",
+   "works": 2,
+   "llm_works": 2,
+   "llm_share_pct": 100.0,
+   "prov_llm_works": 2
+  },
+  {
+   "subject": "math.ST",
+   "works": 2,
+   "llm_works": 2,
+   "llm_share_pct": 100.0,
+   "prov_llm_works": 2
+  },
+  {
+   "subject": "cs.CC",
+   "works": 2,
+   "llm_works": 1,
+   "llm_share_pct": 50.0,
+   "prov_llm_works": 1
+  },
+  {
+   "subject": "math.MP",
+   "works": 1,
+   "llm_works": 0,
+   "llm_share_pct": 0.0,
+   "prov_llm_works": 1
+  },
+  {
+   "subject": "stat.TH",
+   "works": 1,
+   "llm_works": 0,
+   "llm_share_pct": 0.0,
+   "prov_llm_works": 1
+  },
+  {
+   "subject": "math.GT",
+   "works": 1,
+   "llm_works": 1,
+   "llm_share_pct": 100.0,
+   "prov_llm_works": 1
+  },
+  {
+   "subject": "math.DS",
+   "works": 1,
+   "llm_works": 1,
+   "llm_share_pct": 100.0,
+   "prov_llm_works": 1
+  },
+  {
+   "subject": "math.AP",
+   "works": 1,
+   "llm_works": 0,
+   "llm_share_pct": 0.0,
+   "prov_llm_works": 0
+  },
+  {
+   "subject": "math.DG",
+   "works": 1,
+   "llm_works": 1,
+   "llm_share_pct": 100.0,
+   "prov_llm_works": 1
+  },
+  {
+   "subject": "quant-ph",
+   "works": 1,
+   "llm_works": 0,
+   "llm_share_pct": 0.0,
+   "prov_llm_works": 1
+  }
+ ],
+ "per_work": [
+  {
+   "id": "2610.00221",
+   "title": "Deterministic Integer 3SUM in O(n^1.999017) Time via a Sharper Binomial-Tail Analysis",
+   "subject": "cs.DS",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / GPT-6 Astra"
+   ]
+  },
+  {
+   "id": "2610.00216",
+   "title": "A seven-eighths zero-free half-plane for unitary Weil L-functions",
+   "subject": "math.NT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "ChatGPT",
+    "ChatGPT",
+    "ChatGPT",
+    "Claude",
+    "Lean"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "OpenAI / ChatGPT / GPT-6 Pro",
+    "Anthropic / Claude Opus / Opus 5.5"
+   ]
+  },
+  {
+   "id": "2610.00220",
+   "title": "A zero-free strip for the $L$-functions of the elliptic curves $y^2=x^3+d$",
+   "subject": "math.NT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "Codex",
+    "Claude",
+    "Opus 5.5",
+    "lean",
+    "PARI/GP",
+    "Python",
+    "SymPy",
+    "mpmath"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "OpenAI / Codex / Astra"
+   ]
+  },
+  {
+   "id": "2610.00215",
+   "title": "Non-Archimedean Hudzik-Landes-Dragomir-Kato-Saito-Tamura Inequality",
+   "subject": "math.NT",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00219",
+   "title": "Gonality and quintic points on intermediate modular curves",
+   "subject": "math.NT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Code",
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "GPT-6 Astra",
+    "Codex",
+    "Claude",
+    "Claude",
+    "Claude Code"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 4,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "OpenAI / Codex / GPT-6 Astra",
+    "Magma / Magma / V2.29-4",
+    "SageMath / SageMath / 10.7"
+   ]
+  },
+  {
+   "id": "2610.00214",
+   "title": "Hilbert functions of chopped ideals of general plane points",
+   "subject": "math.AC",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00203",
+   "title": "Point Density Measures: A Measure-Theoretic Framework with Applications to Geometric Probability",
+   "subject": "math.PR",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "none",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00213",
+   "title": "An order-five Haagerup--Izumi vertex operator algebra at central charge eight",
+   "subject": "math.QA",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": true,
+   "n_tool_entries": 9,
+   "raw_tools": [
+    "NumPy developers / NumPy / 2.4.6",
+    "SymPy development team / SymPy / 1.14.0",
+    "Alex Martelli, Case Van Horsen and contributors / gmpy2 / 2.3.1",
+    "FLINT development team / FLINT / 3.4.0",
+    "GNU GMP developers / GMP / 6.3.0",
+    "The GAP Group / GAP / 4.16.1",
+    "Siu-Hung Ng, Yilong Wang, Samuel Wilson / SL2Reps / 1.1",
+    "SciPy developers / SciPy / 1.16.2",
+    "Fredrik Johansson and contributors / mpmath / 1.4.1"
+   ]
+  },
+  {
+   "id": "2610.00212",
+   "title": "The Chaise Longue Theorem: Conjecture 1.2 of Degtyarev–Shimada for the Fermat varieties of every degree in every even dimension, and the integral Hodge conjecture for those whose degree is prime, equal to 4, or prime to (n+1)!",
+   "subject": "math.AG",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Code",
+    "Harmonic"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "Google",
+    "Harmonic",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "Claude",
+    "Gemini",
+    "Aristotle",
+    "Harmonic",
+    "Lean",
+    "Mathlib",
+    "Lean"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 7,
+   "raw_tools": [
+    "Anthropic / Claude Code / ",
+    "Harmonic / Aristotle / ",
+    "Lean / Lean / v4.28.0",
+    "Lean / Mathlib / ",
+    "Python / Python / ",
+    "Singular / Singular / ",
+    "Macaulay2 / Macaulay2 / "
+   ]
+  },
+  {
+   "id": "2610.00211",
+   "title": "Axiomatic degree theory on topological manifolds",
+   "subject": "math.AT",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00210",
+   "title": "The truncated octahedral conjecture",
+   "subject": "math.MG",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-5.6 Sol",
+    "ChatGPT",
+    "ChatGPT",
+    "Python"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.6 Sol"
+   ]
+  },
+  {
+   "id": "2610.00209",
+   "title": "An analogue of the Erdos-Kac theorem for signed Iwasawa invariants of modular forms",
+   "subject": "math.NT",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00208",
+   "title": "Strongly regular graphs on 160, 232, 261 and 280 vertices from fusions of orbitals of PΓL(2,8) and 2^4:(S3×S3)",
+   "subject": "math.CO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "Anthropic Claude Code",
+    "Anthropic Claude Fable",
+    "Anthropic Claude Opus"
+   ],
+   "prov_spans": [
+    "Claude",
+    "Fable",
+    "Fable",
+    "Claude Code",
+    "GAP",
+    "Python"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00207",
+   "title": "How long can an off-line zero survive the de Bruijn-Newman heat flow? An explicit unconditional lower bound for Lambda",
+   "subject": "math.NT",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Anthropic Claude Opus"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus"
+   ],
+   "prov_spans": [
+    "Claude",
+    "Claude",
+    "Python"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "Python / Python / 3.13"
+   ]
+  },
+  {
+   "id": "2610.00206",
+   "title": "A 23-Point Counterexample to a Modified Half-Frequency Conjecture for Union–Intersection Systems",
+   "subject": "math.CO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "GPT-6",
+    "Python",
+    "Python"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / "
+   ]
+  },
+  {
+   "id": "2610.00205",
+   "title": "The Dancing Sand Theorem: the 2-part of the sandpile group of the hypercube, for every n",
+   "subject": "math.CO",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Code",
+    "Harmonic"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "Harmonic"
+   ],
+   "prov_spans": [
+    "Claude",
+    "Aristotle",
+    "Harmonic",
+    "Lean",
+    "Mathlib",
+    "Lean",
+    "Lean",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 5,
+   "raw_tools": [
+    "Anthropic / Claude Code / ",
+    "Harmonic / Aristotle / ",
+    "Lean / Lean / v4.28.0",
+    "Lean / Mathlib / ",
+    "Python Software Foundation / Python / 3"
+   ]
+  },
+  {
+   "id": "2610.00201",
+   "title": "Finite quantum theta functions for skew-symmetrizable seeds",
+   "subject": "math.QA",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00168",
+   "title": "Mobility Edge for Sparse Complex Gaussian Matrices",
+   "subject": "math.PR",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 4,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "OpenAI / ChatGPT / 5.6",
+    "OpenAI / ChatGPT / 6",
+    "OpenAI / ChatGPT / 6.1"
+   ]
+  },
+  {
+   "id": "2610.00177",
+   "title": "An $N^{-7/10}$ Bound for the Finite-Size Bias of the Sherrington-Kirkpatrick Free Energy",
+   "subject": "math.PR",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Fable",
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Fable",
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT 5.6 Sol",
+    "GPT 6 Sol",
+    "GPT 6 Astra",
+    "GPT 6.1 Sol",
+    "GPT 6.1 Sol",
+    "GPT 6.1 Sol",
+    "Claude",
+    "Opus 5.5"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 7,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.6",
+    "OpenAI / ChatGPT / 6",
+    "OpenAI / ChatGPT / 6.1",
+    "Anthropic / Claude Opus / 5.5",
+    "Anthropic / Claude Fable / 5",
+    "Anthropic / Claude Fable / 5.1",
+    "Lean / Lean / 4.35.0-rc2"
+   ]
+  },
+  {
+   "id": "2610.00198",
+   "title": "Infinitely Many Elliptic Curves of Exact Ranks Five, Six, and Seven",
+   "subject": "math.NT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT 6 Astra",
+    "GPT 6.1 Sol",
+    "GPT 6 Astra",
+    "GPT 6.1 Sol",
+    "Opus 5.5",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "OpenAI / ChatGPT / 6",
+    "OpenAI / ChatGPT / 6.1"
+   ]
+  },
+  {
+   "id": "2610.00199",
+   "title": "Finite Field Riesz-Frechet Representation",
+   "subject": "math.FA",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00200",
+   "title": "A quasi-Riemann hypothesis for Dedekind zeta functions",
+   "subject": "math.NT",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "AxiomMath"
+   ],
+   "prov_llm_families": [
+    "AxiomMath"
+   ],
+   "prov_spans": [
+    "AxiomProver",
+    "Lean",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "AxiomMath / AxiomProver / "
+   ]
+  },
+  {
+   "id": "2610.00195",
+   "title": "Fröberg's Conjecture through 2d in sufficiently many variables",
+   "subject": "math.AC",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00194",
+   "title": "Strongly regular graphs on 306, 400, 576, 784 and 1296 vertices from multi-orbit coset fusion and Bush-type Hadamard matrices",
+   "subject": "math.CO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "Anthropic Claude Code",
+    "Anthropic Claude Fable",
+    "Anthropic Claude Opus"
+   ],
+   "prov_spans": [
+    "Claude",
+    "Fable",
+    "Fable",
+    "Claude Code",
+    "GAP",
+    "Python"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00190",
+   "title": "Aging in Spherical Spin Glass Dynamics",
+   "subject": "math.PR",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT 6 Astra",
+    "GPT 6.1 Sol",
+    "GPT 6.1 Sol",
+    "Opus 5.5"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "OpenAI / ChatGPT / 6",
+    "OpenAI / ChatGPT / 6.1"
+   ]
+  },
+  {
+   "id": "2610.00192",
+   "title": "A Machine-Checked Kernel for Federated Automated Adjudication: Credibility Lattice Completion, Certificate Lifecycle Invariants, Certified Numerical Anchors, and a Parameterized Rice Template",
+   "subject": "cs.LO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [
+    "Lean"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00193",
+   "title": "A characterization of cut-percolating bigraphs",
+   "subject": "math.CO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT6"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / GPT6"
+   ]
+  },
+  {
+   "id": "2610.00191",
+   "title": "BRUDNO’S FAMILIES OF EQUAL SUMS OF SIXTH POWERS AND BREMNER’S K3 SURFACE",
+   "subject": "math.NT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Fable"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Fable"
+   ],
+   "prov_spans": [
+    "Fable"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "Anthropic / Claude Fable / 5.1"
+   ]
+  },
+  {
+   "id": "2610.00187",
+   "title": "An Irrationality Measure for Catalan's Constant",
+   "subject": "math.NT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [
+    "Anthropic Claude Opus"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus"
+   ],
+   "prov_spans": [
+    "Claude",
+    "Opus 5.5"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "Lean / Lean / 4"
+   ]
+  },
+  {
+   "id": "2610.00178",
+   "title": "Unconditional implications of the Quasi-Riemann Hypothesis",
+   "subject": "math.NT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6 Astra"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / GPT-6 Astra"
+   ]
+  },
+  {
+   "id": "2610.00188",
+   "title": "A counterexample to Vaught's Conjecture for $L_{\\omega_1,\\omega}$",
+   "subject": "math.LO",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Anthropic Claude Code",
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [],
+   "prov_spans": [
+    "Lean"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 5,
+   "raw_tools": [
+    "Anthropic / Claude Code / ",
+    "OpenAI / Codex / ",
+    "OpenAI / ChatGPT / Pro",
+    "Lean / Lean / ",
+    "Z3 and Python / SMT and Horn clause solvers / "
+   ]
+  },
+  {
+   "id": "2610.00189",
+   "title": "Bruck loops with abelian inner mapping groups: a short proof",
+   "subject": "math.GR",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-Astra",
+    "Lean",
+    "Lean",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / GPT-Astra / "
+   ]
+  },
+  {
+   "id": "2610.00186",
+   "title": "Stark units for real quadratic fields and reciprocity laws",
+   "subject": "math.NT",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00175",
+   "title": "The Haagerup VOA at Central Charge Eight",
+   "subject": "math.QA",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00182",
+   "title": "A counterexample to Han’s conjecture over arbitrary fields",
+   "subject": "math.RT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00180",
+   "title": "A variational formula for affine semicircular determinants",
+   "subject": "math.OA",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / Codex / 6 Astra"
+   ]
+  },
+  {
+   "id": "2610.00185",
+   "title": "Arithmetic progressions with prescribed lp gaps",
+   "subject": "math.CA",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.6 Sol",
+    "OpenAI / ChatGPT / 6 Astra"
+   ]
+  },
+  {
+   "id": "2610.00176",
+   "title": "Superexponentially decaying sequences in the Erdos similarity problem",
+   "subject": "math.CA",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 6 Astra"
+   ]
+  },
+  {
+   "id": "2610.00179",
+   "title": "Representation embeddings and the third Brauer--Thrall conjecture",
+   "subject": "math.RT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra",
+    "Claude"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "OpenAI / Codex / GPT-6-Astra",
+    "Anthropic / Claude Opus / Opus 5.5"
+   ]
+  },
+  {
+   "id": "2610.00165",
+   "title": "Multi-coverings by lattice translates of convex bodies",
+   "subject": "math.MG",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT",
+    "Quora Poe (aggregator)"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "Quora Poe (aggregator)"
+   ],
+   "prov_spans": [
+    "GPT-6 Astra",
+    "Poe"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "OpenAI / GPT / 6 Astra",
+    "Anthropic / Claude Opus / 5.5",
+    "Quora / Poe / "
+   ]
+  },
+  {
+   "id": "2610.00161",
+   "title": "THE CROSS-ENERGY OF DIRICHLET PARTIAL SUMS AND THE ZEROS OF THE RIEMANN ZETA FUNCTION",
+   "subject": "math.NT",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Anthropic Claude Sonnet",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "Claude",
+    "Python"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "Anthropic / Claude Sonnet / ",
+    "OpenAI / ChatGPT / ",
+    "Python / Python / 3.13"
+   ]
+  },
+  {
+   "id": "2610.00169",
+   "title": "Classical infinite divisibility, self-decomposability and bell-shape of free stable laws",
+   "subject": "math.PR",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00173",
+   "title": "Wave Mechanics",
+   "subject": "math.MP",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00167",
+   "title": "The Sharp Commutator Bound for the Polymath14 Inequality",
+   "subject": "math.GR",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.4"
+   ]
+  },
+  {
+   "id": "2610.00170",
+   "title": "The number of multiplicity sets of n-point plane line collections grows as exp(Theta(sqrt(n)))",
+   "subject": "math.CO",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Local/open"
+   ],
+   "prov_llm_families": [
+    "Local/open"
+   ],
+   "prov_spans": [
+    "Qwen",
+    "Lean"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "Local LLM (llama-swap) / Qwen 3.8 27B / 27B local inference"
+   ]
+  },
+  {
+   "id": "2610.00171",
+   "title": "Measurable Independence Density Equals the Finite Independence-Ratio Infimum in the Euclidean Plane",
+   "subject": "math.CO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "ChatGPT"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00172",
+   "title": "From Snapshots to Processes: Dynamic Contact Algebras as a Foundation for Process-Oriented GIS",
+   "subject": "cs.DS",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Anthropic Claude Fable"
+   ],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "Anthropic / Claude Fable / "
+   ]
+  },
+  {
+   "id": "2610.00162",
+   "title": "Nearly Minimax Variance Estimation Under Rough Random Design",
+   "subject": "math.ST",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Fable",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Fable",
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT 5.4",
+    "GPT 5.5",
+    "GPT 5.6 Sol",
+    "GPT 6 Sol",
+    "GPT 6 Astra",
+    "GPT 6.1 Sol",
+    "GPT 6.1 Sol",
+    "GPT 6.1 Sol"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 6,
+   "raw_tools": [
+    "Lean / Lean / 4.34.1",
+    "Anthropic / Claude Fable / 5.1",
+    "Anthropic / Claude Fable / 5",
+    "OpenAI / ChatGPT / 6.1",
+    "OpenAI / ChatGPT / 6",
+    "OpenAI / ChatGPT / 5.6"
+   ]
+  },
+  {
+   "id": "2610.00163",
+   "title": "An exponential improvement for Borsuk's problem",
+   "subject": "math.MG",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / Astra"
+   ]
+  },
+  {
+   "id": "2610.00160",
+   "title": "Binary Regression for BV Class Conditional Probability",
+   "subject": "stat.TH",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00159",
+   "title": "The torus with asymptotically the fewest simple closed geodesics",
+   "subject": "math.GT",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.4, 5.5, 5.6, 6.0"
+   ]
+  },
+  {
+   "id": "2610.00157",
+   "title": "Nearly Minimax Rates for Functional Estimation Under Rough Random Design",
+   "subject": "math.ST",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Fable",
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Fable",
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT 5.6 Sol",
+    "GPT 6 Sol",
+    "GPT 6 Astra",
+    "GPT 6.1 Sol",
+    "GPT 6.1 Sol",
+    "GPT 6 Astra",
+    "Claude",
+    "Opus 5.5"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 7,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "Anthropic / Claude Fable / 5.1",
+    "Anthropic / Claude Fable / 5",
+    "OpenAI / ChatGPT / 6.1",
+    "OpenAI / ChatGPT / 6",
+    "OpenAI / ChatGPT / 5.6",
+    "Lean / Lean / 4.34.1"
+   ]
+  },
+  {
+   "id": "2610.00155",
+   "title": "The Parisi Formula for the Edwards–Anderson Model in the High-Dimensional Limit",
+   "subject": "math.PR",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT 6 Astra",
+    "GPT 5.6 Sol",
+    "GPT 6.1 Sol",
+    "GPT 6 Astra",
+    "Opus 5.5"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 4,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "OpenAI / ChatGPT / 5.6",
+    "OpenAI / ChatGPT / 6",
+    "OpenAI / ChatGPT / 6.1"
+   ]
+  },
+  {
+   "id": "2610.00156",
+   "title": "Modularity of elliptic curves over totally real field and CM fields not containing \\zeta_5",
+   "subject": "math.NT",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT 6.1",
+    "Claude",
+    "Opus 5.5"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "OpenAI / Codex / Astra 6.1",
+    "Anthropic / Claude Opus / 5.5"
+   ]
+  },
+  {
+   "id": "2610.00154",
+   "title": "Parisi formula for Ising and Spherical Perceptrons",
+   "subject": "math.PR",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.6Pro",
+    "OpenAI / ChatGPT / 6"
+   ]
+  },
+  {
+   "id": "2610.00153",
+   "title": "The generalized Fermat equation $x^2+y^5=z^7$",
+   "subject": "math.NT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [
+    "Anthropic Claude Opus"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus"
+   ],
+   "prov_spans": [
+    "Claude",
+    "Opus 5.5",
+    "Claude",
+    "Opus 5.5",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "PARI Group / PARI/GP / 2.17.3",
+    "Python Software Foundation / Python (python-flint/Arb, NumPy, SciPy, SymPy, mpmath) / 3.12"
+   ]
+  },
+  {
+   "id": "2610.00152",
+   "title": "A Verified Constructive Reduction of the Cook-Levin Theorem in Lean 4: Bridging the Gap Between Complexity Theory and Formal SAT Encodings",
+   "subject": "cs.CC",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Google"
+   ],
+   "prov_llm_families": [
+    "Google"
+   ],
+   "prov_spans": [
+    "Gemini"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "Google / Gemini / ",
+    "Lean / Lean / v4.28.0"
+   ]
+  },
+  {
+   "id": "2610.00151",
+   "title": "Square-difference-free sets of exponent 0.7580758",
+   "subject": "math.CO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra",
+    "Claude",
+    "Opus 5.5"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "OpenAI / ChatGPT / Astra 6"
+   ]
+  },
+  {
+   "id": "2610.00148",
+   "title": "Uniform Kazhdan Monsters and Schmidt's Property M",
+   "subject": "math.DS",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-5.6 Sol"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.6 sol"
+   ]
+  },
+  {
+   "id": "2610.00146",
+   "title": "Phase retrieval for stationary Schrödinger evolutions",
+   "subject": "math.AP",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00147",
+   "title": "Moment defects and sharp iid Berry–Esseen bounds",
+   "subject": "math.PR",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "GPT-5.6 Sol",
+    "GPT-6.1 Sol",
+    "GPT-6 Astra",
+    "Codex",
+    "Lean",
+    "mathlib"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00145",
+   "title": "The inverse quiver problem is NP-complete",
+   "subject": "math.RT",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00142",
+   "title": "Noncommutative Buzano-Dragomir Inequality and Applications",
+   "subject": "math.FA",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00141",
+   "title": "Constant-Time O(1) AST Reduction and Native Delegate Compilation in RICIS-III",
+   "subject": "math.AG",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Google"
+   ],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "Google / Gemini / 3.8"
+   ]
+  },
+  {
+   "id": "2610.00143",
+   "title": "A note on counterexamples to homological conjectures",
+   "subject": "math.RT",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "none",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra",
+    "GPT-6-Astra"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00140",
+   "title": "A note of refinements to an algebra of infinite little finitistic dimension",
+   "subject": "math.RT",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "none",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra",
+    "GPT-6-Astra"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "OpenAI / ChatGPT / GPT-6-Astra",
+    "Lean / Lean / 4.34.1"
+   ]
+  },
+  {
+   "id": "2610.00138",
+   "title": "Weak chromatic splitting fails at n = p for every odd prime p",
+   "subject": "math.AT",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [
+    "Anthropic Claude Opus"
+   ],
+   "prov_spans": [
+    "Claude",
+    "Claude",
+    "Claude",
+    "Claude",
+    "Claude",
+    "Claude"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00137",
+   "title": "Proof of the Non-existence of Perfect Cuboids via Mordell-Weil Rank Exhaustion and Minimal Polynomial Irreducibility of the Perfect Cuboid Surface",
+   "subject": "math.NT",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Google"
+   ],
+   "prov_llm_families": [
+    "Google"
+   ],
+   "prov_spans": [
+    "Gemini"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "Google / Gemini / ",
+    "Lean / Lean / v4.28.0"
+   ]
+  },
+  {
+   "id": "2610.00136",
+   "title": "The generalized Fermat equation $x^3+y^3=z^n$",
+   "subject": "math.NT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [
+    "Anthropic Claude Opus"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus"
+   ],
+   "prov_spans": [
+    "Claude",
+    "Opus 5.5",
+    "Claude",
+    "Opus 5.5"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 5,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "SageMath / SageMath / 10.9",
+    "PARI Group / PARI/GP / 2.17.3",
+    "GAP Group / GAP / 4.15.1",
+    "Python Software Foundation / Python (python-flint/Arb, SymPy, mpmath) / 3.12"
+   ]
+  },
+  {
+   "id": "2610.00135",
+   "title": "Improved sum-difference inequalities in abelian groups",
+   "subject": "math.NT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Harmonic",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "Harmonic",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6 Astra",
+    "GPT-5.6 Sol",
+    "GPT-6 Astra",
+    "GPT-5.6 Sol",
+    "GPT-6 Astra",
+    "Aristotle",
+    "Harmonic",
+    "Aristotle"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "OpenAI / ChatGPT / GPT-6 Astra",
+    "Harmonic / Aristotle / ",
+    "OpenAI / ChatGPT / GPT-5.6 Sol"
+   ]
+  },
+  {
+   "id": "2610.00134",
+   "title": "Poisson boundaries of type III factors and the relative bicentralizer conjecture",
+   "subject": "math.OA",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Google",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": true,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 6 Astra",
+    "Google / Gemini / 3.1 Pro"
+   ]
+  },
+  {
+   "id": "2610.00083",
+   "title": "Strongly positive bases and quantum greedy expansions",
+   "subject": "math.QA",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra",
+    "Codex"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00031",
+   "title": "Algebraic dependence of cluster X-variables",
+   "subject": "math.RA",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra",
+    "GPT-6-Astra"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00032",
+   "title": "An explicit nonideal rooted cluster morphism",
+   "subject": "math.RA",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra",
+    "GPT-6-Astra"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00030",
+   "title": "Crystalline and infinitesimal Poisson stacks",
+   "subject": "math.AG",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00029",
+   "title": "Theta Bases for Rank-Two Quantum Cluster Algebras of Geometric Type",
+   "subject": "math.QA",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra",
+    "GPT-6-Astra"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00026",
+   "title": "The Anti-Arithmetic Product of Symmetric Functions",
+   "subject": "math.CO",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6",
+    "GPT-5.5"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.5",
+    "OpenAI / ChatGPT / 6 Astra"
+   ]
+  },
+  {
+   "id": "2610.00024",
+   "title": "Reflexive equivalence and reflexive-minimal algebras",
+   "subject": "math.RT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra",
+    "GPT-6-Astra",
+    "Claude"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "OpenAI / Codex / GPT-6-Astra",
+    "Anthropic / Claude Opus / Opus 5.5"
+   ]
+  },
+  {
+   "id": "2610.00025",
+   "title": "Minimality of the Rank-Two Quantum Greedy Basis",
+   "subject": "math.QA",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00023",
+   "title": "A Finite Polyhedral Construction of the Rank-Two Quantum Greedy Basis",
+   "subject": "math.QA",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "Danus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra",
+    "Danus"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00022",
+   "title": "Continuity of solutions to abstract linear control systems",
+   "subject": "math.OC",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6",
+    "GPT-6",
+    "Opus 5.5",
+    "Opus 5.5",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 6 Pro",
+    "Anthropic / Claude Opus / 5.5"
+   ]
+  },
+  {
+   "id": "2610.00019",
+   "title": "The Negative Spherical Perceptron: Capacity, Isostatic Jamming, and Full Replica Symmetry Breaking",
+   "subject": "math.PR",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Fable",
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Fable",
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT 5.6 Sol",
+    "GPT 6 Sol",
+    "GPT 6 Astra",
+    "GPT 6 Astra",
+    "Claude",
+    "Opus 5.5",
+    "Opus 5.5",
+    "Fable"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 5,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "Anthropic / Claude Fable / 5.1",
+    "Anthropic / Claude Fable / 5",
+    "OpenAI / ChatGPT / 6",
+    "OpenAI / ChatGPT / 5.6"
+   ]
+  },
+  {
+   "id": "2610.00021",
+   "title": "A Fourier Consequence for Lattice Kissing Numbers and Average Contacts",
+   "subject": "math.MG",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Anthropic Claude Fable",
+    "OpenAI ChatGPT",
+    "Quora Poe (aggregator)"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Fable",
+    "OpenAI ChatGPT",
+    "Quora Poe (aggregator)"
+   ],
+   "prov_spans": [
+    "GPT-6 Astra",
+    "GPT-6 Astra",
+    "Fable",
+    "Poe"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "OpenAI / GPT / 6 Astra",
+    "Anthropic / Claude Fable / 5.1",
+    "Quora / Poe / "
+   ]
+  },
+  {
+   "id": "2610.00017",
+   "title": "On the ternary pentagonal numbers conjecture",
+   "subject": "math.NT",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "ChatGPT",
+    "ChatGPT"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.6 Sol"
+   ]
+  },
+  {
+   "id": "2610.00018",
+   "title": "Linnik's constant is at most $3.99$",
+   "subject": "math.NT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT",
+    "xAI"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT",
+    "xAI"
+   ],
+   "prov_spans": [
+    "GPT Astra",
+    "Claude",
+    "Opus 5.5",
+    "Grok",
+    "Lean"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "OpenAI / ChatGPT / Astra 6",
+    "XAi / Grok / 4.7"
+   ]
+  },
+  {
+   "id": "2610.00016",
+   "title": "An Exponent of 1.043 for the Unit Distance Problem",
+   "subject": "math.CO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "Anthropic Claude Opus",
+    "Meta",
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Code",
+    "Anthropic Claude Opus",
+    "Meta",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "ChatGPT",
+    "Astra 6",
+    "Claude",
+    "Opus 5.5",
+    "Claude",
+    "Claude",
+    "Opus 5.5"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 4,
+   "raw_tools": [
+    "OpenAI / ChatGPT / Astra 6",
+    "OpenAI / ChatGPT / Sol 5.6",
+    "Anthropic / Claude Opus / 5.5",
+    "Meta / Muse / Spark 1.3 Contributor"
+   ]
+  },
+  {
+   "id": "2610.00013",
+   "title": "Explicit non-inducible rooted cluster morphisms",
+   "subject": "math.RA",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "Codex"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00015",
+   "title": "Tilings of an equilateral triangle by at most five lattice trapezoids with 60° base angles: a complete structural classification",
+   "subject": "math.CO",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00014",
+   "title": "On the escape rate of favorite sites of planar random walks",
+   "subject": "math.PR",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / Codex / GPT-5.6 Sol"
+   ]
+  },
+  {
+   "id": "2610.00012",
+   "title": "A finite criterion for total sign skew symmetry in order three",
+   "subject": "math.RA",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra",
+    "Codex"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2610.00011",
+   "title": "A generalized Gerver sofa for angled corridors",
+   "subject": "math.MG",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "Codex"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / Codex / Astra Medium"
+   ]
+  },
+  {
+   "id": "2610.00010",
+   "title": "A contractible open four-manifold with a complete metric of uniformly positive scalar curvature",
+   "subject": "math.DG",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6",
+    "GPT-6"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 6"
+   ]
+  },
+  {
+   "id": "2610.00003",
+   "title": "Arrow and Gibbard Satterthwaite Theorems in Lean",
+   "subject": "math.LO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "GPT-6.1",
+    "gpt-6",
+    "Codex",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "OpenAI / ChatGPT / GPT 6.1 (manuscript)",
+    "OpenAI / Codex / gpt-6-luna (historical proof engineering)",
+    "Lean / Lean / 4.35.0-rc2 (registered artifacts)"
+   ]
+  },
+  {
+   "id": "2610.00004",
+   "title": "A Lean Formalization of the Shapley Value Characterization for Finite Cooperative Games",
+   "subject": "math.LO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "GPT-6.1",
+    "gpt-6",
+    "Codex",
+    "Lean",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "OpenAI / ChatGPT / GPT 6.1 (manuscript)",
+    "OpenAI / Codex / gpt-6-luna (historical proof engineering)",
+    "Lean / Lean / 4.35.0-rc2 (registered artifact)"
+   ]
+  },
+  {
+   "id": "2610.00005",
+   "title": "Nash Bargaining Characterization in Lean",
+   "subject": "math.LO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "GPT-6.1",
+    "gpt-6",
+    "Codex",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "OpenAI / ChatGPT / GPT 6.1 (manuscript)",
+    "OpenAI / Codex / gpt-6-luna (historical proof engineering)",
+    "Lean / Lean / 4.35.0-rc2 (registered artifact)"
+   ]
+  },
+  {
+   "id": "2610.00008",
+   "title": "Finite Nash Equilibria and Dependent Mixed Strategies in Lean",
+   "subject": "math.LO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "GPT-6.1",
+    "GPT-5",
+    "Codex",
+    "Lean",
+    "lean",
+    "lean",
+    "Lean",
+    "Mathlib"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "Lean / Lean / 4.33.0 (historical pinned proofs)",
+    "OpenAI / Codex / GPT-6.1 (manuscript)"
+   ]
+  },
+  {
+   "id": "2610.00002",
+   "title": "A Finite Coordinate Reduction for Approachability Loss in Lean",
+   "subject": "math.OC",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "GPT-6.1",
+    "GPT-5",
+    "Codex",
+    "Lean",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "OpenAI / ChatGPT / GPT 6.1 (manuscript)",
+    "OpenAI / Codex / GPT-5 (historical proof assistance)",
+    "Lean / Lean / 4.33.0 (registered artifact)"
+   ]
+  },
+  {
+   "id": "2610.00006",
+   "title": "An Executable Stallings Recognizer for Finite Generating Lists in Lean",
+   "subject": "math.GR",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "GPT-6.1",
+    "GPT-6",
+    "Codex",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "OpenAI / ChatGPT / GPT 6.1 (manuscript)",
+    "OpenAI / Codex / GPT-6 (historical proof engineering)",
+    "Lean / Lean / 4.33.0 (registered artifact)"
+   ]
+  },
+  {
+   "id": "2610.00007",
+   "title": "Prime-Generated Localization Descent for Unique Factorization in Lean",
+   "subject": "math.AC",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "GPT-6.1",
+    "Codex",
+    "Lean",
+    "Mathlib",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "OpenAI / ChatGPT / GPT 6.1 (manuscript)",
+    "OpenAI / Codex / Historical assistance; precise model versions unspecified",
+    "Lean / Lean / 4.33.0 (registered artifact)"
+   ]
+  },
+  {
+   "id": "2610.00001",
+   "title": "A Lean Formalization of Myerson-Satterthwaite Impossibility for Continuous Bilateral Trade",
+   "subject": "cs.LO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "GPT-6.1",
+    "gpt-6",
+    "Codex",
+    "Lean",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "OpenAI / ChatGPT / GPT 6.1 (manuscript)",
+    "OpenAI / Codex / gpt-6-luna (historical proof engineering)",
+    "Lean / Lean / 4.35.0-rc2 (registered artifact)"
+   ]
+  },
+  {
+   "id": "2610.00009",
+   "title": "A Lean Certificate for the Single Source Unsplittable Flow Cost Counterexample",
+   "subject": "cs.DS",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6.1",
+    "GPT-5",
+    "GPT-5.6",
+    "Lean",
+    "Lean",
+    "lean",
+    "Lean",
+    "Mathlib"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "Lean / Lean / 4.33.0 (historical pinned proofs)",
+    "OpenAI / Codex / GPT-6.1 (manuscript)"
+   ]
+  },
+  {
+   "id": "2609.00152",
+   "title": "A Lean Formalization of the Classical Seifert van Kampen Groupoid Theorem",
+   "subject": "math.AT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6.1",
+    "gpt-6-astra",
+    "Lean",
+    "lean",
+    "Lean",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "Lean / Lean / 4.35.0-rc2",
+    "OpenAI / Codex / GPT-6.1",
+    "OpenAI / Codex / gpt-6-astra (pinned repository-reported formalization assistance)"
+   ]
+  },
+  {
+   "id": "2609.00149",
+   "title": "Deferred Acceptance in Lean for Finite Strict Preference Markets",
+   "subject": "cs.DS",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "GPT-6.1",
+    "GPT-6",
+    "Codex",
+    "Codex",
+    "Lean",
+    "lean",
+    "Lean"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "Lean / Lean / 4.35.0-rc2",
+    "OpenAI / Codex / GPT-6.1",
+    "OpenAI / Codex / GPT-6-Luna (repository-reported formalization assistance)"
+   ]
+  },
+  {
+   "id": "2609.00151",
+   "title": "A Lean Formalization of Roberts Theorem on Unrestricted Valuations",
+   "subject": "math.OC",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6.1",
+    "GPT-6",
+    "Lean",
+    "lean",
+    "Lean",
+    "Mathlib",
+    "Lean",
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "Lean / Lean / 4.35.0-rc2",
+    "OpenAI / Codex / GPT-6.1",
+    "OpenAI / Codex / GPT-6-Luna (repository-reported formalization assistance)"
+   ]
+  },
+  {
+   "id": "2609.00150",
+   "title": "Finite VCG and Groves Payments in Lean",
+   "subject": "math.OC",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6.1",
+    "GPT-6",
+    "Lean",
+    "lean",
+    "Lean",
+    "Mathlib",
+    "Lean"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "Lean / Lean / 4.35.0-rc2",
+    "OpenAI / Codex / GPT-6.1",
+    "OpenAI / Codex / GPT-6-Luna (repository-reported formalization assistance)"
+   ]
+  },
+  {
+   "id": "2609.00148",
+   "title": "A Lean Formalization of Finite Zero Sum Minimax via Sion's Theorem",
+   "subject": "math.OC",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6.1",
+    "Lean",
+    "lean",
+    "Mathlib"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 2,
+   "raw_tools": [
+    "Lean / Lean / 4.35.0-rc2",
+    "OpenAI / Codex / GPT-6.1"
+   ]
+  },
+  {
+   "id": "2609.00147",
+   "title": "Signed Mukai diagonals and derived equivalences of fivefolds",
+   "subject": "math.AG",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.6 Sol"
+   ]
+  },
+  {
+   "id": "2609.00145",
+   "title": "The support conjecture for rank-two quantum triangular bases",
+   "subject": "math.QA",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "Danus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra",
+    "Danus"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00144",
+   "title": "On the Asymptotic \\(W_1\\) Cost of Two-Dimensional Semi-Discrete Matching",
+   "subject": "math.PR",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.6Pro"
+   ]
+  },
+  {
+   "id": "2609.00146",
+   "title": "FINITE HAUSDORFF HYPERSPACES AND GROMOV–HAUSDORFF GEOMETRY",
+   "subject": "math.MG",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "Codex"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00141",
+   "title": "Ordinal-definable families in Cohen, random, and collapse extensions",
+   "subject": "math.LO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [],
+   "prov_spans": [
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / Codex / Astra"
+   ]
+  },
+  {
+   "id": "2609.00142",
+   "title": "Collapsibility of Alexander duals for shade maps",
+   "subject": "math.CO",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-5.6 Sol"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.6 Sol"
+   ]
+  },
+  {
+   "id": "2609.00143",
+   "title": "Strongly positive bases in rank-two quantum cluster algebras",
+   "subject": "math.QA",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "Codex"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00140",
+   "title": "Coefficientwise positivity for alternating sums of $q$-factorials",
+   "subject": "math.CO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Anthropic Claude Fable",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [],
+   "prov_spans": [
+    "Lean"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "Anthropic / Claude Fable / 5.1",
+    "OpenAI / Codex / 6",
+    "Lean / Lean / 4"
+   ]
+  },
+  {
+   "id": "2609.00138",
+   "title": "Signed seeds and G-gradings on cluster algebras",
+   "subject": "math.CO",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT 5.5",
+    "GPT 5.6",
+    "Claude"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00128",
+   "title": "On properties of Plancherel algebras",
+   "subject": "math.AG",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "OpenAI / Codex / GPT-6-Astra",
+    "Rethlas / https://github.com/frenzymath/Rethlas / commit 887cc46427636bbdd235160a112f9a30ae81d040",
+    "OSVerify / OSVerify / "
+   ]
+  },
+  {
+   "id": "2609.00137",
+   "title": "On a non-basis of the coinvariant algebra",
+   "subject": "math.CO",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-5.6 Sol",
+    "GPT-6 Astra",
+    "SageMath"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.6 Sol",
+    "OpenAI / ChatGPT / 6 Astra",
+    "SageMath / SageMath / 10.10.beta9"
+   ]
+  },
+  {
+   "id": "2609.00132",
+   "title": "Primitive Integer Solutions of x^4 + 3y^3 + 2z^3 = 0",
+   "subject": "math.NT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "Astra 6"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / Astra 6 Pro"
+   ]
+  },
+  {
+   "id": "2609.00134",
+   "title": "Five equations for first-order logic, modulo the structure of existential graphs",
+   "subject": "math.LO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Anthropic Claude Opus"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Opus"
+   ],
+   "prov_spans": [
+    "Opus 5.5",
+    "Opus 5.5"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "Anthropic / Claude Opus / 5.5",
+    "University of New Mexico / Mace4 / ",
+    "University of New Mexico / Prover9 / "
+   ]
+  },
+  {
+   "id": "2609.00133",
+   "title": "A Universal Noncommutative Splitting Algebra for Polynomials",
+   "subject": "math.RA",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-5.5"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.5"
+   ]
+  },
+  {
+   "id": "2609.00135",
+   "title": "A counterexample to the Burman--Kulishov conjecture on Lie elements",
+   "subject": "math.CO",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-5.6 Sol"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.6 Sol"
+   ]
+  },
+  {
+   "id": "2609.00130",
+   "title": "Primitive Integer Solutions of x^4 + 4y^3 + z^3 = 0",
+   "subject": "math.NT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "none",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "Astra 6"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / Astra 6 Pro"
+   ]
+  },
+  {
+   "id": "2609.00124",
+   "title": "Quantum Laurent Positivity for Mutation-Acyclic Cluster Algebras",
+   "subject": "math.QA",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "Danus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-6-Astra",
+    "Danus"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00126",
+   "title": "Pauli problem in dimension 4",
+   "subject": "quant-ph",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "ChatGPT",
+    "ChatGPT",
+    "Claude",
+    "Opus 5.5"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00123",
+   "title": "Breaking the Fourth Wall: The Planar Centroid Banach–Mazur Diameter Is Strictly Less than $4$",
+   "subject": "math.MG",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "Anthropic Claude Fable",
+    "OpenAI ChatGPT",
+    "Quora Poe (aggregator)"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Fable",
+    "OpenAI ChatGPT",
+    "Quora Poe (aggregator)"
+   ],
+   "prov_spans": [
+    "GPT-5.6 Sol",
+    "GPT-5.6 Sol",
+    "Fable",
+    "Poe"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 3,
+   "raw_tools": [
+    "OpenAI / GPT / 5.6 Sol",
+    "Anthropic / Claude Fable / 5",
+    "Quora / Poe / "
+   ]
+  },
+  {
+   "id": "2609.00121",
+   "title": "Polynomials over Symmetric Polynomials",
+   "subject": "math.AC",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-5.6 Sol"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.6 Sol"
+   ]
+  },
+  {
+   "id": "2609.00122",
+   "title": "Generalized Bawo: A Finite-State Model and an EXPTIME Upper Bound",
+   "subject": "cs.CC",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [],
+   "prov_spans": [],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00118",
+   "title": "A counterexample to ordering-independence for chromatic operators",
+   "subject": "math.CO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-5.6 Sol",
+    "SageMath"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00119",
+   "title": "Hilbert-type inequality with primes",
+   "subject": "math.NT",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00117",
+   "title": "Splitting a Polynomial into Linear Factors after an Injective Ring Extension",
+   "subject": "math.AC",
+   "authorshipMode": "mixed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-5.5"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT / 5.5"
+   ]
+  },
+  {
+   "id": "2609.00116",
+   "title": "A Counterexample to a Conjecture on Fused Specht Polynomials",
+   "subject": "math.CO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT-5.6 Sol",
+    "SageMath"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00114",
+   "title": "Under Measurables, HOD_{Ord^{\\omega}} is locally arbitrary",
+   "subject": "math.LO",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "Codex"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / Codex / 6 Astra"
+   ]
+  },
+  {
+   "id": "2609.00112",
+   "title": "Swan induction for the finite-local sphere",
+   "subject": "math.AT",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "Claude"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00111",
+   "title": "Torsion in $K_1$ and $p$-adic vanishing cycles",
+   "subject": "math.AG",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "Claude"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00110",
+   "title": "Frobenius orbit maps and rank-four group schemes",
+   "subject": "math.AG",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "some",
+   "llm_families": [],
+   "prov_llm_families": [
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "Codex",
+    "Claude",
+    "Claude",
+    "Macaulay"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00102",
+   "title": "Inclusions between p-bounded crystalline loci in dimension two",
+   "subject": "math.NT",
+   "authorshipMode": "human",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "GPT 5.5"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00105",
+   "title": "Graded absolute integral closures and Picard groups",
+   "subject": "math.AC",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "all",
+   "llm_families": [],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 0,
+   "raw_tools": []
+  },
+  {
+   "id": "2609.00104",
+   "title": "Derived invariance of the signature and Hodge numbers of fourfolds",
+   "subject": "math.AG",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": "all",
+   "llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_llm_families": [
+    "OpenAI ChatGPT"
+   ],
+   "prov_spans": [
+    "ChatGPT"
+   ],
+   "ai_prose": false,
+   "n_tool_entries": 1,
+   "raw_tools": [
+    "OpenAI / ChatGPT 5.6 Sol / "
+   ]
+  },
+  {
+   "id": "2609.00001",
+   "title": "Strict negativity and non-vanishing of Chen--Larson hypergeometric coefficients",
+   "subject": "math.AG",
+   "authorshipMode": "no-human-author-claimed",
+   "humanUnderstanding": null,
+   "llm_families": [
+    "Anthropic Claude Fable",
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_llm_families": [
+    "Anthropic Claude Code",
+    "Anthropic Claude Fable",
+    "Anthropic Claude Opus",
+    "OpenAI ChatGPT",
+    "OpenAI Codex"
+   ],
+   "prov_spans": [
+    "ChatGPT",
+    "ChatGPT",
+    "Codex",
+    "Codex",
+    "Codex",
+    "Claude",
+    "Claude",
+    "Opus 4.8"
+   ],
+   "ai_prose": true,
+   "n_tool_entries": 4,
+   "raw_tools": [
+    "OpenAI / GPT-5.5 Pro / ",
+    "OpenAI / codex CLI / ",
+    "Anthropic / Claude Opus 4.8 / ",
+    "Anthropic / Claude Fable 5 / "
+   ]
+  }
+ ]
+}

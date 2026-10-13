@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hexagon archive: which AI models are used</title>
+<!-- BEGIN SHARED-HEAD (managed by _utils/html/scaffold.py) -->
+<style>
+/* Shared stylesheet for vault HTML notes.
+ *
+ * Inlined into each note by the scaffold/render scripts so every note is a
+ * single standalone file. Edit here and re-sync; never hand-edit the copy
+ * inside a generated note.
+ *
+ * Theme contract (do not break it):
+ *   :root                                                   light palette
+ *   @media (prefers-color-scheme: dark)
+ *       :root:not([data-theme="light"])                     dark palette
+ *   :root[data-theme="dark"]                                dark palette, explicit
+ * The explicit rules must duplicate the media-query block, because a user
+ * choice has to beat the OS in BOTH directions.
+ *
+ * The @media print block at the bottom re-declares the LIGHT palette. It has to
+ * match the selector list above, at the same specificity and later in the
+ * source, otherwise a dark-mode page prints dark boxes with dark text.
+ */
+
+/* ------------------------------------------------------------- light */
+
+:root {
+  --bg: #ffffff;
+  --fg: #1f2328;
+  --muted: #59636e;
+  --rule: #d1d9e0;
+  --link: #0969da;
+  --code-bg: #f6f8fa;
+  --code-fg: #1f2328;
+  --accent: #6e40c9;
+  --quote-rule: #d1d9e0;
+  --table-stripe: #f6f8fa;
+  --surface: #f6f8fa;
+  --figure-bg: #ffffff;
+
+  /* Reading width. Single-column notes use the default 46rem. A note with an
+     outline sidebar overrides this in its own <style> with
+     `:root { --page-width: 74rem; }` (a later rule at the same specificity
+     wins). An explicit reader choice beats both: width.js sets data-width on
+     <html>, mapped to --page-width by the rules just below, whose
+     html[attr] specificity beats a bare :root. */
+  --page-width: 46rem;
+
+  --cl-note: #0969da;
+  --cl-abstract: #6e40c9;
+  --cl-info: #0969da;
+  --cl-tip: #1a7f37;
+  --cl-success: #1a7f37;
+  --cl-warning: #9a6700;
+  --cl-danger: #bc4c00;
+  --cl-failure: #bc4c00;
+  --cl-bug: #bc4c00;
+  --cl-example: #6e40c9;
+  --cl-question: #0e7490;
+  --cl-quote: #59636e;
+
+  color-scheme: light;
+}
+
+html[data-width="narrow"] { --page-width: 46rem; }
+html[data-width="wide"] { --page-width: 74rem; }
+html[data-width="full"] { --page-width: 90rem; }
+
+/* -------------------------------------------------------------- dark */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #9198a1;
+    --rule: #3d444d;
+    --link: #4493f8;
+    --code-bg: #151b23;
+    --code-fg: #e6edf3;
+    --accent: #ab7df8;
+    --quote-rule: #3d444d;
+    --table-stripe: #151b23;
+    --surface: #151b23;
+    --figure-bg: #0d1117;
+
+    --cl-note: #2f81f7;
+    --cl-abstract: #ab7df8;
+    --cl-info: #2f81f7;
+    --cl-tip: #3fb950;
+    --cl-success: #3fb950;
+    --cl-warning: #d29922;
+    --cl-danger: #db6d28;
+    --cl-failure: #db6d28;
+    --cl-bug: #db6d28;
+    --cl-example: #ab7df8;
+    --cl-question: #39c5cf;
+    --cl-quote: #9198a1;
+
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0d1117;
+  --fg: #e6edf3;
+  --muted: #9198a1;
+  --rule: #3d444d;
+  --link: #4493f8;
+  --code-bg: #151b23;
+  --code-fg: #e6edf3;
+  --accent: #ab7df8;
+  --quote-rule: #3d444d;
+  --table-stripe: #151b23;
+  --surface: #151b23;
+  --figure-bg: #0d1117;
+
+  --cl-note: #2f81f7;
+  --cl-abstract: #ab7df8;
+  --cl-info: #2f81f7;
+  --cl-tip: #3fb950;
+  --cl-success: #3fb950;
+  --cl-warning: #d29922;
+  --cl-danger: #db6d28;
+  --cl-failure: #db6d28;
+  --cl-bug: #db6d28;
+  --cl-example: #ab7df8;
+  --cl-question: #39c5cf;
+  --cl-quote: #9198a1;
+
+  color-scheme: dark;
+}
+
+/* ------------------------------------------------------------------ base */
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+    "Ubuntu", "Droid Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 1.5rem;
+  padding-bottom: 5rem;
+  /* Anchor links should not land under the floating controls. */
+  scroll-padding-top: 4rem;
+}
+
+h1, h2, h3, h4, h5, h6 { line-height: 1.25; font-weight: 600; }
+h1 { font-size: 1.9rem; margin: 0 0 0.25rem; }
+h2 {
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.3rem;
+  margin: 2.5rem 0 0.9rem;
+}
+h3 { font-size: 1.08rem; margin: 1.8rem 0 0.6rem; }
+h4 { font-size: 1rem; margin: 1.5rem 0 0.5rem; color: var(--muted); }
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+img, svg { max-width: 100%; height: auto; }
+
+/* ------------------------------------------------------------------ meta */
+
+.meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 0.7rem 0;
+  margin-bottom: 1.5rem;
+}
+.meta > span + span::before { content: "\00b7"; margin: 0 0.5rem; }
+.meta a { color: var(--muted); text-decoration: underline; }
+
+/* ------------------------------------------------- display controls
+ *
+ * Fixed cluster, top right: the page-width segmented control plus the theme
+ * toggle. #theme-toggle keeps its own `position: fixed` rule below so pages
+ * generated before the width control still show a working toggle; inside the
+ * cluster it is reset to static positioning.
+ */
+
+#display-controls {
+  position: fixed;
+  top: 0.9rem;
+  right: 0.9rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: calc(100vw - 1.8rem);
+}
+
+#display-controls #theme-toggle {
+  position: static;
+}
+
+#width-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-size: 0.78rem;
+  line-height: 1;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.15rem;
+}
+
+#width-control button {
+  font: inherit;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#width-control button:hover { color: var(--fg); }
+#width-control button:focus-visible { outline: 2px solid var(--link); outline-offset: 1px; }
+#width-control button[aria-pressed="true"] {
+  color: var(--fg);
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--rule);
+}
+
+/* ----------------------------------------------------------- theme toggle */
+
+#theme-toggle {
+  position: fixed;
+  top: 0.9rem;
+  right: 0.9rem;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  font: inherit;
+  font-size: 0.78rem;
+  line-height: 1;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  cursor: pointer;
+}
+#theme-toggle:hover { color: var(--fg); border-color: var(--muted); }
+#theme-toggle:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+#theme-toggle .icon { font-size: 0.95rem; }
+
+/* ------------------------------------------------------------------ code */
+
+code {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+pre code { background: none; padding: 0; font-size: 0.86rem; }
+
+kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  border: 1px solid var(--rule);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  background: var(--code-bg);
+}
+
+/* -------------------------------------------------------------- quotes */
+
+blockquote {
+  margin: 1.2rem 0;
+  padding: 0.1rem 1rem;
+  border-left: 4px solid var(--quote-rule);
+  color: var(--muted);
+}
+blockquote > :first-child { margin-top: 0.5rem; }
+blockquote > :last-child { margin-bottom: 0.5rem; }
+
+/* ----------------------------------------------------------------- lists */
+
+ul, ol { padding-left: 1.5rem; }
+li { margin-bottom: 0.35rem; }
+li > ul, li > ol { margin-top: 0.35rem; }
+dl { margin: 1.2rem 0; }
+dt { font-weight: 600; margin-top: 0.7rem; }
+dd { margin-left: 1.4rem; }
+
+/* --------------------------------------------------------------- tables */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2rem 0;
+  font-size: 0.94rem;
+  display: block;
+  overflow-x: auto;
+}
+th, td { border: 1px solid var(--rule); padding: 0.45rem 0.7rem; text-align: left; }
+th { background: var(--code-bg); font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--table-stripe); }
+
+/* -------------------------------------------------------------- figures */
+
+figure {
+  margin: 1.6rem 0;
+  padding: 1rem;
+  background: var(--figure-bg);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+figure > :first-child { margin-top: 0; }
+figure > :last-child { margin-bottom: 0; }
+figure figcaption {
+  margin-top: 0.7rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+figure.tight { padding: 0.4rem; }
+figure.plain { background: none; border: 0; padding: 0; }
+
+/* Inline SVG diagrams: let the SVG paint itself in the page colour. */
+figure svg { display: block; margin: 0 auto; }
+figure svg text { fill: var(--fg); }
+figure svg .muted { fill: var(--muted); }
+figure svg .rule { stroke: var(--rule); }
+figure svg .accent { stroke: var(--link); }
+
+/* Mermaid renders into .mermaid; keep it legible in both themes. */
+figure.mermaid-figure { overflow-x: auto; }
+.mermaid { display: flex; justify-content: center; }
+.mermaid svg { max-width: 100%; height: auto; }
+
+/* ------------------------------------------------------------- callouts */
+
+.callout {
+  border-left: 4px solid var(--cl-note);
+  background: var(--surface);
+  border-radius: 0 6px 6px 0;
+  padding: 0.85rem 1.1rem;
+  margin: 1.2rem 0;
+}
+.callout > :first-child { margin-top: 0; }
+.callout > :last-child { margin-bottom: 0; }
+.callout .callout-title {
+  display: block;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--cl-note);
+  margin-bottom: 0.3rem;
+}
+.callout-abstract { border-left-color: var(--cl-abstract); }
+.callout-abstract .callout-title { color: var(--cl-abstract); }
+.callout-info { border-left-color: var(--cl-info); }
+.callout-info .callout-title { color: var(--cl-info); }
+.callout-tip, .callout-success { border-left-color: var(--cl-tip); }
+.callout-tip .callout-title, .callout-success .callout-title { color: var(--cl-tip); }
+.callout-warning { border-left-color: var(--cl-warning); }
+.callout-warning .callout-title { color: var(--cl-warning); }
+.callout-danger, .callout-failure, .callout-bug { border-left-color: var(--cl-danger); }
+.callout-danger .callout-title,
+.callout-failure .callout-title,
+.callout-bug .callout-title { color: var(--cl-danger); }
+.callout-example { border-left-color: var(--cl-example); }
+.callout-example .callout-title { color: var(--cl-example); }
+.callout-question { border-left-color: var(--cl-question); }
+.callout-question .callout-title { color: var(--cl-question); }
+.callout-quote { border-left-color: var(--cl-quote); }
+.callout-quote .callout-title { color: var(--cl-quote); }
+
+/* ------------------------------------------------- disclosure / tabs */
+
+details {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  margin: 1rem 0;
+  background: var(--surface);
+}
+details > summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--fg);
+  list-style: none;
+}
+details > summary::-webkit-details-marker { display: none; }
+details > summary::before {
+  content: "\25b8";
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: var(--muted);
+  transition: transform 0.15s ease;
+}
+details[open] > summary::before { transform: rotate(90deg); }
+details > *:not(summary) { margin-top: 0.8rem; }
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  border-bottom: 1px solid var(--rule);
+  margin: 1.4rem 0 0.8rem;
+}
+.tabs button {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.75rem;
+  color: var(--muted);
+  background: none;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+}
+.tabs button[aria-selected="true"] {
+  color: var(--fg);
+  background: var(--surface);
+  border-color: var(--rule);
+  margin-bottom: -1px;
+}
+.tabpanel[hidden] { display: none; }
+
+/* ------------------------------------------------------------ layout aid */
+
+.cols {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  margin: 1.2rem 0;
+}
+.cols > * { margin: 0; }
+
+/* --------------------------------------- sidebar layouts vs page width
+ *
+ * Sidebar notes arrange themselves as `div.<name>-layout > nav[data-outline]
+ * + div.<name>-main` with `grid-template-columns: 230px minmax(0, 1fr)`.
+ * The text column is intentionally uncapped: it grows with --page-width, which
+ * is the whole point of the width control. When the reader picks Narrow, the
+ * 230px sidebar would squeeze the text back down to ~28rem, so the layout
+ * stacks instead. The :has selector keeps this generic over layout class
+ * names; on viewports too narrow for grid anyway, each note's own
+ * `@media (max-width: ...)` rule already stacks it.
+ */
+
+html[data-width="narrow"] div:has(> nav[data-outline]) { display: block; }
+/* !important: page-level sidebar rules are keyed to #id (specificity 1,0,0),
+   which beats any id-free override. This is a reader-preference override, the
+   same category as the print rules below, so !important is correct here. */
+html[data-width="narrow"] nav[data-outline] {
+  position: static !important;
+  max-height: 15rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* --------------------------------------- generic outline-sidebar layout
+ *
+ * Used by notes-to-html `--toc` output so rendered Markdown gets the same
+ * left-sidebar reading layout as native notes. Native html-note pages use
+ * their own per-page `<name>-layout` classes of the same shape (they predate
+ * this generic); do not migrate them, the duplication is intentional and
+ * keeps each page self-describing.
+ *
+ * What a per-page copy MUST agree on is the 60rem stacking breakpoint -- see
+ * the trap note in the narrow-viewport block below. Duplicating the layout is
+ * fine; duplicating it with a different breakpoint is not.
+ */
+
+.layout-sidebar {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 2.5rem;
+  justify-content: center;
+}
+nav.sidebar[data-outline] {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.8rem 0.9rem;
+  font-size: 0.9rem;
+}
+nav.sidebar[data-outline] h2 { margin: 0 0 0.4rem; font-size: 0.78rem; }
+nav.sidebar[data-outline] ol, nav.sidebar[data-outline] ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav.sidebar[data-outline] li { margin-bottom: 0; }
+nav.sidebar[data-outline] a {
+  display: block;
+  color: var(--muted);
+  padding: 0.2rem 0.5rem;
+  border-left: 2px solid transparent;
+  border-radius: 0 4px 4px 0;
+}
+nav.sidebar[data-outline] a:hover {
+  color: var(--link);
+  text-decoration: none;
+  background: var(--code-bg);
+}
+nav.sidebar[data-outline] a.active {
+  color: var(--link);
+  border-left-color: var(--link);
+  font-weight: 600;
+}
+.sidebar-main { min-width: 0; }
+
+/* Narrow viewports: the sticky sidebar would eat the viewport, so it becomes
+   a short scroll box above the text. (Reader-picked Narrow is handled by the
+   :has rules above.)
+ *
+ * The `div:has(> nav[data-outline])` arm is NOT redundant with `.layout-sidebar`:
+ * it stacks the grid for hand-rolled per-page layouts too, which is what keeps
+ * the following trap closed for notes that were not written with this block in
+ * front of them.
+ *
+ * THE TRAP: this arm and the drawer block below must break at the SAME 60rem.
+ * A page that stacks its own grid at a *lower* max-width (900px is the value
+ * several notes carried) opens a band between the two. In that band the drawer
+ * has already made the nav an out-of-flow fixed overlay, but the grid still has
+ * two tracks, so the one in-flow child auto-places into the 230px sidebar track
+ * and the whole article renders at 230px -- narrowest column, widest sidebar,
+ * no outline anywhere. Specificity, not source order, is what saves a stray page
+ * rule here: `div:has(> nav[data-outline])` is (0,1,2) against a page's
+ * `.x-layout` (0,1,0), and a media query adds none.
+ *
+ * See docs/html-note-pitfalls.md.
+ */
+@media (max-width: 60rem) {
+  .layout-sidebar,
+  div:has(> nav[data-outline]) { display: block; }
+  nav.sidebar[data-outline] {
+    position: static;
+    max-height: 15rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* --------------------------------------- outline drawer (narrow viewports)
+ *
+ * Below 60rem a nav[data-outline] becomes a slide-in drawer (toggle button
+ * bottom-left, left-edge swipe to open, swipe-left / overlay tap / Escape /
+ * anchor tap to close) instead of an inline scroll box. Gated on
+ * html.has-toc, which sidebar.js sets only when the page has such a nav:
+ * pages without one -- including exports that inline this stylesheet but not
+ * the script -- are untouched.
+ *
+ * Page-level CSS must NOT restyle nav[data-outline] under narrow viewports
+ * (stack the layout grid only); the drawer owns the nav there. The
+ * !important flags beat per-page #id rules (specificity 1,0,0) and the
+ * data-width="narrow" override above -- same reader-preference category as
+ * the print rules, so !important is correct here too.
+ */
+#toc-toggle, #toc-overlay { display: none; }
+@media (max-width: 60rem) {
+  html.has-toc #toc-toggle {
+    display: inline-flex;
+    align-items: center;
+    position: fixed;
+    left: 0.9rem;
+    bottom: 0.9rem;
+    z-index: 30;
+    padding: 0.45rem 0.8rem;
+    font: inherit;
+    font-size: 0.82rem;
+    line-height: 1;
+    color: var(--fg);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+  }
+  html.has-toc #toc-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 24;
+    background: rgba(0, 0, 0, 0.35);
+  }
+  html.has-toc[data-toc-open] body { overflow: hidden; }
+  html.has-toc[data-toc-open] #toc-overlay { display: block; }
+  html.has-toc nav[data-outline] {
+    position: fixed !important;
+    top: 0.75rem !important;
+    left: 0.75rem !important;
+    bottom: 0.75rem !important;
+    width: min(80vw, 20rem) !important;
+    max-height: none !important;
+    margin: 0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    z-index: 25 !important;
+    overflow-y: auto;
+    transform: translateX(calc(-100% - 1rem));
+    transition: transform 0.18s ease-out;
+  }
+  html.has-toc[data-toc-open] nav[data-outline] { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.has-toc nav[data-outline] { transition: none; }
+}
+@media print {
+  #toc-toggle, #toc-overlay { display: none !important; }
+}
+
+/* ------------------------------------------------------------------ toc */
+
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.5rem 1rem 0.7rem 2rem;
+  font-size: 0.94rem;
+}
+.toc ul { margin: 0.3rem 0; }
+
+/* ---------------------------------------------------------------- katex */
+
+figure.math-display { margin: 0.9rem 0; }
+.katex-display { margin: 0.9rem 0; overflow-x: auto; overflow-y: hidden; }
+.katex-error { color: var(--cl-danger); }
+/* KaTeX emits currentColor; pin it so math cannot end up near-invisible if the
+   page colour ever changes without the palette following. */
+.katex { color: inherit; }
+
+/* ---------------------------------------------------------------- footer */
+
+.footnote,
+footer.foot {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ----------------------------------------------------------------- print
+ *
+ * Force the LIGHT palette. The selector list must mirror the theme selectors
+ * above -- :root, the explicit dark override, and the not-light override -- so
+ * that each rule lands at the same specificity and wins by source order.
+ * Without the dark cases, a page left on dark theme prints dark callout boxes
+ * with dark text, i.e. an unreadable document.
+ *
+ * print-color-adjust keeps the light backgrounds, which browsers strip by
+ * default -- which would leave the callouts invisible rather than dark.
+ */
+
+@media print {
+  :root,
+  :root[data-theme="dark"],
+  :root:not([data-theme="light"]) {
+    --bg: #ffffff;
+    --fg: #1f2328;
+    --muted: #59636e;
+    --rule: #d1d9e0;
+    --link: #0969da;
+    --code-bg: #f6f8fa;
+    --code-fg: #1f2328;
+    --accent: #6e40c9;
+    --quote-rule: #d1d9e0;
+    --table-stripe: #f6f8fa;
+    --surface: #f6f8fa;
+    --figure-bg: #ffffff;
+
+    --cl-note: #0969da;
+    --cl-abstract: #6e40c9;
+    --cl-info: #0969da;
+    --cl-tip: #1a7f37;
+    --cl-success: #1a7f37;
+    --cl-warning: #9a6700;
+    --cl-danger: #bc4c00;
+    --cl-failure: #bc4c00;
+    --cl-bug: #bc4c00;
+    --cl-example: #6e40c9;
+    --cl-question: #0e7490;
+    --cl-quote: #59636e;
+
+    color-scheme: light;
+  }
+
+  html, body {
+    background: #fff !important;
+    color: #000;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  #theme-toggle { display: none !important; }
+  #display-controls { display: none !important; }
+  .layout-sidebar { display: block; }
+  nav.sidebar[data-outline] { display: none; }
+
+  body {
+    max-width: none;
+    padding: 0;
+    font-size: 11pt;
+  }
+
+  a { color: #000; text-decoration: underline; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; color: #555; }
+
+  h1, h2, h3 { break-after: avoid; }
+  figure, .callout, details, pre, table, tr { break-inside: avoid; }
+  details { display: block; }
+  details > *:not(summary) { display: revert; }
+  .tabs { display: none; }
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof renderMathInElement !== "function") return;
+  renderMathInElement(document.body, {
+    delimiters: [
+      { left: "$$", right: "$$", display: true },
+      { left: "\\[", right: "\\]", display: true },
+      { left: "$", right: "$", display: false },
+      { left: "\\(", right: "\\)", display: false }
+    ],
+    // code/pre stay ignored on purpose: Obsidian does not render math inside
+    // them either. Do NOT put maths inside <code> expecting it to render.
+    ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code", "option"],
+    ignoredClasses: ["no-katex"],
+    throwOnError: false,
+    errorColor: "#bc4c00"
+  });
+});
+</script>
+<script>
+(function () {
+  try {
+    var v = window.localStorage.getItem("notes-theme");
+    if (v === "light" || v === "dark") {
+      document.documentElement.setAttribute("data-theme", v);
+    }
+    var w = window.localStorage.getItem("notes-width");
+    if (w === "narrow" || w === "wide" || w === "full") {
+      document.documentElement.setAttribute("data-width", w);
+    }
+  } catch (e) {}
+})();
+</script>
+<script>
+/* Theme toggle for vault HTML notes.
+ *
+ * Three states, cycled on click:  Auto -> Light -> Dark -> Auto.
+ * "Auto" follows the OS via prefers-color-scheme.
+ *
+ * The choice is stored under the localStorage key STORAGE_KEY and shared across
+ * every note on the same origin, so one click sticks for the whole set. Storage
+ * access is wrapped in try/catch because file:// origins can refuse
+ * localStorage; the toggle still works for the current page view in that case.
+ *
+ * DISPATCHES a `notes:themechange` event on <html> after every change, with
+ * detail = { mode, resolved } where mode is "auto" | "light" | "dark" and
+ * resolved is "light" | "dark". This is the hook for anything that bakes colour
+ * into the DOM and therefore cannot be restyled by a CSS variable alone --
+ * Mermaid diagrams are the main case, since their text colours are computed and
+ * written as inline attributes at render time:
+ *
+ *     document.documentElement.addEventListener("notes:themechange", (e) => {
+ *       renderDiagrams(e.detail.resolved);
+ *     });
+ *
+ * This file lives in <head>, so the #theme-toggle button does not exist yet when
+ * it is first evaluated. Everything waits for the DOM; an earlier version looked
+ * the button up at module scope and silently produced a dead toggle.
+ *
+ * STORAGE_KEY must stay in sync with the pre-paint snippet and STORAGE_KEY in
+ * _utils/html/scaffold.py.
+ */
+(function () {
+  "use strict";
+
+  var STORAGE_KEY = "notes-theme";
+  var MODES = ["auto", "light", "dark"];
+  var ICONS = { auto: "\u25d0", light: "\u2600", dark: "\u263e" };
+  var EVENT = "notes:themechange";
+
+  var root = document.documentElement;
+
+  function read() {
+    try {
+      var v = window.localStorage.getItem(STORAGE_KEY);
+      return MODES.indexOf(v) >= 0 ? v : "auto";
+    } catch (e) {
+      return "auto";
+    }
+  }
+
+  function write(mode) {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, mode);
+    } catch (e) {
+      /* no-op: still works for this page view */
+    }
+  }
+
+  function resolved(mode) {
+    if (mode !== "auto") return mode;
+    return window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+  }
+
+  function apply(mode, persist, toggle) {
+    if (mode === "auto") {
+      root.removeAttribute("data-theme");
+    } else {
+      root.setAttribute("data-theme", mode);
+    }
+    if (toggle) {
+      var icon = toggle.querySelector(".icon");
+      var label = toggle.querySelector(".label");
+      if (icon) icon.textContent = ICONS[mode];
+      if (label) label.textContent = mode.charAt(0).toUpperCase() + mode.slice(1);
+      toggle.setAttribute("title", "Colour theme: " + mode + " (click to change)");
+      toggle.setAttribute("aria-label", "Colour theme: " + mode);
+    }
+    if (persist) write(mode);
+    root.dispatchEvent(
+      new CustomEvent(EVENT, { detail: { mode: mode, resolved: resolved(mode) } })
+    );
+  }
+
+  function init() {
+    var toggle = document.getElementById("theme-toggle");
+
+    apply(read(), false, toggle);
+
+    if (toggle) {
+      toggle.addEventListener("click", function () {
+        var current = root.getAttribute("data-theme") || "auto";
+        var next = MODES[(MODES.indexOf(current) + 1) % MODES.length];
+        apply(next, true, toggle);
+      });
+    }
+
+    /* Follow the OS while in "auto" mode. */
+    if (window.matchMedia) {
+      var mq = window.matchMedia("(prefers-color-scheme: dark)");
+      var onChange = function () {
+        if (!root.getAttribute("data-theme")) apply("auto", false, toggle);
+      };
+      if (mq.addEventListener) mq.addEventListener("change", onChange);
+      else if (mq.addListener) mq.addListener(onChange);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
+<script>
+/* Page-width control for vault HTML notes.
+ *
+ * Four states, picked from the #width-control segmented group in the fixed
+ * display cluster: Auto -> Narrow -> Wide -> Full. "Auto" removes data-width
+ * and falls back to the page default (46rem single column, or whatever the
+ * note's own <style> sets in :root -- sidebar notes use 74rem). The other
+ * three set data-width on <html>, which style.css maps to --page-width and
+ * hence to body's max-width.
+ *
+ * The choice is stored under STORAGE_KEY in localStorage and shared across
+ * every note on the same origin, exactly like the theme choice. A pre-paint
+ * snippet in <head> (emitted by scaffold.py alongside the theme one) applies
+ * the stored value before first paint so there is no width flash.
+ *
+ * STORAGE_KEY must stay in sync with the pre-paint snippet and STORAGE_KEY in
+ * _utils/html/scaffold.py.
+ */
+(function () {
+  "use strict";
+
+  var STORAGE_KEY = "notes-width";
+  var MODES = ["auto", "narrow", "wide", "full"];
+
+  var root = document.documentElement;
+
+  function read() {
+    try {
+      var v = window.localStorage.getItem(STORAGE_KEY);
+      return MODES.indexOf(v) >= 0 ? v : "auto";
+    } catch (e) {
+      return "auto";
+    }
+  }
+
+  function write(mode) {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, mode);
+    } catch (e) {
+      /* no-op: still works for this page view */
+    }
+  }
+
+  function apply(mode, persist, group) {
+    if (mode === "auto") {
+      root.removeAttribute("data-width");
+    } else {
+      root.setAttribute("data-width", mode);
+    }
+    if (group) {
+      var buttons = group.querySelectorAll("[data-set-width]");
+      for (var i = 0; i < buttons.length; i++) {
+        var active = buttons[i].getAttribute("data-set-width") === mode;
+        buttons[i].setAttribute("aria-pressed", active ? "true" : "false");
+      }
+      group.setAttribute("title", "Page width: " + mode);
+    }
+    if (persist) write(mode);
+  }
+
+  function init() {
+    var group = document.getElementById("width-control");
+
+    apply(read(), false, group);
+
+    if (group) {
+      group.addEventListener("click", function (ev) {
+        var target = ev.target;
+        if (target && target.getAttribute) {
+          var next = target.getAttribute("data-set-width");
+          if (next && MODES.indexOf(next) >= 0) {
+            apply(next, true, group);
+          }
+        }
+      });
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+
+</script>
+<script>
+/* Sticky-outline sidebar: highlight the section currently being read.
+ *
+ * Drop it into a page by giving the outline nav a data-outline attribute:
+ *
+ *     <nav id="gst-sidebar" data-outline aria-label="Document outline">
+ *       <ol><li><a href="#section">Section</a></li>...</ol>
+ *     </nav>
+ *
+ * The href target must be the id of a heading in the document. The nav needs no
+ * particular id or class; any nav[data-outline] works. On a page without one
+ * this file no-ops.
+ *
+ * WHY THIS IS NOT AN IntersectionObserver
+ * ---------------------------------------
+ * The obvious implementation -- observe the headings and mark whichever one
+ * intersects a band -- is subtly broken for anchor navigation, and it fails in
+ * the most visible way possible. An observer with a band such as
+ * rootMargin "-20% 0px -65% 0px" fires only when an intersection *changes*, and
+ * only marks entries where isIntersecting is true. Clicking a sidebar link parks
+ * the target heading at the very top of the viewport (top ~ 0px), which is
+ * *above* the band. Nothing is intersecting, so no entry sets the current
+ * section, the previous highlight simply persists, and the marker catches up
+ * only once you scroll far enough for the *next* heading to enter the band. So
+ * the highlight looks broken exactly when the reader is most likely to be looking
+ * at it: immediately after a click.
+ *
+ * The fix is to stop asking "what intersects a band" and ask "what is the last
+ * heading that has passed the reading line". That is a total function of scroll
+ * position: defined at the top of the document, immediately after any anchor
+ * jump, and at the bottom. There is no state to fall out of sync.
+ *
+ * Scheduling note: this deliberately does NOT use requestAnimationFrame. Like
+ * IntersectionObserver, rAF is suppressed when the document is not being
+ * rendered -- a hidden or backgrounded tab -- so an rAF-throttled updater never
+ * runs there and the highlight silently does nothing. A plain setTimeout
+ * throttle still fires when hidden, which also makes this testable headlessly.
+ */
+(function () {
+  "use strict";
+
+  function init() {
+    var nav = document.querySelector("nav[data-outline]");
+    if (!nav) return;
+
+    var links = Array.prototype.slice.call(nav.querySelectorAll("a[href^='#']"));
+    var heads = links
+      .map(function (a) {
+        return document.getElementById(a.getAttribute("href").slice(1));
+      })
+      .filter(function (el) {
+        return !!el;
+      });
+    if (!heads.length) return;
+
+    function mark() {
+      // The reading line: a heading counts as current once its top has passed
+      // this far down. Everything above it also satisfies the test, so take the
+      // last one in document order.
+      var line = window.innerHeight * 0.3;
+      var current = null;
+      for (var i = 0; i < heads.length; i++) {
+        if (heads[i].getBoundingClientRect().top <= line) current = heads[i];
+      }
+
+      // At the very bottom the final section may be too short to ever reach the
+      // line, so pin it explicitly.
+      var scroller = document.scrollingElement || document.documentElement;
+      if (window.scrollY + window.innerHeight >= scroller.scrollHeight - 4) {
+        current = heads[heads.length - 1];
+      }
+
+      // In the preamble before the first heading, nothing has passed the line
+      // yet. Fall back to the first section so exactly one link is always
+      // marked and the sidebar never shows a dead "nothing selected" state.
+
+      if (!current) current = heads[0];
+
+      for (var j = 0; j < links.length; j++) {
+        links[j].classList.toggle(
+          "active",
+          links[j].getAttribute("href") === "#" + current.id
+        );
+      }
+    }
+
+    // Throttle on a timestamp, with a guaranteed trailing call. Browsers already
+    // coalesce scroll events and reading ~13 rects is cheap; the throttle only
+    // stops a fast flick from doing the work on every single event.
+    var MIN_MS = 50;
+    var last = 0;
+    var pending = null;
+
+    function schedule() {
+      if (pending) return;
+      var wait = Math.max(0, MIN_MS - (Date.now() - last));
+      if (wait === 0) {
+        last = Date.now();
+        mark();
+        return;
+      }
+      pending = setTimeout(function () {
+        pending = null;
+        last = Date.now();
+        mark();
+      }, wait);
+    }
+
+    function markNow() {
+      if (pending) {
+        clearTimeout(pending);
+        pending = null;
+      }
+      last = Date.now();
+      mark();
+    }
+
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule, { passive: true });
+    // After an anchor jump the reader is looking at this link right now and
+    // expects it marked, so do not wait for the throttle.
+    window.addEventListener("hashchange", markNow);
+    mark();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+
+/* Outline drawer for narrow viewports.
+ *
+ * The stylesheet turns nav[data-outline] into a slide-in drawer below 60rem,
+ * gated on html.has-toc. That class is set here, and only when the page has
+ * such a nav -- pages without an outline, and readers without JS, see no
+ * toggle button and keep their existing behaviour. State lives on
+ * <html data-toc-open>; the button and overlay come from the managed shell
+ * (scaffold.py), so a shell predating them means refresh, not failure.
+ *
+ * Open: toggle-button tap, or a rightward swipe starting at the left edge.
+ * Close: toggle tap, overlay tap, Escape, anchor tap (narrow only), or a
+ * leftward swipe. Listeners are passive and never preventDefault, and only
+ * edge-origin swipes open, so horizontal scrolling (code blocks, figures)
+ * is untouched.
+ */
+(function () {
+  "use strict";
+
+  function init() {
+    var nav = document.querySelector("nav[data-outline]");
+    if (!nav) return;
+    var toggle = document.getElementById("toc-toggle");
+    var overlay = document.getElementById("toc-overlay");
+    if (!toggle || !overlay) return;
+    var root = document.documentElement;
+    root.classList.add("has-toc");
+
+    function narrow() {
+      return window.matchMedia("(max-width: 60rem)").matches;
+    }
+    function isOpen() {
+      return root.hasAttribute("data-toc-open");
+    }
+    function open() {
+      root.setAttribute("data-toc-open", "open");
+      toggle.setAttribute("aria-expanded", "true");
+    }
+    function close() {
+      if (!isOpen()) return;
+      root.removeAttribute("data-toc-open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    toggle.addEventListener("click", function () {
+      if (isOpen()) close();
+      else open();
+    });
+    overlay.addEventListener("click", close);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+    });
+    // An anchor tap navigates; on narrow screens the drawer gets out of the way.
+    nav.addEventListener("click", function (e) {
+      var a = e.target && e.target.closest
+        ? e.target.closest("a[href^='#']")
+        : null;
+      if (a && narrow()) close();
+    });
+
+    var sx = 0;
+    var sy = 0;
+    var tracking = false;
+    document.addEventListener(
+      "touchstart",
+      function (e) {
+        if (e.touches.length !== 1) {
+          tracking = false;
+          return;
+        }
+        sx = e.touches[0].clientX;
+        sy = e.touches[0].clientY;
+        tracking = true;
+      },
+      { passive: true }
+    );
+    document.addEventListener(
+      "touchend",
+      function (e) {
+        if (!tracking) return;
+        tracking = false;
+        var dx = e.changedTouches[0].clientX - sx;
+        var dy = e.changedTouches[0].clientY - sy;
+        if (Math.abs(dy) > Math.abs(dx) || Math.abs(dx) < 48) return;
+        if (!isOpen() && sx <= 28 && dx > 0 && narrow()) open();
+        else if (isOpen() && dx < 0) close();
+      },
+      { passive: true }
+    );
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
+<!-- END SHARED-HEAD -->
+</head>
+<body>
+<main>
+<article>
+<!-- NOTE BODY -->
+<h1>Hexagon archive: which AI models are used</h1>
+
+<p class="meta"><span>snapshot 2026-10-13T18:23:49+00:00</span><span>139 works</span><span>tags: math, ai-for-math</span><span>created: 2026-10-13</span></p>
+
+<aside class="callout callout-note"><span class="callout-title">What this is</span>
+<p>Hexagon (<a href="https://hexagonmath.org/">hexagonmath.org</a>) requires depositors to
+declare the computational tools behind each work as free-text provider, name, and version
+triples. This page scans the full public catalogue through the read-only
+<code class="no-katex">/api/v1/works</code> endpoint and counts which LLM and AI assistants
+show up. Work-share means the fraction of works listing a family at least once, with
+\(s = 100 \cdot w / n\) and \(n = 139\). Re-run the three scripts in
+the three scripts in this repo to refresh every
+number below.</p></aside>
+
+<h2 id="coverage">1. Coverage</h2>
+
+<p>89 of 139 works (64.0%) name at least one LLM or AI assistant in the
+structured tools field. Mining the free-text provenance statements (per-work detail
+records) for the same canonical families raises this to 120 works
+(86.3%): 31 works name a model only
+in prose. 49 works (35.3%) disclose no tools at all. The raw declarations
+use 101 distinct spellings, normalized here to 14 canonical
+families; version strings alone cannot be trusted (see §4).</p>
+
+<figure><svg viewBox="0 0 666 224" role="img" aria-label="Bar chart"><text x="0" y="25" font-size="13">OpenAI ChatGPT</text><rect x="180" y="10" width="430" height="18" style="fill:#0969da"/><text x="614" y="25" font-size="13" class="muted">96</text><text x="0" y="51" font-size="13">Anthropic Claude Opus</text><rect x="180" y="36" width="161" height="18" style="fill:#6e40c9"/><text x="345" y="51" font-size="13" class="muted">36</text><text x="0" y="77" font-size="13">OpenAI Codex</text><rect x="180" y="62" width="157" height="18" style="fill:#1a7f37"/><text x="341" y="77" font-size="13" class="muted">35</text><text x="0" y="103" font-size="13">Anthropic Claude Fable</text><rect x="180" y="88" width="54" height="18" style="fill:#9a6700"/><text x="238" y="103" font-size="13" class="muted">12</text><text x="0" y="129" font-size="13">Anthropic Claude Code</text><rect x="180" y="114" width="36" height="18" style="fill:#bc4c00"/><text x="220" y="129" font-size="13" class="muted">8</text><text x="0" y="155" font-size="13">Google</text><rect x="180" y="140" width="22" height="18" style="fill:#0e7490"/><text x="206" y="155" font-size="13" class="muted">5</text><text x="0" y="181" font-size="13">Harmonic</text><rect x="180" y="166" width="13" height="18" style="fill:#59636e"/><text x="197" y="181" font-size="13" class="muted">3</text><text x="0" y="207" font-size="13">Quora Poe (aggregator)</text><rect x="180" y="192" width="13" height="18" style="fill:#d29922"/><text x="197" y="207" font-size="13" class="muted">3</text></svg>
+<figcaption>Works per AI family, top eight, counting structured declarations plus
+provenance-prose mentions (combined). Work-level counts: one work naming a family twice
+still counts once.</figcaption></figure>
+
+<h3 id="stance">Text origin and human understanding</h3>
+
+<table><thead><tr><th>Declaration</th><th>Works</th><th>Share (%)</th></tr></thead><tbody>
+<tr><td>Primarily AI-generated</td><td>79</td><td>56.8</td></tr>
+<tr><td>Mixed human / AI</td><td>43</td><td>30.9</td></tr>
+<tr><td>Primarily human-written</td><td>17</td><td>12.2</td></tr>
+<tr><td>Human understanding: all parts</td><td>50</td><td>36.0</td></tr>
+<tr><td>Human understanding: some parts</td><td>68</td><td>48.9</td></tr>
+<tr><td>Human understanding: no parts</td><td>20</td><td>14.4</td></tr>
+</tbody></table>
+
+<h2 id="counts">2. Counts</h2>
+
+<h3 id="families">Families (structured works, %, prose works, combined, %)</h3>
+
+<table><thead><tr><th>Family</th><th>Structured</th><th>%</th><th>Prose</th><th>Combined</th><th>%</th></tr></thead>
+<tbody><tr><td>OpenAI ChatGPT</td><td>56</td><td>40.3</td><td>89</td><td>96</td><td>69.1</td></tr><tr><td>Anthropic Claude Opus</td><td>24</td><td>17.3</td><td>34</td><td>36</td><td>25.9</td></tr><tr><td>OpenAI Codex</td><td>28</td><td>20.1</td><td>21</td><td>35</td><td>25.2</td></tr><tr><td>Anthropic Claude Fable</td><td>10</td><td>7.2</td><td>10</td><td>12</td><td>8.6</td></tr><tr><td>Anthropic Claude Code</td><td>3</td><td>2.2</td><td>5</td><td>8</td><td>5.8</td></tr><tr><td>Google</td><td>4</td><td>2.9</td><td>3</td><td>5</td><td>3.6</td></tr><tr><td>Harmonic</td><td>3</td><td>2.2</td><td>3</td><td>3</td><td>2.2</td></tr><tr><td>Quora Poe (aggregator)</td><td>3</td><td>2.2</td><td>3</td><td>3</td><td>2.2</td></tr><tr><td>Danus</td><td>0</td><td>0.0</td><td>3</td><td>3</td><td>2.2</td></tr><tr><td>Anthropic Claude Sonnet</td><td>1</td><td>0.7</td><td>0</td><td>1</td><td>0.7</td></tr><tr><td>Local/open</td><td>1</td><td>0.7</td><td>1</td><td>1</td><td>0.7</td></tr><tr><td>xAI</td><td>1</td><td>0.7</td><td>1</td><td>1</td><td>0.7</td></tr><tr><td>AxiomMath</td><td>1</td><td>0.7</td><td>1</td><td>1</td><td>0.7</td></tr><tr><td>Meta</td><td>1</td><td>0.7</td><td>1</td><td>1</td><td>0.7</td></tr></tbody></table>
+
+<h3 id="models">Top models</h3>
+
+<figure><svg viewBox="0 0 666 224" role="img" aria-label="Bar chart"><text x="0" y="25" font-size="13">Opus 5.5</text><rect x="180" y="10" width="430" height="18" style="fill:#0969da"/><text x="614" y="25" font-size="13" class="muted">23</text><text x="0" y="51" font-size="13">ChatGPT 6 Astra</text><rect x="180" y="36" width="280" height="18" style="fill:#6e40c9"/><text x="464" y="51" font-size="13" class="muted">15</text><text x="0" y="77" font-size="13">ChatGPT 6.1</text><rect x="180" y="62" width="262" height="18" style="fill:#1a7f37"/><text x="446" y="77" font-size="13" class="muted">14</text><text x="0" y="103" font-size="13">ChatGPT 5.6 Sol</text><rect x="180" y="88" width="206" height="18" style="fill:#9a6700"/><text x="390" y="103" font-size="13" class="muted">11</text><text x="0" y="129" font-size="13">ChatGPT 6</text><rect x="180" y="114" width="206" height="18" style="fill:#bc4c00"/><text x="390" y="129" font-size="13" class="muted">11</text><text x="0" y="155" font-size="13">Codex 6 Astra</text><rect x="180" y="140" width="131" height="18" style="fill:#0e7490"/><text x="315" y="155" font-size="13" class="muted">7</text><text x="0" y="181" font-size="13">Fable 5.1</text><rect x="180" y="166" width="131" height="18" style="fill:#59636e"/><text x="315" y="181" font-size="13" class="muted">7</text><text x="0" y="207" font-size="13">Codex 6 Luna</text><rect x="180" y="192" width="131" height="18" style="fill:#d29922"/><text x="315" y="207" font-size="13" class="muted">7</text></svg>
+<figcaption>Works per normalized model, top eight.</figcaption></figure>
+
+<table><thead><tr><th>Model</th><th>Family</th><th>Works</th><th>%</th><th>Mentions</th></tr></thead>
+<tbody><tr><td>Opus 5.5</td><td>Anthropic Claude Opus</td><td>23</td><td>16.5</td><td>23</td></tr><tr><td>ChatGPT 6 Astra</td><td>OpenAI ChatGPT</td><td>15</td><td>10.8</td><td>15</td></tr><tr><td>ChatGPT 6.1</td><td>OpenAI ChatGPT</td><td>14</td><td>10.1</td><td>14</td></tr><tr><td>ChatGPT 5.6 Sol</td><td>OpenAI ChatGPT</td><td>11</td><td>7.9</td><td>11</td></tr><tr><td>ChatGPT 6</td><td>OpenAI ChatGPT</td><td>11</td><td>7.9</td><td>11</td></tr><tr><td>Codex 6 Astra</td><td>OpenAI Codex</td><td>7</td><td>5.0</td><td>7</td></tr><tr><td>Fable 5.1</td><td>Anthropic Claude Fable</td><td>7</td><td>5.0</td><td>7</td></tr><tr><td>Codex 6 Luna</td><td>OpenAI Codex</td><td>7</td><td>5.0</td><td>7</td></tr><tr><td>Codex 6.1</td><td>OpenAI Codex</td><td>7</td><td>5.0</td><td>7</td></tr><tr><td>ChatGPT 5.6</td><td>OpenAI ChatGPT</td><td>6</td><td>4.3</td><td>6</td></tr><tr><td>ChatGPT</td><td>OpenAI ChatGPT</td><td>5</td><td>3.6</td><td>5</td></tr><tr><td>Fable 5</td><td>Anthropic Claude Fable</td><td>5</td><td>3.6</td><td>5</td></tr></tbody></table>
+
+<h2 id="significance">3. Significance</h2>
+
+<ul>
+<li><strong>Two labs dominate.</strong> OpenAI ChatGPT appears on 56 works
+(40.3%) in the structured field and 96 combined
+(69.1%); OpenAI Codex on 28 structured,
+35 combined; Anthropic Claude Opus on 24 structured,
+36 combined. Together the
+two labs cover nearly every work that names any model.</li>
+<li><strong>Multi-model workflows are normal.</strong> Claude Opus and ChatGPT co-occur on
+14 works; ChatGPT and Codex on 9. Depositors routinely draft with one system and code or
+formalize with another.</li>
+<li><strong>Lean never walks alone.</strong> 25 works list Lean or Mathlib, and all 25 also
+list an LLM assistant. Machine-checked proof on Hexagon currently arrives bundled with AI
+assistance, not instead of it.</li>
+<li><strong>One subject hides in prose.</strong> All 10 quantum-algebra works list
+zero LLM tools in the structured field, yet 7 of them name GPT-6-Astra,
+OpenAI Codex, or a Danus verification system in their free-text provenance; the other
+3 describe generic AI assistance. Most are
+quantum-cluster-algebra manuscripts from a small depositor group. Structured-only counting
+reports this subject as AI-free; it is the heaviest per-work AI user in the archive.</li>
+<li><strong>Disclosure is incomplete.</strong> 49 works name no tools; 31
+works name a specific system only in prose. Absence from the structured tables does
+not mean absence of AI use — the combined 86.3% figure is still a lower bound.</li>
+<li><strong>Long tail, thin signal.</strong> Past the big three sit Harmonic Aristotle (3),
+Claude Code (3), Quora Poe (3, an aggregator that hides the real model), then singletons:
+xAI Grok, Google Gemini variants, a local Qwen run, AxiomProver, and one Meta Muse Spark
+entry. Poe-style aggregators make exact model attribution impossible.</li>
+</ul>
+
+<h3 id="pairs">Frequent pairs</h3>
+
+<table><thead><tr><th>Family A</th><th>Family B</th><th>Works together</th></tr></thead>
+<tbody><tr><td>Anthropic Claude Opus</td><td>OpenAI ChatGPT</td><td>14</td></tr><tr><td>OpenAI ChatGPT</td><td>OpenAI Codex</td><td>9</td></tr><tr><td>Anthropic Claude Fable</td><td>OpenAI ChatGPT</td><td>7</td></tr><tr><td>Anthropic Claude Opus</td><td>OpenAI Codex</td><td>6</td></tr><tr><td>Anthropic Claude Fable</td><td>Anthropic Claude Opus</td><td>4</td></tr><tr><td>OpenAI ChatGPT</td><td>Quora Poe (aggregator)</td><td>3</td></tr><tr><td>Anthropic Claude Code</td><td>Harmonic</td><td>2</td></tr><tr><td>Anthropic Claude Fable</td><td>Quora Poe (aggregator)</td><td>2</td></tr></tbody></table>
+
+<h3 id="subjects">Subjects</h3>
+
+<table><thead><tr><th>Subject</th><th>Works</th><th>With LLM</th><th>LLM share (%)</th><th>Prose LLM</th></tr></thead>
+<tbody><tr><td><code class="no-katex">math.NT</code></td><td>24</td><td>19</td><td>79.2</td><td>21</td></tr><tr><td><code class="no-katex">math.CO</code></td><td>18</td><td>11</td><td>61.1</td><td>16</td></tr><tr><td><code class="no-katex">math.PR</code></td><td>11</td><td>8</td><td>72.7</td><td>7</td></tr><tr><td><code class="no-katex">math.QA</code></td><td>10</td><td>0</td><td>0.0</td><td>7</td></tr><tr><td><code class="no-katex">math.AG</code></td><td>9</td><td>6</td><td>66.7</td><td>6</td></tr><tr><td><code class="no-katex">math.LO</code></td><td>8</td><td>8</td><td>100.0</td><td>6</td></tr><tr><td><code class="no-katex">math.MG</code></td><td>7</td><td>6</td><td>85.7</td><td>7</td></tr><tr><td><code class="no-katex">math.AC</code></td><td>6</td><td>3</td><td>50.0</td><td>4</td></tr><tr><td><code class="no-katex">math.RT</code></td><td>6</td><td>3</td><td>50.0</td><td>4</td></tr><tr><td><code class="no-katex">math.RA</code></td><td>5</td><td>1</td><td>20.0</td><td>5</td></tr><tr><td><code class="no-katex">math.OC</code></td><td>5</td><td>5</td><td>100.0</td><td>5</td></tr><tr><td><code class="no-katex">cs.DS</code></td><td>4</td><td>4</td><td>100.0</td><td>2</td></tr><tr><td><code class="no-katex">math.AT</code></td><td>4</td><td>1</td><td>25.0</td><td>3</td></tr><tr><td><code class="no-katex">math.GR</code></td><td>3</td><td>3</td><td>100.0</td><td>2</td></tr><tr><td><code class="no-katex">math.FA</code></td><td>2</td><td>0</td><td>0.0</td><td>0</td></tr><tr><td><code class="no-katex">cs.LO</code></td><td>2</td><td>1</td><td>50.0</td><td>1</td></tr><tr><td><code class="no-katex">math.OA</code></td><td>2</td><td>2</td><td>100.0</td><td>0</td></tr><tr><td><code class="no-katex">math.CA</code></td><td>2</td><td>2</td><td>100.0</td><td>2</td></tr><tr><td><code class="no-katex">math.ST</code></td><td>2</td><td>2</td><td>100.0</td><td>2</td></tr><tr><td><code class="no-katex">cs.CC</code></td><td>2</td><td>1</td><td>50.0</td><td>1</td></tr><tr><td><code class="no-katex">math.MP</code></td><td>1</td><td>0</td><td>0.0</td><td>1</td></tr><tr><td><code class="no-katex">stat.TH</code></td><td>1</td><td>0</td><td>0.0</td><td>1</td></tr><tr><td><code class="no-katex">math.GT</code></td><td>1</td><td>1</td><td>100.0</td><td>1</td></tr><tr><td><code class="no-katex">math.DS</code></td><td>1</td><td>1</td><td>100.0</td><td>1</td></tr><tr><td><code class="no-katex">math.AP</code></td><td>1</td><td>0</td><td>0.0</td><td>0</td></tr><tr><td><code class="no-katex">math.DG</code></td><td>1</td><td>1</td><td>100.0</td><td>1</td></tr><tr><td><code class="no-katex">quant-ph</code></td><td>1</td><td>0</td><td>0.0</td><td>1</td></tr></tbody></table>
+
+<h3 id="nonllm">Non-LLM tooling (works, of which also list an LLM)</h3>
+
+<table><thead><tr><th>Tool family</th><th>Works</th><th>Also LLM</th></tr></thead>
+<tbody><tr><td>Lean/Mathlib</td><td>25</td><td>25</td></tr><tr><td>Python/scientific stack</td><td>8</td><td>7</td></tr><tr><td>SageMath</td><td>3</td><td>3</td></tr><tr><td>GAP</td><td>2</td><td>1</td></tr><tr><td>PARI/GP</td><td>2</td><td>2</td></tr><tr><td>Magma</td><td>1</td><td>1</td></tr><tr><td>Domain package</td><td>1</td><td>0</td></tr><tr><td>Singular</td><td>1</td><td>1</td></tr><tr><td>Macaulay2</td><td>1</td><td>1</td></tr><tr><td>OSVerify</td><td>1</td><td>1</td></tr><tr><td>Rethlas</td><td>1</td><td>1</td></tr><tr><td>Mace4/Prover9</td><td>1</td><td>1</td></tr></tbody></table>
+
+<h2 id="caveats">4. Caveats</h2>
+
+<ul>
+<li>Declarations are depositor-supplied free text: “GPT-6 Astra”, “Astra 6”, and
+“gpt-6-astra (pinned …)” are one model spelled three ways, and 101 raw spellings
+collapse to 14 families only through the normalization table in
+<code class="no-katex">analyze_hexagon.py</code>, which is itself a judgment call. Five
+works leave the version blank.</li>
+<li>Prose mining is regex-based (<code class="no-katex">PROV_PATTERNS</code> in
+<code class="no-katex">analyze_hexagon.py</code>): 107
+works name a specific system in prose, 8 describe AI
+use only generically (boilerplate declarations excluded). Every hit's matched spans are kept
+per work as <code class="no-katex">prov_spans</code> in the analysis JSON, so a false
+positive is auditable. The Danus verification system appears only in prose (3 works) and
+has no structured counterpart.</li>
+<li>Hexagon is in public beta with 139 works at snapshot time; shares will move as the
+archive grows. Re-run <code class="no-katex">scan_hexagon.py</code>,
+<code class="no-katex">analyze_hexagon.py</code>,
+<code class="no-katex">render_hexagon_report.py</code> in that order.</li>
+</ul>
+
+<details><summary>Per-work table (139 rows)</summary>
+<table><thead><tr><th>ID</th><th>Subject</th><th>Origin</th><th>Understood</th><th>LLM families</th><th>Prose families</th><th>Title</th></tr></thead>
+<tbody><tr><td><a href="https://hexagonmath.org/abs/2610.00221">2610.00221</a></td><td><code class="no-katex">cs.DS</code></td><td>no-human-author-claimed</td><td>none</td><td>OpenAI ChatGPT</td><td>—</td><td>Deterministic Integer 3SUM in O(n^1.999017) Time via a Sharper Binomial-Tail Analysis</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00216">2610.00216</a></td><td><code class="no-katex">math.NT</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>A seven-eighths zero-free half-plane for unitary Weil L-functions</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00220">2610.00220</a></td><td><code class="no-katex">math.NT</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Opus, OpenAI Codex</td><td>Anthropic Claude Opus, OpenAI Codex</td><td>A zero-free strip for the L-functions of the elliptic curves y^2=x^3+d</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00215">2610.00215</a></td><td><code class="no-katex">math.NT</code></td><td>human</td><td>all</td><td>—</td><td>—</td><td>Non-Archimedean Hudzik-Landes-Dragomir-Kato-Saito-Tamura Inequality</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00219">2610.00219</a></td><td><code class="no-katex">math.NT</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Opus, OpenAI Codex</td><td>Anthropic Claude Code, Anthropic Claude Opus, OpenAI ChatGPT, OpenAI Codex</td><td>Gonality and quintic points on intermediate modular curves</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00214">2610.00214</a></td><td><code class="no-katex">math.AC</code></td><td>no-human-author-claimed</td><td>all</td><td>—</td><td>—</td><td>Hilbert functions of chopped ideals of general plane points</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00203">2610.00203</a></td><td><code class="no-katex">math.PR</code></td><td>mixed</td><td>none</td><td>—</td><td>OpenAI ChatGPT</td><td>Point Density Measures: A Measure-Theoretic Framework with Applications to Geometric Probability</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00213">2610.00213</a></td><td><code class="no-katex">math.QA</code></td><td>mixed</td><td>some</td><td>—</td><td>—</td><td>An order-five Haagerup--Izumi vertex operator algebra at central charge eight</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00212">2610.00212</a></td><td><code class="no-katex">math.AG</code></td><td>mixed</td><td>some</td><td>Anthropic Claude Code, Harmonic</td><td>Anthropic Claude Opus, Google, Harmonic, OpenAI ChatGPT</td><td>The Chaise Longue Theorem: Conjecture 1.2 of Degtyarev–Shimada for the Fermat varieties of every degree in every even dimension, and the integral Hodge conjecture for those whose degree is prime, equal to 4, or prime to (n+1)!</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00211">2610.00211</a></td><td><code class="no-katex">math.AT</code></td><td>human</td><td>all</td><td>—</td><td>—</td><td>Axiomatic degree theory on topological manifolds</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00210">2610.00210</a></td><td><code class="no-katex">math.MG</code></td><td>mixed</td><td>all</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>The truncated octahedral conjecture</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00209">2610.00209</a></td><td><code class="no-katex">math.NT</code></td><td>human</td><td>all</td><td>—</td><td>—</td><td>An analogue of the Erdos-Kac theorem for signed Iwasawa invariants of modular forms</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00208">2610.00208</a></td><td><code class="no-katex">math.CO</code></td><td>no-human-author-claimed</td><td>some</td><td>—</td><td>Anthropic Claude Code, Anthropic Claude Fable, Anthropic Claude Opus</td><td>Strongly regular graphs on 160, 232, 261 and 280 vertices from fusions of orbitals of PΓL(2,8) and 2^4:(S3×S3)</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00207">2610.00207</a></td><td><code class="no-katex">math.NT</code></td><td>human</td><td>all</td><td>Anthropic Claude Opus</td><td>Anthropic Claude Opus</td><td>How long can an off-line zero survive the de Bruijn-Newman heat flow? An explicit unconditional lower bound for Lambda</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00206">2610.00206</a></td><td><code class="no-katex">math.CO</code></td><td>no-human-author-claimed</td><td>none</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>A 23-Point Counterexample to a Modified Half-Frequency Conjecture for Union–Intersection Systems</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00205">2610.00205</a></td><td><code class="no-katex">math.CO</code></td><td>mixed</td><td>some</td><td>Anthropic Claude Code, Harmonic</td><td>Anthropic Claude Opus, Harmonic</td><td>The Dancing Sand Theorem: the 2-part of the sandpile group of the hypercube, for every n</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00201">2610.00201</a></td><td><code class="no-katex">math.QA</code></td><td>no-human-author-claimed</td><td>none</td><td>—</td><td>—</td><td>Finite quantum theta functions for skew-symmetrizable seeds</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00168">2610.00168</a></td><td><code class="no-katex">math.PR</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>—</td><td>Mobility Edge for Sparse Complex Gaussian Matrices</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00177">2610.00177</a></td><td><code class="no-katex">math.PR</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Fable, Anthropic Claude Opus, OpenAI ChatGPT</td><td>Anthropic Claude Fable, Anthropic Claude Opus, OpenAI ChatGPT</td><td>An N^{-7/10} Bound for the Finite-Size Bias of the Sherrington-Kirkpatrick Free Energy</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00198">2610.00198</a></td><td><code class="no-katex">math.NT</code></td><td>no-human-author-claimed</td><td>none</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Infinitely Many Elliptic Curves of Exact Ranks Five, Six, and Seven</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00199">2610.00199</a></td><td><code class="no-katex">math.FA</code></td><td>human</td><td>all</td><td>—</td><td>—</td><td>Finite Field Riesz-Frechet Representation</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00200">2610.00200</a></td><td><code class="no-katex">math.NT</code></td><td>mixed</td><td>some</td><td>AxiomMath</td><td>AxiomMath</td><td>A quasi-Riemann hypothesis for Dedekind zeta functions</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00195">2610.00195</a></td><td><code class="no-katex">math.AC</code></td><td>no-human-author-claimed</td><td>some</td><td>—</td><td>—</td><td>Fröberg&#x27;s Conjecture through 2d in sufficiently many variables</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00194">2610.00194</a></td><td><code class="no-katex">math.CO</code></td><td>no-human-author-claimed</td><td>some</td><td>—</td><td>Anthropic Claude Code, Anthropic Claude Fable, Anthropic Claude Opus</td><td>Strongly regular graphs on 306, 400, 576, 784 and 1296 vertices from multi-orbit coset fusion and Bush-type Hadamard matrices</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00190">2610.00190</a></td><td><code class="no-katex">math.PR</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Aging in Spherical Spin Glass Dynamics</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00192">2610.00192</a></td><td><code class="no-katex">cs.LO</code></td><td>no-human-author-claimed</td><td>some</td><td>—</td><td>—</td><td>A Machine-Checked Kernel for Federated Automated Adjudication: Credibility Lattice Completion, Certificate Lifecycle Invariants, Certified Numerical Anchors, and a Parameterized Rice Template</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00193">2610.00193</a></td><td><code class="no-katex">math.CO</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>A characterization of cut-percolating bigraphs</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00191">2610.00191</a></td><td><code class="no-katex">math.NT</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Fable</td><td>Anthropic Claude Fable</td><td>BRUDNO’S FAMILIES OF EQUAL SUMS OF SIXTH POWERS AND BREMNER’S K3 SURFACE</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00187">2610.00187</a></td><td><code class="no-katex">math.NT</code></td><td>no-human-author-claimed</td><td>none</td><td>Anthropic Claude Opus</td><td>Anthropic Claude Opus</td><td>An Irrationality Measure for Catalan&#x27;s Constant</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00178">2610.00178</a></td><td><code class="no-katex">math.NT</code></td><td>no-human-author-claimed</td><td>none</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>Unconditional implications of the Quasi-Riemann Hypothesis</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00188">2610.00188</a></td><td><code class="no-katex">math.LO</code></td><td>human</td><td>all</td><td>Anthropic Claude Code, OpenAI ChatGPT, OpenAI Codex</td><td>—</td><td>A counterexample to Vaught&#x27;s Conjecture for L_{\omega_1,\omega}</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00189">2610.00189</a></td><td><code class="no-katex">math.GR</code></td><td>no-human-author-claimed</td><td>all</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>Bruck loops with abelian inner mapping groups: a short proof</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00186">2610.00186</a></td><td><code class="no-katex">math.NT</code></td><td>mixed</td><td>all</td><td>—</td><td>—</td><td>Stark units for real quadratic fields and reciprocity laws</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00175">2610.00175</a></td><td><code class="no-katex">math.QA</code></td><td>mixed</td><td>some</td><td>—</td><td>—</td><td>The Haagerup VOA at Central Charge Eight</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00182">2610.00182</a></td><td><code class="no-katex">math.RT</code></td><td>no-human-author-claimed</td><td>none</td><td>—</td><td>—</td><td>A counterexample to Han’s conjecture over arbitrary fields</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00180">2610.00180</a></td><td><code class="no-katex">math.OA</code></td><td>no-human-author-claimed</td><td>none</td><td>OpenAI Codex</td><td>—</td><td>A variational formula for affine semicircular determinants</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00185">2610.00185</a></td><td><code class="no-katex">math.CA</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>Arithmetic progressions with prescribed lp gaps</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00176">2610.00176</a></td><td><code class="no-katex">math.CA</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>Superexponentially decaying sequences in the Erdos similarity problem</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00179">2610.00179</a></td><td><code class="no-katex">math.RT</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Opus, OpenAI Codex</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Representation embeddings and the third Brauer--Thrall conjecture</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00165">2610.00165</a></td><td><code class="no-katex">math.MG</code></td><td>mixed</td><td>all</td><td>Anthropic Claude Opus, OpenAI ChatGPT, Quora Poe (aggregator)</td><td>OpenAI ChatGPT, Quora Poe (aggregator)</td><td>Multi-coverings by lattice translates of convex bodies</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00161">2610.00161</a></td><td><code class="no-katex">math.NT</code></td><td>mixed</td><td>all</td><td>Anthropic Claude Sonnet, OpenAI ChatGPT</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>THE CROSS-ENERGY OF DIRICHLET PARTIAL SUMS AND THE ZEROS OF THE RIEMANN ZETA FUNCTION</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00169">2610.00169</a></td><td><code class="no-katex">math.PR</code></td><td>no-human-author-claimed</td><td>none</td><td>—</td><td>—</td><td>Classical infinite divisibility, self-decomposability and bell-shape of free stable laws</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00173">2610.00173</a></td><td><code class="no-katex">math.MP</code></td><td>mixed</td><td>all</td><td>—</td><td>OpenAI ChatGPT</td><td>Wave Mechanics</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00167">2610.00167</a></td><td><code class="no-katex">math.GR</code></td><td>human</td><td>all</td><td>OpenAI ChatGPT</td><td>—</td><td>The Sharp Commutator Bound for the Polymath14 Inequality</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00170">2610.00170</a></td><td><code class="no-katex">math.CO</code></td><td>mixed</td><td>all</td><td>Local/open</td><td>Local/open</td><td>The number of multiplicity sets of n-point plane line collections grows as exp(Theta(sqrt(n)))</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00171">2610.00171</a></td><td><code class="no-katex">math.CO</code></td><td>no-human-author-claimed</td><td>some</td><td>—</td><td>OpenAI ChatGPT</td><td>Measurable Independence Density Equals the Finite Independence-Ratio Infimum in the Euclidean Plane</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00172">2610.00172</a></td><td><code class="no-katex">cs.DS</code></td><td>mixed</td><td>all</td><td>Anthropic Claude Fable</td><td>—</td><td>From Snapshots to Processes: Dynamic Contact Algebras as a Foundation for Process-Oriented GIS</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00162">2610.00162</a></td><td><code class="no-katex">math.ST</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Fable, OpenAI ChatGPT</td><td>Anthropic Claude Fable, Anthropic Claude Opus, OpenAI ChatGPT</td><td>Nearly Minimax Variance Estimation Under Rough Random Design</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00163">2610.00163</a></td><td><code class="no-katex">math.MG</code></td><td>no-human-author-claimed</td><td>all</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>An exponential improvement for Borsuk&#x27;s problem</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00160">2610.00160</a></td><td><code class="no-katex">stat.TH</code></td><td>mixed</td><td>some</td><td>—</td><td>OpenAI ChatGPT</td><td>Binary Regression for BV Class Conditional Probability</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00159">2610.00159</a></td><td><code class="no-katex">math.GT</code></td><td>human</td><td>all</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>The torus with asymptotically the fewest simple closed geodesics</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00157">2610.00157</a></td><td><code class="no-katex">math.ST</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Fable, Anthropic Claude Opus, OpenAI ChatGPT</td><td>Anthropic Claude Fable, Anthropic Claude Opus, OpenAI ChatGPT</td><td>Nearly Minimax Rates for Functional Estimation Under Rough Random Design</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00155">2610.00155</a></td><td><code class="no-katex">math.PR</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>The Parisi Formula for the Edwards–Anderson Model in the High-Dimensional Limit</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00156">2610.00156</a></td><td><code class="no-katex">math.NT</code></td><td>mixed</td><td>some</td><td>Anthropic Claude Opus, OpenAI Codex</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Modularity of elliptic curves over totally real field and CM fields not containing \zeta_5</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00154">2610.00154</a></td><td><code class="no-katex">math.PR</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>Parisi formula for Ising and Spherical Perceptrons</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00153">2610.00153</a></td><td><code class="no-katex">math.NT</code></td><td>no-human-author-claimed</td><td>none</td><td>Anthropic Claude Opus</td><td>Anthropic Claude Opus</td><td>The generalized Fermat equation x^2+y^5=z^7</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00152">2610.00152</a></td><td><code class="no-katex">cs.CC</code></td><td>mixed</td><td>all</td><td>Google</td><td>Google</td><td>A Verified Constructive Reduction of the Cook-Levin Theorem in Lean 4: Bridging the Gap Between Complexity Theory and Formal SAT Encodings</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00151">2610.00151</a></td><td><code class="no-katex">math.CO</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Square-difference-free sets of exponent 0.7580758</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00148">2610.00148</a></td><td><code class="no-katex">math.DS</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>Uniform Kazhdan Monsters and Schmidt&#x27;s Property M</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00146">2610.00146</a></td><td><code class="no-katex">math.AP</code></td><td>no-human-author-claimed</td><td>all</td><td>—</td><td>—</td><td>Phase retrieval for stationary Schrödinger evolutions</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00147">2610.00147</a></td><td><code class="no-katex">math.PR</code></td><td>no-human-author-claimed</td><td>some</td><td>—</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>Moment defects and sharp iid Berry–Esseen bounds</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00145">2610.00145</a></td><td><code class="no-katex">math.RT</code></td><td>human</td><td>all</td><td>—</td><td>—</td><td>The inverse quiver problem is NP-complete</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00142">2610.00142</a></td><td><code class="no-katex">math.FA</code></td><td>human</td><td>all</td><td>—</td><td>—</td><td>Noncommutative Buzano-Dragomir Inequality and Applications</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00141">2610.00141</a></td><td><code class="no-katex">math.AG</code></td><td>human</td><td>all</td><td>Google</td><td>—</td><td>Constant-Time O(1) AST Reduction and Native Delegate Compilation in RICIS-III</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00143">2610.00143</a></td><td><code class="no-katex">math.RT</code></td><td>mixed</td><td>none</td><td>—</td><td>OpenAI ChatGPT</td><td>A note on counterexamples to homological conjectures</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00140">2610.00140</a></td><td><code class="no-katex">math.RT</code></td><td>mixed</td><td>none</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>A note of refinements to an algebra of infinite little finitistic dimension</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00138">2610.00138</a></td><td><code class="no-katex">math.AT</code></td><td>human</td><td>all</td><td>—</td><td>Anthropic Claude Opus</td><td>Weak chromatic splitting fails at n = p for every odd prime p</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00137">2610.00137</a></td><td><code class="no-katex">math.NT</code></td><td>mixed</td><td>all</td><td>Google</td><td>Google</td><td>Proof of the Non-existence of Perfect Cuboids via Mordell-Weil Rank Exhaustion and Minimal Polynomial Irreducibility of the Perfect Cuboid Surface</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00136">2610.00136</a></td><td><code class="no-katex">math.NT</code></td><td>no-human-author-claimed</td><td>none</td><td>Anthropic Claude Opus</td><td>Anthropic Claude Opus</td><td>The generalized Fermat equation x^3+y^3=z^n</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00135">2610.00135</a></td><td><code class="no-katex">math.NT</code></td><td>no-human-author-claimed</td><td>some</td><td>Harmonic, OpenAI ChatGPT</td><td>Harmonic, OpenAI ChatGPT</td><td>Improved sum-difference inequalities in abelian groups</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00134">2610.00134</a></td><td><code class="no-katex">math.OA</code></td><td>mixed</td><td>all</td><td>Google, OpenAI ChatGPT</td><td>—</td><td>Poisson boundaries of type III factors and the relative bicentralizer conjecture</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00083">2610.00083</a></td><td><code class="no-katex">math.QA</code></td><td>mixed</td><td>some</td><td>—</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>Strongly positive bases and quantum greedy expansions</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00031">2610.00031</a></td><td><code class="no-katex">math.RA</code></td><td>mixed</td><td>some</td><td>—</td><td>OpenAI ChatGPT</td><td>Algebraic dependence of cluster X-variables</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00032">2610.00032</a></td><td><code class="no-katex">math.RA</code></td><td>mixed</td><td>some</td><td>—</td><td>OpenAI ChatGPT</td><td>An explicit nonideal rooted cluster morphism</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00030">2610.00030</a></td><td><code class="no-katex">math.AG</code></td><td>human</td><td>all</td><td>—</td><td>—</td><td>Crystalline and infinitesimal Poisson stacks</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00029">2610.00029</a></td><td><code class="no-katex">math.QA</code></td><td>no-human-author-claimed</td><td>none</td><td>—</td><td>OpenAI ChatGPT</td><td>Theta Bases for Rank-Two Quantum Cluster Algebras of Geometric Type</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00026">2610.00026</a></td><td><code class="no-katex">math.CO</code></td><td>mixed</td><td>all</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>The Anti-Arithmetic Product of Symmetric Functions</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00024">2610.00024</a></td><td><code class="no-katex">math.RT</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Opus, OpenAI Codex</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Reflexive equivalence and reflexive-minimal algebras</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00025">2610.00025</a></td><td><code class="no-katex">math.QA</code></td><td>mixed</td><td>some</td><td>—</td><td>OpenAI ChatGPT</td><td>Minimality of the Rank-Two Quantum Greedy Basis</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00023">2610.00023</a></td><td><code class="no-katex">math.QA</code></td><td>mixed</td><td>some</td><td>—</td><td>Danus, OpenAI ChatGPT</td><td>A Finite Polyhedral Construction of the Rank-Two Quantum Greedy Basis</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00022">2610.00022</a></td><td><code class="no-katex">math.OC</code></td><td>no-human-author-claimed</td><td>all</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Continuity of solutions to abstract linear control systems</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00019">2610.00019</a></td><td><code class="no-katex">math.PR</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Fable, Anthropic Claude Opus, OpenAI ChatGPT</td><td>Anthropic Claude Fable, Anthropic Claude Opus, OpenAI ChatGPT</td><td>The Negative Spherical Perceptron: Capacity, Isostatic Jamming, and Full Replica Symmetry Breaking</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00021">2610.00021</a></td><td><code class="no-katex">math.MG</code></td><td>mixed</td><td>all</td><td>Anthropic Claude Fable, OpenAI ChatGPT, Quora Poe (aggregator)</td><td>Anthropic Claude Fable, OpenAI ChatGPT, Quora Poe (aggregator)</td><td>A Fourier Consequence for Lattice Kissing Numbers and Average Contacts</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00017">2610.00017</a></td><td><code class="no-katex">math.NT</code></td><td>human</td><td>all</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>On the ternary pentagonal numbers conjecture</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00018">2610.00018</a></td><td><code class="no-katex">math.NT</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Opus, OpenAI ChatGPT, xAI</td><td>Anthropic Claude Opus, OpenAI ChatGPT, xAI</td><td>Linnik&#x27;s constant is at most 3.99</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00016">2610.00016</a></td><td><code class="no-katex">math.CO</code></td><td>no-human-author-claimed</td><td>some</td><td>Anthropic Claude Opus, Meta, OpenAI ChatGPT</td><td>Anthropic Claude Code, Anthropic Claude Opus, Meta, OpenAI ChatGPT</td><td>An Exponent of 1.043 for the Unit Distance Problem</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00013">2610.00013</a></td><td><code class="no-katex">math.RA</code></td><td>mixed</td><td>some</td><td>—</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>Explicit non-inducible rooted cluster morphisms</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00015">2610.00015</a></td><td><code class="no-katex">math.CO</code></td><td>mixed</td><td>all</td><td>—</td><td>—</td><td>Tilings of an equilateral triangle by at most five lattice trapezoids with 60° base angles: a complete structural classification</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00014">2610.00014</a></td><td><code class="no-katex">math.PR</code></td><td>no-human-author-claimed</td><td>none</td><td>OpenAI Codex</td><td>—</td><td>On the escape rate of favorite sites of planar random walks</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00012">2610.00012</a></td><td><code class="no-katex">math.RA</code></td><td>mixed</td><td>some</td><td>—</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>A finite criterion for total sign skew symmetry in order three</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00011">2610.00011</a></td><td><code class="no-katex">math.MG</code></td><td>mixed</td><td>some</td><td>OpenAI Codex</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>A generalized Gerver sofa for angled corridors</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00010">2610.00010</a></td><td><code class="no-katex">math.DG</code></td><td>mixed</td><td>all</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>A contractible open four-manifold with a complete metric of uniformly positive scalar curvature</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00003">2610.00003</a></td><td><code class="no-katex">math.LO</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>Arrow and Gibbard Satterthwaite Theorems in Lean</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00004">2610.00004</a></td><td><code class="no-katex">math.LO</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>A Lean Formalization of the Shapley Value Characterization for Finite Cooperative Games</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00005">2610.00005</a></td><td><code class="no-katex">math.LO</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>Nash Bargaining Characterization in Lean</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00008">2610.00008</a></td><td><code class="no-katex">math.LO</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI Codex</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>Finite Nash Equilibria and Dependent Mixed Strategies in Lean</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00002">2610.00002</a></td><td><code class="no-katex">math.OC</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>A Finite Coordinate Reduction for Approachability Loss in Lean</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00006">2610.00006</a></td><td><code class="no-katex">math.GR</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>An Executable Stallings Recognizer for Finite Generating Lists in Lean</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00007">2610.00007</a></td><td><code class="no-katex">math.AC</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>Prime-Generated Localization Descent for Unique Factorization in Lean</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00001">2610.00001</a></td><td><code class="no-katex">cs.LO</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>A Lean Formalization of Myerson-Satterthwaite Impossibility for Continuous Bilateral Trade</td></tr><tr><td><a href="https://hexagonmath.org/abs/2610.00009">2610.00009</a></td><td><code class="no-katex">cs.DS</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI Codex</td><td>OpenAI ChatGPT</td><td>A Lean Certificate for the Single Source Unsplittable Flow Cost Counterexample</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00152">2609.00152</a></td><td><code class="no-katex">math.AT</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI Codex</td><td>OpenAI ChatGPT</td><td>A Lean Formalization of the Classical Seifert van Kampen Groupoid Theorem</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00149">2609.00149</a></td><td><code class="no-katex">cs.DS</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI Codex</td><td>OpenAI ChatGPT, OpenAI Codex</td><td>Deferred Acceptance in Lean for Finite Strict Preference Markets</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00151">2609.00151</a></td><td><code class="no-katex">math.OC</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI Codex</td><td>OpenAI ChatGPT</td><td>A Lean Formalization of Roberts Theorem on Unrestricted Valuations</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00150">2609.00150</a></td><td><code class="no-katex">math.OC</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI Codex</td><td>OpenAI ChatGPT</td><td>Finite VCG and Groves Payments in Lean</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00148">2609.00148</a></td><td><code class="no-katex">math.OC</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI Codex</td><td>OpenAI ChatGPT</td><td>A Lean Formalization of Finite Zero Sum Minimax via Sion&#x27;s Theorem</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00147">2609.00147</a></td><td><code class="no-katex">math.AG</code></td><td>no-human-author-claimed</td><td>none</td><td>OpenAI ChatGPT</td><td>—</td><td>Signed Mukai diagonals and derived equivalences of fivefolds</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00145">2609.00145</a></td><td><code class="no-katex">math.QA</code></td><td>mixed</td><td>some</td><td>—</td><td>Danus, OpenAI ChatGPT</td><td>The support conjecture for rank-two quantum triangular bases</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00144">2609.00144</a></td><td><code class="no-katex">math.PR</code></td><td>no-human-author-claimed</td><td>none</td><td>OpenAI ChatGPT</td><td>—</td><td>On the Asymptotic \(W_1\) Cost of Two-Dimensional Semi-Discrete Matching</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00146">2609.00146</a></td><td><code class="no-katex">math.MG</code></td><td>no-human-author-claimed</td><td>some</td><td>—</td><td>OpenAI Codex</td><td>FINITE HAUSDORFF HYPERSPACES AND GROMOV–HAUSDORFF GEOMETRY</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00141">2609.00141</a></td><td><code class="no-katex">math.LO</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI Codex</td><td>—</td><td>Ordinal-definable families in Cohen, random, and collapse extensions</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00142">2609.00142</a></td><td><code class="no-katex">math.CO</code></td><td>mixed</td><td>all</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>Collapsibility of Alexander duals for shade maps</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00143">2609.00143</a></td><td><code class="no-katex">math.QA</code></td><td>mixed</td><td>some</td><td>—</td><td>OpenAI Codex</td><td>Strongly positive bases in rank-two quantum cluster algebras</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00140">2609.00140</a></td><td><code class="no-katex">math.CO</code></td><td>no-human-author-claimed</td><td>all</td><td>Anthropic Claude Fable, OpenAI Codex</td><td>—</td><td>Coefficientwise positivity for alternating sums of q-factorials</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00138">2609.00138</a></td><td><code class="no-katex">math.CO</code></td><td>human</td><td>all</td><td>—</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Signed seeds and G-gradings on cluster algebras</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00128">2609.00128</a></td><td><code class="no-katex">math.AG</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI Codex</td><td>OpenAI ChatGPT</td><td>On properties of Plancherel algebras</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00137">2609.00137</a></td><td><code class="no-katex">math.CO</code></td><td>mixed</td><td>all</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>On a non-basis of the coinvariant algebra</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00132">2609.00132</a></td><td><code class="no-katex">math.NT</code></td><td>no-human-author-claimed</td><td>none</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>Primitive Integer Solutions of x^4 + 3y^3 + 2z^3 = 0</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00134">2609.00134</a></td><td><code class="no-katex">math.LO</code></td><td>no-human-author-claimed</td><td>all</td><td>Anthropic Claude Opus</td><td>Anthropic Claude Opus</td><td>Five equations for first-order logic, modulo the structure of existential graphs</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00133">2609.00133</a></td><td><code class="no-katex">math.RA</code></td><td>mixed</td><td>all</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>A Universal Noncommutative Splitting Algebra for Polynomials</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00135">2609.00135</a></td><td><code class="no-katex">math.CO</code></td><td>mixed</td><td>all</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>A counterexample to the Burman--Kulishov conjecture on Lie elements</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00130">2609.00130</a></td><td><code class="no-katex">math.NT</code></td><td>no-human-author-claimed</td><td>none</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>Primitive Integer Solutions of x^4 + 4y^3 + z^3 = 0</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00124">2609.00124</a></td><td><code class="no-katex">math.QA</code></td><td>mixed</td><td>some</td><td>—</td><td>Danus, OpenAI ChatGPT</td><td>Quantum Laurent Positivity for Mutation-Acyclic Cluster Algebras</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00126">2609.00126</a></td><td><code class="no-katex">quant-ph</code></td><td>no-human-author-claimed</td><td>some</td><td>—</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Pauli problem in dimension 4</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00123">2609.00123</a></td><td><code class="no-katex">math.MG</code></td><td>mixed</td><td>all</td><td>Anthropic Claude Fable, OpenAI ChatGPT, Quora Poe (aggregator)</td><td>Anthropic Claude Fable, OpenAI ChatGPT, Quora Poe (aggregator)</td><td>Breaking the Fourth Wall: The Planar Centroid Banach–Mazur Diameter Is Strictly Less than 4</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00121">2609.00121</a></td><td><code class="no-katex">math.AC</code></td><td>mixed</td><td>all</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>Polynomials over Symmetric Polynomials</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00122">2609.00122</a></td><td><code class="no-katex">cs.CC</code></td><td>mixed</td><td>all</td><td>—</td><td>—</td><td>Generalized Bawo: A Finite-State Model and an EXPTIME Upper Bound</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00118">2609.00118</a></td><td><code class="no-katex">math.CO</code></td><td>no-human-author-claimed</td><td>all</td><td>—</td><td>OpenAI ChatGPT</td><td>A counterexample to ordering-independence for chromatic operators</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00119">2609.00119</a></td><td><code class="no-katex">math.NT</code></td><td>human</td><td>all</td><td>—</td><td>OpenAI ChatGPT</td><td>Hilbert-type inequality with primes</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00117">2609.00117</a></td><td><code class="no-katex">math.AC</code></td><td>mixed</td><td>all</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>Splitting a Polynomial into Linear Factors after an Injective Ring Extension</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00116">2609.00116</a></td><td><code class="no-katex">math.CO</code></td><td>no-human-author-claimed</td><td>some</td><td>—</td><td>OpenAI ChatGPT</td><td>A Counterexample to a Conjecture on Fused Specht Polynomials</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00114">2609.00114</a></td><td><code class="no-katex">math.LO</code></td><td>no-human-author-claimed</td><td>some</td><td>OpenAI Codex</td><td>OpenAI Codex</td><td>Under Measurables, HOD_{Ord^{\omega}} is locally arbitrary</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00112">2609.00112</a></td><td><code class="no-katex">math.AT</code></td><td>no-human-author-claimed</td><td>some</td><td>—</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Swan induction for the finite-local sphere</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00111">2609.00111</a></td><td><code class="no-katex">math.AG</code></td><td>no-human-author-claimed</td><td>all</td><td>—</td><td>Anthropic Claude Opus, OpenAI ChatGPT</td><td>Torsion in K_1 and p-adic vanishing cycles</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00110">2609.00110</a></td><td><code class="no-katex">math.AG</code></td><td>no-human-author-claimed</td><td>some</td><td>—</td><td>Anthropic Claude Opus, OpenAI ChatGPT, OpenAI Codex</td><td>Frobenius orbit maps and rank-four group schemes</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00102">2609.00102</a></td><td><code class="no-katex">math.NT</code></td><td>human</td><td>all</td><td>—</td><td>OpenAI ChatGPT</td><td>Inclusions between p-bounded crystalline loci in dimension two</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00105">2609.00105</a></td><td><code class="no-katex">math.AC</code></td><td>no-human-author-claimed</td><td>all</td><td>—</td><td>OpenAI ChatGPT</td><td>Graded absolute integral closures and Picard groups</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00104">2609.00104</a></td><td><code class="no-katex">math.AG</code></td><td>no-human-author-claimed</td><td>all</td><td>OpenAI ChatGPT</td><td>OpenAI ChatGPT</td><td>Derived invariance of the signature and Hodge numbers of fourfolds</td></tr><tr><td><a href="https://hexagonmath.org/abs/2609.00001">2609.00001</a></td><td><code class="no-katex">math.AG</code></td><td>no-human-author-claimed</td><td></td><td>Anthropic Claude Fable, Anthropic Claude Opus, OpenAI ChatGPT, OpenAI Codex</td><td>Anthropic Claude Code, Anthropic Claude Fable, Anthropic Claude Opus, OpenAI ChatGPT, OpenAI Codex</td><td>Strict negativity and non-vanishing of Chen--Larson hypergeometric coefficients</td></tr></tbody></table>
+</details>
+
+<p class="footnote">Snapshot 2026-10-13T18:23:49+00:00 from
+<code class="no-katex">https://hexagonmath.org/api/v1/works</code> (139 works);
+detail records 2026-10-13T18:23:49+00:00 carry the mined
+provenance. Pipeline: <code class="no-katex">scan_hexagon.py</code>,
+<code class="no-katex">analyze_hexagon.py</code>,
+<code class="no-katex">render_hexagon_report.py</code>; raw snapshots and analysis JSON
+in <code class="no-katex">data/</code>. AI disclaimer: drafted with
+<code class="no-katex">opencode-go/muse-spark-1.3-contributor</code> (2026-10-13).</p>
+
+</article>
+</main>
+
+<!-- BEGIN SHARED-SHELL (managed by _utils/html/scaffold.py) -->
+<div id="display-controls">
+  <div id="width-control" role="group" aria-label="Page width" title="Page width: auto">
+    <button type="button" data-set-width="auto" aria-pressed="true">Auto</button>
+    <button type="button" data-set-width="narrow" aria-pressed="false">Narrow</button>
+    <button type="button" data-set-width="wide" aria-pressed="false">Wide</button>
+    <button type="button" data-set-width="full" aria-pressed="false">Full</button>
+  </div>
+  <button id="theme-toggle" type="button" aria-label="Colour theme">
+    <span class="icon" aria-hidden="true">◐</span>
+    <span class="label">Auto</span>
+  </button>
+</div>
+<button id="toc-toggle" type="button" aria-expanded="false">Contents</button>
+<div id="toc-overlay"></div>
+<!-- END SHARED-SHELL -->
+
+</body>
+</html>
