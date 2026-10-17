@@ -85,6 +85,14 @@ def main():
     subj_gap_text = ", ".join(f"{s} (+{g})" for s, g in subj_gaps[:6])
     tools = a["non_llm_tools"]
     raw = a["raw_triples"]
+    formal = a.get("formalizations", {})
+    formal_records = sum(formal.get("by_platform_records", {}).values())
+    formal_platforms = ", ".join(sorted(formal.get("by_platform_works", {}).keys())) or "none"
+    formal_rows = "".join(
+        f"<tr><td>{esc(p)}</td><td>{formal.get('by_platform_works', {}).get(p, 0)}</td>"
+        f"<td>{formal.get('by_platform_records', {}).get(p, 0)}</td></tr>"
+        for p in sorted(formal.get("by_platform_works", {}).keys())
+    )
     fam_map = {f["family"]: f for f in fam}
     co_lookup = {}
     for c in a.get("cooccurrence", []):
@@ -279,6 +287,12 @@ Poe-style aggregators make exact model attribution impossible.</li>
 
 <table><thead><tr><th>Tool family</th><th>Works</th><th>Also LLM</th><th>Prose works</th></tr></thead>
 <tbody>{tool_rows}</tbody></table>
+
+<h3 id="formalizations">Formalizations</h3>
+<p>{formal.get("works", 0)} works carry formalization records ({formal_records} total), all on the
+{formal_platforms} platform.</p>
+<table><thead><tr><th>Platform</th><th>Works</th><th>Records</th></tr></thead>
+<tbody>{formal_rows}</tbody></table>
 
 <h2 id="caveats">4. Caveats</h2>
 

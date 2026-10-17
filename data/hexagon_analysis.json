@@ -202,6 +202,16 @@
    "combined_pct": 1.0
   },
   {
+   "family": "Local/open",
+   "works": 1,
+   "pct_of_all": 0.5,
+   "mentions": 1,
+   "prov_works": 1,
+   "prov_mentions": 1,
+   "combined_works": 1,
+   "combined_pct": 0.5
+  },
+  {
    "family": "xAI",
    "works": 1,
    "pct_of_all": 0.5,
@@ -213,16 +223,6 @@
   },
   {
    "family": "Moonshot",
-   "works": 1,
-   "pct_of_all": 0.5,
-   "mentions": 1,
-   "prov_works": 1,
-   "prov_mentions": 1,
-   "combined_works": 1,
-   "combined_pct": 0.5
-  },
-  {
-   "family": "Local/open",
    "works": 1,
    "pct_of_all": 0.5,
    "mentions": 1,
@@ -524,13 +524,6 @@
    "mentions": 1
   },
   {
-   "family": "OpenAI ChatGPT",
-   "model": "ChatGPT 4o",
-   "works": 1,
-   "pct_of_all": 0.5,
-   "mentions": 1
-  },
-  {
    "family": "Anthropic Claude Opus",
    "model": "Opus 4",
    "works": 1,
@@ -540,6 +533,13 @@
   {
    "family": "Moonshot",
    "model": "Kimi",
+   "works": 1,
+   "pct_of_all": 0.5,
+   "mentions": 1
+  },
+  {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT 4o",
    "works": 1,
    "pct_of_all": 0.5,
    "mentions": 1
@@ -1453,11 +1453,11 @@
    "Wolfram Mathematica": 1,
    "Domain package": 1,
    "GAP": 2,
-   "Macaulay2": 1,
    "Singular": 1,
+   "Macaulay2": 1,
    "PARI/GP": 2,
-   "OSVerify": 1,
    "Rethlas": 1,
+   "OSVerify": 1,
    "Mace4/Prover9": 1
   },
   "by_mentions": {
@@ -1490,12 +1490,12 @@
    "Mace4/Prover9": 1
   },
   "prov_by_works": {
-   "Wolfram Mathematica": 55,
    "Lean/Mathlib": 54,
+   "Wolfram Mathematica": 55,
    "Python/scientific stack": 14,
    "Magma": 1,
-   "SageMath": 4,
    "GAP": 3,
+   "SageMath": 4,
    "PARI/GP": 1,
    "Macaulay2": 1
   },
@@ -1504,10 +1504,19 @@
    "Lean/Mathlib": 54,
    "Python/scientific stack": 14,
    "Magma": 1,
-   "GAP": 3,
    "SageMath": 4,
+   "GAP": 3,
    "PARI/GP": 1,
    "Macaulay2": 1
+  }
+ },
+ "formalizations": {
+  "works": 28,
+  "by_platform_works": {
+   "Palomar": 28
+  },
+  "by_platform_records": {
+   "Palomar": 37
   }
  },
  "cooccurrence": [

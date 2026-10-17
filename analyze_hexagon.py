@@ -236,6 +236,9 @@ def main():
     gap_ids = []
     tool_with_llm = collections.Counter()
     tool_total = collections.Counter()
+    formal_works = 0
+    formal_platform_works = collections.Counter()
+    formal_platform_records = collections.Counter()
     prov_tool_fam_works = collections.Counter()
     prov_tool_fam_mentions = collections.Counter()
     per_work = []
@@ -299,6 +302,15 @@ def main():
         prov_spans = []
         ai_prose = False
         d = details.get(wid)
+        if d:
+            f = d.get("formalizations") or []
+            if f:
+                formal_works += 1
+                for pl in {x.get("platform") for x in f if isinstance(x, dict)}:
+                    formal_platform_works[pl] += 1
+                for x in f:
+                    if isinstance(x, dict):
+                        formal_platform_records[x.get("platform")] += 1
         if d and d.get("provenance"):
             n_with_provenance += 1
             hits, prov_spans = mine_provenance(d["provenance"])
@@ -403,6 +415,11 @@ def main():
             "works_also_listing_llm": dict(tool_with_llm),
             "prov_by_works": dict(prov_tool_fam_works),
             "prov_by_mentions": dict(prov_tool_fam_mentions),
+        },
+        "formalizations": {
+            "works": formal_works,
+            "by_platform_works": dict(formal_platform_works),
+            "by_platform_records": dict(formal_platform_records),
         },
         "cooccurrence": [{"a": a, "b": b, "works": c}
                          for (a, b), c in cooccur.most_common(20)],
