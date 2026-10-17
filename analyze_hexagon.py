@@ -226,6 +226,7 @@ def main():
     subject_total = collections.Counter()
     subject_llm = collections.Counter()
     subject_prov_llm = collections.Counter()
+    subject_combined_llm = collections.Counter()
     llm_by_authorship = collections.Counter()
     cooccur = collections.Counter()
     prov_fam_works = collections.Counter()
@@ -337,6 +338,8 @@ def main():
             subject_prov_llm[w.get("subject") or "?"] += 1
         elif ai_prose:
             n_unspecified_ai_only += 1
+        if has_llm or prov_llm_fams:
+            subject_combined_llm[w.get("subject") or "?"] += 1
         if prov_llm_fams and not has_llm:
             gap_ids.append(wid)
 
@@ -426,7 +429,9 @@ def main():
         "subjects": [{"subject": s, "works": c,
                       "llm_works": subject_llm.get(s, 0),
                       "llm_share_pct": round(100.0 * subject_llm.get(s, 0) / c, 1),
-                      "prov_llm_works": subject_prov_llm.get(s, 0)}
+                      "prov_llm_works": subject_prov_llm.get(s, 0),
+                      "combined_llm_works": subject_combined_llm.get(s, 0),
+                      "combined_llm_share_pct": round(100.0 * subject_combined_llm.get(s, 0) / c, 1)}
                      for s, c in subject_total.most_common()],
         "per_work": per_work,
     }

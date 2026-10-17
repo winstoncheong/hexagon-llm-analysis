@@ -153,7 +153,9 @@ def main():
     subj_rows = "".join(
         f"<tr><td><code class=\"no-katex\">{esc(s['subject'])}</code></td>"
         f"<td>{s['works']}</td><td>{s['llm_works']}</td>"
-        f"<td>{s['llm_share_pct']:.1f}</td><td>{s.get('prov_llm_works', 0)}</td></tr>"
+        f"<td>{s.get('prov_llm_works', 0)}</td>"
+        f"<td>{s.get('combined_llm_works', 0)}</td>"
+        f"<td>{s.get('combined_llm_share_pct', 0):.1f}</td></tr>"
         for s in subj)
     co_rows = "".join(
         f"<tr><td>{esc(c['a'])}</td><td>{esc(c['b'])}</td>"
@@ -280,7 +282,7 @@ Poe-style aggregators make exact model attribution impossible.</li>
 
 <h3 id="subjects">Subjects</h3>
 
-<table><thead><tr><th>Subject</th><th>Works</th><th>With LLM</th><th>LLM share (%)</th><th>Prose LLM</th></tr></thead>
+<table><thead><tr><th>Subject</th><th>Works</th><th>Structured LLM</th><th>Prose LLM</th><th>Combined</th><th>Combined share (%)</th></tr></thead>
 <tbody>{subj_rows}</tbody></table>
 
 <h3 id="nonllm">Non-LLM tooling (works, of which also list an LLM, prose works)</h3>

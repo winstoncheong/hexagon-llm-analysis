@@ -172,20 +172,20 @@
    "combined_pct": 1.5
   },
   {
-   "family": "Quora Poe (aggregator)",
-   "works": 3,
-   "pct_of_all": 1.5,
-   "mentions": 3,
+   "family": "Danus",
+   "works": 0,
+   "pct_of_all": 0.0,
+   "mentions": 0,
    "prov_works": 3,
    "prov_mentions": 3,
    "combined_works": 3,
    "combined_pct": 1.5
   },
   {
-   "family": "Danus",
-   "works": 0,
-   "pct_of_all": 0.0,
-   "mentions": 0,
+   "family": "Quora Poe (aggregator)",
+   "works": 3,
+   "pct_of_all": 1.5,
+   "mentions": 3,
    "prov_works": 3,
    "prov_mentions": 3,
    "combined_works": 3,
@@ -202,7 +202,7 @@
    "combined_pct": 1.0
   },
   {
-   "family": "Local/open",
+   "family": "xAI",
    "works": 1,
    "pct_of_all": 0.5,
    "mentions": 1,
@@ -212,7 +212,7 @@
    "combined_pct": 0.5
   },
   {
-   "family": "xAI",
+   "family": "Meta",
    "works": 1,
    "pct_of_all": 0.5,
    "mentions": 1,
@@ -232,7 +232,7 @@
    "combined_pct": 0.5
   },
   {
-   "family": "Meta",
+   "family": "Local/open",
    "works": 1,
    "pct_of_all": 0.5,
    "mentions": 1,
@@ -398,15 +398,15 @@
    "mentions": 3
   },
   {
-   "family": "OpenAI Codex",
-   "model": "Codex 6.1 Sol",
+   "family": "Anthropic Claude Sonnet",
+   "model": "Sonnet 5.5",
    "works": 2,
    "pct_of_all": 1.0,
    "mentions": 2
   },
   {
-   "family": "Anthropic Claude Sonnet",
-   "model": "Sonnet 5.5",
+   "family": "OpenAI Codex",
+   "model": "Codex 6.1 Sol",
    "works": 2,
    "pct_of_all": 1.0,
    "mentions": 2
@@ -531,15 +531,15 @@
    "mentions": 1
   },
   {
-   "family": "Moonshot",
-   "model": "Kimi",
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT 4o",
    "works": 1,
    "pct_of_all": 0.5,
    "mentions": 1
   },
   {
-   "family": "OpenAI ChatGPT",
-   "model": "ChatGPT 4o",
+   "family": "Moonshot",
+   "model": "Kimi",
    "works": 1,
    "pct_of_all": 0.5,
    "mentions": 1
@@ -1451,8 +1451,8 @@
    "Magma": 2,
    "SageMath": 5,
    "Wolfram Mathematica": 1,
-   "Domain package": 1,
    "GAP": 2,
+   "Domain package": 1,
    "Singular": 1,
    "Macaulay2": 1,
    "PARI/GP": 2,
@@ -1490,18 +1490,18 @@
    "Mace4/Prover9": 1
   },
   "prov_by_works": {
-   "Lean/Mathlib": 54,
    "Wolfram Mathematica": 55,
+   "Lean/Mathlib": 54,
    "Python/scientific stack": 14,
    "Magma": 1,
-   "GAP": 3,
    "SageMath": 4,
+   "GAP": 3,
    "PARI/GP": 1,
    "Macaulay2": 1
   },
   "prov_by_mentions": {
-   "Wolfram Mathematica": 55,
    "Lean/Mathlib": 54,
+   "Wolfram Mathematica": 55,
    "Python/scientific stack": 14,
    "Magma": 1,
    "SageMath": 4,
@@ -1627,231 +1627,297 @@
    "works": 42,
    "llm_works": 34,
    "llm_share_pct": 81.0,
-   "prov_llm_works": 33
+   "prov_llm_works": 33,
+   "combined_llm_works": 36,
+   "combined_llm_share_pct": 85.7
   },
   {
    "subject": "math.CO",
    "works": 29,
    "llm_works": 19,
    "llm_share_pct": 65.5,
-   "prov_llm_works": 26
+   "prov_llm_works": 26,
+   "combined_llm_works": 27,
+   "combined_llm_share_pct": 93.1
   },
   {
    "subject": "math.AG",
    "works": 13,
    "llm_works": 10,
    "llm_share_pct": 76.9,
-   "prov_llm_works": 10
+   "prov_llm_works": 10,
+   "combined_llm_works": 12,
+   "combined_llm_share_pct": 92.3
   },
   {
    "subject": "math.QA",
    "works": 13,
    "llm_works": 2,
    "llm_share_pct": 15.4,
-   "prov_llm_works": 9
+   "prov_llm_works": 9,
+   "combined_llm_works": 9,
+   "combined_llm_share_pct": 69.2
   },
   {
    "subject": "math.PR",
    "works": 12,
    "llm_works": 8,
    "llm_share_pct": 66.7,
-   "prov_llm_works": 7
+   "prov_llm_works": 7,
+   "combined_llm_works": 10,
+   "combined_llm_share_pct": 83.3
   },
   {
    "subject": "math.MG",
    "works": 10,
    "llm_works": 9,
    "llm_share_pct": 90.0,
-   "prov_llm_works": 9
+   "prov_llm_works": 9,
+   "combined_llm_works": 10,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "math.LO",
    "works": 8,
    "llm_works": 8,
    "llm_share_pct": 100.0,
-   "prov_llm_works": 6
+   "prov_llm_works": 6,
+   "combined_llm_works": 8,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "math.RA",
    "works": 7,
    "llm_works": 2,
    "llm_share_pct": 28.6,
-   "prov_llm_works": 7
+   "prov_llm_works": 7,
+   "combined_llm_works": 7,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "math.RT",
    "works": 7,
    "llm_works": 4,
    "llm_share_pct": 57.1,
-   "prov_llm_works": 5
+   "prov_llm_works": 5,
+   "combined_llm_works": 5,
+   "combined_llm_share_pct": 71.4
   },
   {
    "subject": "cs.DS",
    "works": 6,
    "llm_works": 5,
    "llm_share_pct": 83.3,
-   "prov_llm_works": 4
+   "prov_llm_works": 4,
+   "combined_llm_works": 6,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "math.AC",
    "works": 6,
    "llm_works": 3,
    "llm_share_pct": 50.0,
-   "prov_llm_works": 4
+   "prov_llm_works": 4,
+   "combined_llm_works": 4,
+   "combined_llm_share_pct": 66.7
   },
   {
    "subject": "math.GT",
    "works": 5,
    "llm_works": 4,
    "llm_share_pct": 80.0,
-   "prov_llm_works": 5
+   "prov_llm_works": 5,
+   "combined_llm_works": 5,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "math.OC",
    "works": 5,
    "llm_works": 5,
    "llm_share_pct": 100.0,
-   "prov_llm_works": 5
+   "prov_llm_works": 5,
+   "combined_llm_works": 5,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "math.GR",
    "works": 4,
    "llm_works": 4,
    "llm_share_pct": 100.0,
-   "prov_llm_works": 3
+   "prov_llm_works": 3,
+   "combined_llm_works": 4,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "math.AT",
    "works": 4,
    "llm_works": 1,
    "llm_share_pct": 25.0,
-   "prov_llm_works": 3
+   "prov_llm_works": 3,
+   "combined_llm_works": 3,
+   "combined_llm_share_pct": 75.0
   },
   {
    "subject": "math.OA",
    "works": 3,
    "llm_works": 2,
    "llm_share_pct": 66.7,
-   "prov_llm_works": 0
+   "prov_llm_works": 0,
+   "combined_llm_works": 2,
+   "combined_llm_share_pct": 66.7
   },
   {
    "subject": "math.DS",
    "works": 3,
    "llm_works": 3,
    "llm_share_pct": 100.0,
-   "prov_llm_works": 3
+   "prov_llm_works": 3,
+   "combined_llm_works": 3,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "math.FA",
    "works": 3,
    "llm_works": 0,
    "llm_share_pct": 0.0,
-   "prov_llm_works": 1
+   "prov_llm_works": 1,
+   "combined_llm_works": 1,
+   "combined_llm_share_pct": 33.3
   },
   {
    "subject": "math.ST",
    "works": 3,
    "llm_works": 3,
    "llm_share_pct": 100.0,
-   "prov_llm_works": 3
+   "prov_llm_works": 3,
+   "combined_llm_works": 3,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "math.IT",
    "works": 2,
    "llm_works": 2,
    "llm_share_pct": 100.0,
-   "prov_llm_works": 2
+   "prov_llm_works": 2,
+   "combined_llm_works": 2,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "cs.LO",
    "works": 2,
    "llm_works": 1,
    "llm_share_pct": 50.0,
-   "prov_llm_works": 1
+   "prov_llm_works": 1,
+   "combined_llm_works": 1,
+   "combined_llm_share_pct": 50.0
   },
   {
    "subject": "math.CA",
    "works": 2,
    "llm_works": 2,
    "llm_share_pct": 100.0,
-   "prov_llm_works": 2
+   "prov_llm_works": 2,
+   "combined_llm_works": 2,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "cs.CC",
    "works": 2,
    "llm_works": 1,
    "llm_share_pct": 50.0,
-   "prov_llm_works": 1
+   "prov_llm_works": 1,
+   "combined_llm_works": 1,
+   "combined_llm_share_pct": 50.0
   },
   {
    "subject": "math.GM",
    "works": 1,
    "llm_works": 0,
    "llm_share_pct": 0.0,
-   "prov_llm_works": 1
+   "prov_llm_works": 1,
+   "combined_llm_works": 1,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "cs.DM",
    "works": 1,
    "llm_works": 1,
    "llm_share_pct": 100.0,
-   "prov_llm_works": 1
+   "prov_llm_works": 1,
+   "combined_llm_works": 1,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "cs.AI",
    "works": 1,
    "llm_works": 0,
    "llm_share_pct": 0.0,
-   "prov_llm_works": 0
+   "prov_llm_works": 0,
+   "combined_llm_works": 0,
+   "combined_llm_share_pct": 0.0
   },
   {
    "subject": "math.NA",
    "works": 1,
    "llm_works": 1,
    "llm_share_pct": 100.0,
-   "prov_llm_works": 1
+   "prov_llm_works": 1,
+   "combined_llm_works": 1,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "math.KT",
    "works": 1,
    "llm_works": 0,
    "llm_share_pct": 0.0,
-   "prov_llm_works": 0
+   "prov_llm_works": 0,
+   "combined_llm_works": 0,
+   "combined_llm_share_pct": 0.0
   },
   {
    "subject": "math.MP",
    "works": 1,
    "llm_works": 0,
    "llm_share_pct": 0.0,
-   "prov_llm_works": 1
+   "prov_llm_works": 1,
+   "combined_llm_works": 1,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "stat.TH",
    "works": 1,
    "llm_works": 0,
    "llm_share_pct": 0.0,
-   "prov_llm_works": 1
+   "prov_llm_works": 1,
+   "combined_llm_works": 1,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "math.AP",
    "works": 1,
    "llm_works": 0,
    "llm_share_pct": 0.0,
-   "prov_llm_works": 0
+   "prov_llm_works": 0,
+   "combined_llm_works": 0,
+   "combined_llm_share_pct": 0.0
   },
   {
    "subject": "math.DG",
    "works": 1,
    "llm_works": 1,
    "llm_share_pct": 100.0,
-   "prov_llm_works": 1
+   "prov_llm_works": 1,
+   "combined_llm_works": 1,
+   "combined_llm_share_pct": 100.0
   },
   {
    "subject": "quant-ph",
    "works": 1,
    "llm_works": 0,
    "llm_share_pct": 0.0,
-   "prov_llm_works": 1
+   "prov_llm_works": 1,
+   "combined_llm_works": 1,
+   "combined_llm_share_pct": 100.0
   }
  ],
  "per_work": [
