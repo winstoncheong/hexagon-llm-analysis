@@ -43,6 +43,34 @@ def fetch_detail(versioned_id):
         return json.load(resp)["work"]
 
 
+def load_detail_cache(outdir):
+    '''Load previously fetched detail records from disk, keyed by versioned id.'''
+    cache = {}
+    paths = sorted(outdir.glob("hexagon_details_*.json"))
+    # dated snapshots first, then latest (which overwrites with most recent)
+    for p in paths:
+        if p.name.endswith("_latest.json"):
+            continue
+        _ingest_detail_file(p, cache)
+    latest = outdir / "hexagon_details_latest.json"
+    if latest.exists():
+        _ingest_detail_file(latest, cache)
+    return cache
+
+
+def _ingest_detail_file(path, cache):
+    try:
+        snap = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return
+    for d in snap.get("works", []) or []:
+        for key in (d.get("id"), d.get("identifier")):
+            if key:
+                cache[str(key).split("hexagon:")[-1]] = d
+                cache["hexagon:" + str(key).split("hexagon:")[-1]] = d
+        # also key by versioned id without prefix already handled
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=100)
@@ -87,9 +115,17 @@ def main():
     print(f"wrote {latest}")
 
     if not args.no_details:
+        # Reuse detail records we already have on disk (keyed by versioned id)
+        # so a re-run only fetches genuinely new/changed works.
+        cache = load_detail_cache(outdir)
         details = []
         for i, w in enumerate(works):
             vid = (w.get("id") or "").split("hexagon:")[-1]
+            cached = cache.get(vid) or cache.get("hexagon:" + vid)
+            if cached is not None and not cached.get("detail_error"):
+                details.append(cached)
+                print(f"  detail {i + 1}/{len(works)} {vid} (cached)", flush=True)
+                continue
             try:
                 d = fetch_detail(vid)
             except Exception as e:  # keep going; record the miss

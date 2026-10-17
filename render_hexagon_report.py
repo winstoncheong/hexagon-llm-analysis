@@ -38,10 +38,13 @@ def bars(rows, row_h=26, max_w=430, label_x=180, pad_right=56):
     """
     top = 8
     h = top * 2 + row_h * len(rows)
+    peak = max((v for _, v, _ in rows), default=1)
+    # Fit the viewBox to the longest value label: labels sit just past the
+    # bar end, so a fixed-width box clips the maximum bar's number.
+    pad_right = max(pad_right, 8 * len(str(peak)) + 12)
     width = label_x + max_w + pad_right
     out = [f'<svg viewBox="0 0 {width} {h}" role="img" '
            f'aria-label="Bar chart">']
-    peak = max((v for _, v, _ in rows), default=1)
     for i, (label, value, ci) in enumerate(rows):
         y = top + i * row_h
         w = max(2, round(max_w * value / peak)) if peak else 2
@@ -78,6 +81,35 @@ def main():
     subj = a["subjects"]
     tools = a["non_llm_tools"]
     raw = a["raw_triples"]
+    fam_map = {f["family"]: f for f in fam}
+    co_lookup = {}
+    for c in a.get("cooccurrence", []):
+        co_lookup[(c["a"], c["b"])] = c["works"]
+        co_lookup[(c["b"], c["a"])] = c["works"]
+    co_oc = co_lookup.get(("Anthropic Claude Opus", "OpenAI ChatGPT"), 0)
+    co_cc = co_lookup.get(("OpenAI ChatGPT", "OpenAI Codex"), 0)
+    lean_works = tools["by_works"].get("Lean/Mathlib", 0)
+    lean_llm = tools.get("works_also_listing_llm", {}).get("Lean/Mathlib", 0)
+    bolzano = fam_map.get("Bolzano", {}).get("works", 0)
+    harmonic = fam_map.get("Harmonic", {}).get("works", 0)
+    claude_code = fam_map.get("Anthropic Claude Code", {}).get("works", 0)
+    poe = fam_map.get("Quora Poe (aggregator)", {}).get("works", 0)
+    danus_prov = fam_map.get("Danus", {}).get("prov_works", 0)
+    axiom = fam_map.get("AxiomMath", {}).get("works", 0)
+    blank_works = sum(
+        1 for w in a.get("per_work", [])
+        if any((r.rsplit("/", 1)[-1].strip() == "") for r in (w.get("raw_tools") or []))
+    )
+    big_labs = {"OpenAI ChatGPT", "OpenAI Codex", "Anthropic Claude Opus",
+                "Anthropic Claude Fable", "Anthropic Claude Sonnet", "Anthropic Claude Code"}
+    big_cover = sum(
+        1 for w in a.get("per_work", [])
+        if (set(w.get("llm_families", [])) | set(w.get("prov_llm_families", []))) & big_labs
+    )
+    any_model = sum(1 for w in a.get("per_work", [])
+                    if w.get("llm_families") or w.get("prov_llm_families"))
+    qa = next((s for s in subj if s["subject"] == "math.QA"),
+              {"works": 0, "llm_works": 0, "prov_llm_works": 0})
 
     chatgpt = fams.get("OpenAI ChatGPT", {}).get("works", 0)
     codex = fams.get("OpenAI Codex", {}).get("works", 0)
@@ -127,7 +159,7 @@ def main():
 
     body = f"""<h1>Hexagon archive: which AI models are used</h1>
 
-<p class="meta"><span>snapshot {esc(fetched)}</span><span>{n} works</span><span>tags: math, ai-for-math</span><span>created: 2026-10-13</span></p>
+<p class="meta"><span>snapshot {esc(fetched)}</span><span>{n} works</span><span>tags: math, ai-for-math</span><span>created: 2026-10-13</span><span>last updated {esc(fetched[:10])}</span></p>
 
 <aside class="callout callout-note"><span class="callout-title">What this is</span>
 <p>Hexagon (<a href="https://hexagonmath.org/">hexagonmath.org</a>) requires depositors to
@@ -148,6 +180,16 @@ records) for the same canonical families raises this to {n_comb} works
 in prose. {n_none} works ({share(n_none)}%) disclose no tools at all. The raw declarations
 use {a["n_raw_triples"]} distinct spellings, normalized here to {len(fam)} canonical
 families; version strings alone cannot be trusted (see §4).</p>
+
+<p><strong>Structured vs. prose.</strong> <em>Structured</em> counts come from the
+depositor-supplied tool triples (provider, name, version) in each work's
+<code class="no-katex">tools</code> field. <em>Prose</em> counts come from
+regex-mining the free-text provenance statement of each work's detail record
+for the same canonical families. <em>Combined</em> is the union of the two:
+a work counts once even if it names a family in both places, or twice in one.
+A work can therefore appear in the prose column but not the structured column
+when a model is mentioned only in narrative, and vice versa when a model is
+listed as a tool but never discussed in prose.</p>
 
 <figure>{bars([(f["family"], f.get("combined_works", f["works"]), i) for i, f in enumerate(top_fam)])}
 <figcaption>Works per AI family, top eight, counting structured declarations plus
@@ -188,25 +230,26 @@ still counts once.</figcaption></figure>
 ({share(fams.get("OpenAI ChatGPT", {}).get("combined_works", chatgpt))}%); OpenAI Codex on {codex} structured,
 {fams.get("OpenAI Codex", {}).get("combined_works", codex)} combined; Anthropic Claude Opus on {opus} structured,
 {fams.get("Anthropic Claude Opus", {}).get("combined_works", opus)} combined. Together the
-two labs cover nearly every work that names any model.</li>
+two labs cover {big_cover} of the {any_model} works that name any model.</li>
 <li><strong>Multi-model workflows are normal.</strong> Claude Opus and ChatGPT co-occur on
-14 works; ChatGPT and Codex on 9. Depositors routinely draft with one system and code or
+{co_oc} works; ChatGPT and Codex on {co_cc}. Depositors routinely draft with one system and code or
 formalize with another.</li>
-<li><strong>Lean never walks alone.</strong> 25 works list Lean or Mathlib, and all 25 also
-list an LLM assistant. Machine-checked proof on Hexagon currently arrives bundled with AI
+<li><strong>Lean never walks alone.</strong> {lean_works} works list Lean or Mathlib, and {lean_llm} of them
+also list an LLM assistant. Machine-checked proof on Hexagon currently arrives bundled with AI
 assistance, not instead of it.</li>
-<li><strong>One subject hides in prose.</strong> All {qa["works"]} quantum-algebra works list
-zero LLM tools in the structured field, yet {qa["prov_llm_works"]} of them name GPT-6-Astra,
+<li><strong>One subject hides in prose.</strong> Only {qa["llm_works"]} of {qa["works"]} quantum-algebra works list
+an LLM in the structured field, yet {qa["prov_llm_works"]} of them name GPT-6-Astra,
 OpenAI Codex, or a Danus verification system in their free-text provenance; the other
 {qa["works"] - qa["prov_llm_works"]} describe generic AI assistance. Most are
 quantum-cluster-algebra manuscripts from a small depositor group. Structured-only counting
-reports this subject as AI-free; it is the heaviest per-work AI user in the archive.</li>
-<li><strong>Disclosure is incomplete.</strong> 49 works name no tools; {gap.get("prov_llm_but_no_structured_llm", 0)}
+understates this subject; it is among the heaviest per-work AI users in the archive.</li>
+<li><strong>Disclosure is incomplete.</strong> {cov['works_no_tools']} works name no tools; {gap.get("prov_llm_but_no_structured_llm", 0)}
 works name a specific system only in prose. Absence from the structured tables does
 not mean absence of AI use — the combined {share(n_comb)}% figure is still a lower bound.</li>
-<li><strong>Long tail, thin signal.</strong> Past the big three sit Harmonic Aristotle (3),
-Claude Code (3), Quora Poe (3, an aggregator that hides the real model), then singletons:
-xAI Grok, Google Gemini variants, a local Qwen run, AxiomProver, and one Meta Muse Spark
+<li><strong>Long tail, thin signal.</strong> Past the big three sit Bolzano ({bolzano}),
+Harmonic Aristotle ({harmonic}), Claude Code ({claude_code}), Quora Poe ({poe}, an aggregator that hides the real model),
+Danus ({danus_prov}, prose only), AxiomProver ({axiom}), then singletons:
+xAI Grok, Google Gemini variants, a local Qwen run, Moonshot Kimi, and one Meta Muse Spark
 entry. Poe-style aggregators make exact model attribution impossible.</li>
 </ul>
 
@@ -231,14 +274,14 @@ entry. Poe-style aggregators make exact model attribution impossible.</li>
 <li>Declarations are depositor-supplied free text: “GPT-6 Astra”, “Astra 6”, and
 “gpt-6-astra (pinned …)” are one model spelled three ways, and {len(raw)} raw spellings
 collapse to {len(fam)} families only through the normalization table in
-<code class="no-katex">analyze_hexagon.py</code>, which is itself a judgment call. Five
-works leave the version blank.</li>
+<code class="no-katex">analyze_hexagon.py</code>, which is itself a judgment call. {blank_works}
+works leave the version blank for at least one declared tool.</li>
 <li>Prose mining is regex-based (<code class="no-katex">PROV_PATTERNS</code> in
 <code class="no-katex">analyze_hexagon.py</code>): {prov.get("works_naming_specific_system", 0)}
 works name a specific system in prose, {prov.get("works_unspecified_ai_only", 0)} describe AI
 use only generically (boilerplate declarations excluded). Every hit's matched spans are kept
 per work as <code class="no-katex">prov_spans</code> in the analysis JSON, so a false
-positive is auditable. The Danus verification system appears only in prose (3 works) and
+positive is auditable. The Danus verification system appears only in prose ({fam_map.get('Danus', {}).get('prov_works', 0)} works) and
 has no structured counterpart.</li>
 <li>Hexagon is in public beta with {n} works at snapshot time; shares will move as the
 archive grows. Re-run <code class="no-katex">scan_hexagon.py</code>,
@@ -258,7 +301,8 @@ provenance. Pipeline: <code class="no-katex">scan_hexagon.py</code>,
 <code class="no-katex">analyze_hexagon.py</code>,
 <code class="no-katex">render_hexagon_report.py</code>; raw snapshots and analysis JSON
 in <code class="no-katex">data/</code>. AI disclaimer: drafted with
-<code class="no-katex">opencode-go/muse-spark-1.3-contributor</code> (2026-10-13).</p>
+<code class="no-katex">opencode-go/muse-spark-1.3-contributor</code> (2026-10-13); re-run and re-rendered with
+<code class="no-katex">opencode-go/beam-free</code> ({esc(fetched[:10])}).</p>
 """
 
     full = (HERE / "hexagon-llm-models.html").read_text(encoding="utf-8")

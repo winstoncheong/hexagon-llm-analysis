@@ -44,12 +44,15 @@ PROV_PATTERNS = [
     ("llm", "Local/open", r"qwen|llama[\s-]*swap"),
     ("llm", "AxiomMath", r"axiomprover"),
     ("llm", "Danus", r"(?-i:\bDanus\b)|\bdanus\b"),
+    ("llm", "Bolzano", r"bolzano"),
+    ("llm", "Moonshot", r"moonshot|kimi"),
     ("tool", "Lean/Mathlib", r"(?-i:\bLean\b)|\blean\b|mathlib"),
     ("tool", "Magma", r"(?-i:\bMagma\b)|\bmagma\b"),
     ("tool", "SageMath", r"sagemath|(?-i:\bSage\b)"),
     ("tool", "PARI/GP", r"pari[\s/-]*gp|(?-i:\bPARI\b)"),
     ("tool", "GAP", r"(?-i:\bGAP\b)"),
     ("tool", "Macaulay2", r"macaulay"),
+    ("tool", "Wolfram Mathematica", r"wolfram|mathematica"),
     ("tool", "Python/scientific stack", r"(?-i:\bPython\b)|\bpython\b|numpy|scipy|sympy|mpmath|(?-i:\bFLINT\b)|\bflint\b|gmpy|(?-i:\bGMP\b)"),
 ]
 PROV_RES = [(k, f, re.compile(p, re.IGNORECASE)) for k, f, p in PROV_PATTERNS]
@@ -99,6 +102,8 @@ def classify(provider, name, version):
         if "sl2reps" in blob or "curvearith" in blob:
             fam = "Domain package"
         return ("tool", fam, norm(name) or norm(provider))
+    if "wolfram" in blob or "mathematica" in blob:
+        return ("tool", "Wolfram Mathematica", norm(name) or norm(provider))
     if any(k in blob for k in ("numpy", "scipy", "sympy", "mpmath", "flint",
                                "gmp", "gmpy", "python", "z3", "smt",
                                "horn clause")):
@@ -119,6 +124,10 @@ def classify(provider, name, version):
         return ("llm", "AxiomMath", "AxiomProver")
     if "meta" in p or "muse" in n:
         return ("llm", "Meta", "Muse Spark")
+    if "bolzano" in blob:
+        return ("llm", "Bolzano", "Bolzano")
+    if "moonshot" in blob or "kimi" in blob:
+        return ("llm", "Moonshot", "Kimi")
     if "xai" in p or "grok" in n:
         return ("llm", "xAI", "Grok " + v if v else "Grok")
     if "google" in p or "gemini" in n:
