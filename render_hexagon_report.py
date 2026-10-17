@@ -79,6 +79,10 @@ def main():
     und = a["humanUnderstanding"]
     co = a["cooccurrence"][:8]
     subj = a["subjects"]
+    subj_gaps = [(s["subject"], s.get("prov_llm_works", 0) - s.get("llm_works", 0))
+                 for s in subj if s.get("prov_llm_works", 0) > s.get("llm_works", 0)]
+    subj_gaps.sort(key=lambda x: -x[1])
+    subj_gap_text = ", ".join(f"{s} (+{g})" for s, g in subj_gaps[:6])
     tools = a["non_llm_tools"]
     raw = a["raw_triples"]
     fam_map = {f["family"]: f for f in fam}
@@ -246,12 +250,10 @@ formalize with another.</li>
 <li><strong>Formalization tooling is almost all Lean.</strong> {lean_works} works list Lean or Mathlib;
 OSVerify, Rethlas, Mace4/Prover9, and a domain package appear in {formal_other} works between them.
 {lean_llm} of the Lean works also list an LLM assistant.</li>
-<li><strong>One subject hides in prose.</strong> Only {qa["llm_works"]} of {qa["works"]} quantum-algebra works list
-an LLM in the structured field, yet {qa["prov_llm_works"]} of them name GPT-6-Astra,
-OpenAI Codex, or a Danus verification system in their free-text provenance; the other
-{qa["works"] - qa["prov_llm_works"]} describe generic AI assistance. Most are
-quantum-cluster-algebra manuscripts from a small depositor group. Structured-only counting
-understates this subject; it is among the heaviest per-work AI users in the archive.</li>
+<li><strong>Structured and prose counts diverge by subject.</strong> {subj_gap_text} works name a system in
+prose that they do not list in the structured field. math.QA is the most extreme relative to
+its size (2 of 13 structured), mostly quantum-cluster-algebra manuscripts from a small
+depositor group.</li>
 <li><strong>Disclosure is incomplete.</strong> {cov['works_no_tools']} works name no tools; {gap.get("prov_llm_but_no_structured_llm", 0)}
 works name a specific system only in prose. Absence from the structured tables does
 not mean absence of AI use — the combined {share(n_comb)}% figure is still a lower bound.</li>
