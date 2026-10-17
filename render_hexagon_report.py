@@ -96,6 +96,11 @@ def main():
     poe = fam_map.get("Quora Poe (aggregator)", {}).get("works", 0)
     danus_prov = fam_map.get("Danus", {}).get("prov_works", 0)
     axiom = fam_map.get("AxiomMath", {}).get("works", 0)
+    xai = fam_map.get("xAI", {}).get("works", 0)
+    google = fam_map.get("Google", {}).get("works", 0)
+    local = fam_map.get("Local/open", {}).get("works", 0)
+    moonshot = fam_map.get("Moonshot", {}).get("works", 0)
+    meta = fam_map.get("Meta", {}).get("works", 0)
     blank_works = sum(
         1 for w in a.get("per_work", [])
         if any((r.rsplit("/", 1)[-1].strip() == "") for r in (w.get("raw_tools") or []))
@@ -251,8 +256,9 @@ not mean absence of AI use — the combined {share(n_comb)}% figure is still a l
 <li><strong>Long tail, thin signal.</strong> Past the big three sit Bolzano ({bolzano}),
 Harmonic Aristotle ({harmonic}), Claude Code ({claude_code}), Quora Poe ({poe}, an aggregator that hides the real model),
 Danus ({danus_prov}, prose only), AxiomProver ({axiom}), then singletons:
-xAI Grok, Google Gemini variants, a local Qwen run, Moonshot Kimi, and one Meta Muse Spark
-entry. Poe-style aggregators make exact model attribution impossible.</li>
+xAI Grok ({xai}), Google Gemini variants ({google}), a local Qwen run ({local}),
+Moonshot Kimi ({moonshot}), and Meta Muse Spark ({meta}).
+Poe-style aggregators make exact model attribution impossible.</li>
 </ul>
 
 <h3 id="pairs">Frequent pairs</h3>
