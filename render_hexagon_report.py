@@ -90,6 +90,8 @@ def main():
     co_cc = co_lookup.get(("OpenAI ChatGPT", "OpenAI Codex"), 0)
     lean_works = tools["by_works"].get("Lean/Mathlib", 0)
     lean_llm = tools.get("works_also_listing_llm", {}).get("Lean/Mathlib", 0)
+    formal_other = sum(tools["by_works"].get(k, 0)
+                      for k in ("OSVerify", "Rethlas", "Mace4/Prover9", "Domain package"))
     bolzano = fam_map.get("Bolzano", {}).get("works", 0)
     harmonic = fam_map.get("Harmonic", {}).get("works", 0)
     claude_code = fam_map.get("Anthropic Claude Code", {}).get("works", 0)
@@ -241,9 +243,9 @@ two labs cover {big_cover} of the {any_model} works that name any model.</li>
 <li><strong>Multi-model workflows are normal.</strong> Claude Opus and ChatGPT co-occur on
 {co_oc} works in the structured field; ChatGPT and Codex on {co_cc}. Depositors routinely draft with one system and code or
 formalize with another.</li>
-<li><strong>Lean rarely walks alone.</strong> {lean_works} works list Lean or Mathlib, and {lean_llm} of them
-also list an LLM assistant. Machine-checked proof on Hexagon currently arrives bundled with AI
-assistance, not instead of it.</li>
+<li><strong>Formalization tooling is almost all Lean.</strong> {lean_works} works list Lean or Mathlib;
+OSVerify, Rethlas, Mace4/Prover9, and a domain package appear in {formal_other} works between them.
+{lean_llm} of the Lean works also list an LLM assistant.</li>
 <li><strong>One subject hides in prose.</strong> Only {qa["llm_works"]} of {qa["works"]} quantum-algebra works list
 an LLM in the structured field, yet {qa["prov_llm_works"]} of them name GPT-6-Astra,
 OpenAI Codex, or a Danus verification system in their free-text provenance; the other
