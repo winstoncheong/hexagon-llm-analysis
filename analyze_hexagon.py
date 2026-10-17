@@ -236,6 +236,8 @@ def main():
     gap_ids = []
     tool_with_llm = collections.Counter()
     tool_total = collections.Counter()
+    prov_tool_fam_works = collections.Counter()
+    prov_tool_fam_mentions = collections.Counter()
     per_work = []
     llm_work_ids = []
     no_tool_ids = []
@@ -293,6 +295,7 @@ def main():
         # structured triples above: depositors often name models in prose
         # while leaving the tools field empty, or vice versa.
         prov_llm_fams = set()
+        prov_tool_fams = set()
         prov_spans = []
         ai_prose = False
         d = details.get(wid)
@@ -303,6 +306,9 @@ def main():
                 if kind == "llm":
                     prov_fam_mentions[fam] += 1
                     prov_llm_fams.add(fam)
+                else:
+                    prov_tool_fam_mentions[fam] += 1
+                    prov_tool_fams.add(fam)
             # Generic-AI signal must come from the depositor's own words, not
             # the mandatory declaration boilerplate.
             body = "\n".join(
@@ -312,6 +318,8 @@ def main():
             ai_prose = bool(AI_PROSE_RE.search(body))
             for f in prov_llm_fams:
                 prov_fam_works[f] += 1
+            for f in prov_tool_fams:
+                prov_tool_fam_works[f] += 1
         if prov_llm_fams:
             n_specific_system += 1
             subject_prov_llm[w.get("subject") or "?"] += 1
@@ -393,6 +401,8 @@ def main():
             "by_works": dict(tool_fam_works),
             "by_mentions": dict(tool_fam_mentions),
             "works_also_listing_llm": dict(tool_with_llm),
+            "prov_by_works": dict(prov_tool_fam_works),
+            "prov_by_mentions": dict(prov_tool_fam_mentions),
         },
         "cooccurrence": [{"a": a, "b": b, "works": c}
                          for (a, b), c in cooccur.most_common(20)],

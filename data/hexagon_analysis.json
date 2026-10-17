@@ -172,20 +172,20 @@
    "combined_pct": 1.5
   },
   {
-   "family": "Danus",
-   "works": 0,
-   "pct_of_all": 0.0,
-   "mentions": 0,
+   "family": "Quora Poe (aggregator)",
+   "works": 3,
+   "pct_of_all": 1.5,
+   "mentions": 3,
    "prov_works": 3,
    "prov_mentions": 3,
    "combined_works": 3,
    "combined_pct": 1.5
   },
   {
-   "family": "Quora Poe (aggregator)",
-   "works": 3,
-   "pct_of_all": 1.5,
-   "mentions": 3,
+   "family": "Danus",
+   "works": 0,
+   "pct_of_all": 0.0,
+   "mentions": 0,
    "prov_works": 3,
    "prov_mentions": 3,
    "combined_works": 3,
@@ -202,16 +202,6 @@
    "combined_pct": 1.0
   },
   {
-   "family": "Local/open",
-   "works": 1,
-   "pct_of_all": 0.5,
-   "mentions": 1,
-   "prov_works": 1,
-   "prov_mentions": 1,
-   "combined_works": 1,
-   "combined_pct": 0.5
-  },
-  {
    "family": "xAI",
    "works": 1,
    "pct_of_all": 0.5,
@@ -222,7 +212,7 @@
    "combined_pct": 0.5
   },
   {
-   "family": "Meta",
+   "family": "Moonshot",
    "works": 1,
    "pct_of_all": 0.5,
    "mentions": 1,
@@ -232,7 +222,17 @@
    "combined_pct": 0.5
   },
   {
-   "family": "Moonshot",
+   "family": "Local/open",
+   "works": 1,
+   "pct_of_all": 0.5,
+   "mentions": 1,
+   "prov_works": 1,
+   "prov_mentions": 1,
+   "combined_works": 1,
+   "combined_pct": 0.5
+  },
+  {
+   "family": "Meta",
    "works": 1,
    "pct_of_all": 0.5,
    "mentions": 1,
@@ -524,6 +524,13 @@
    "mentions": 1
   },
   {
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT 4o",
+   "works": 1,
+   "pct_of_all": 0.5,
+   "mentions": 1
+  },
+  {
    "family": "Anthropic Claude Opus",
    "model": "Opus 4",
    "works": 1,
@@ -533,13 +540,6 @@
   {
    "family": "Moonshot",
    "model": "Kimi",
-   "works": 1,
-   "pct_of_all": 0.5,
-   "mentions": 1
-  },
-  {
-   "family": "OpenAI ChatGPT",
-   "model": "ChatGPT 4o",
    "works": 1,
    "pct_of_all": 0.5,
    "mentions": 1
@@ -608,15 +608,15 @@
    "mentions": 1
   },
   {
-   "family": "Meta",
-   "model": "Muse Spark",
+   "family": "OpenAI ChatGPT",
+   "model": "ChatGPT Sol 5.6",
    "works": 1,
    "pct_of_all": 0.5,
    "mentions": 1
   },
   {
-   "family": "OpenAI ChatGPT",
-   "model": "ChatGPT Sol 5.6",
+   "family": "Meta",
+   "model": "Muse Spark",
    "works": 1,
    "pct_of_all": 0.5,
    "mentions": 1
@@ -1451,10 +1451,10 @@
    "Magma": 2,
    "SageMath": 5,
    "Wolfram Mathematica": 1,
-   "GAP": 2,
    "Domain package": 1,
-   "Singular": 1,
+   "GAP": 2,
    "Macaulay2": 1,
+   "Singular": 1,
    "PARI/GP": 2,
    "OSVerify": 1,
    "Rethlas": 1,
@@ -1481,13 +1481,33 @@
    "Magma": 2,
    "SageMath": 5,
    "Wolfram Mathematica": 1,
-   "Macaulay2": 1,
    "Singular": 1,
+   "Macaulay2": 1,
    "PARI/GP": 2,
    "GAP": 1,
    "OSVerify": 1,
    "Rethlas": 1,
    "Mace4/Prover9": 1
+  },
+  "prov_by_works": {
+   "Wolfram Mathematica": 55,
+   "Lean/Mathlib": 54,
+   "Python/scientific stack": 14,
+   "Magma": 1,
+   "SageMath": 4,
+   "GAP": 3,
+   "PARI/GP": 1,
+   "Macaulay2": 1
+  },
+  "prov_by_mentions": {
+   "Wolfram Mathematica": 55,
+   "Lean/Mathlib": 54,
+   "Python/scientific stack": 14,
+   "Magma": 1,
+   "GAP": 3,
+   "SageMath": 4,
+   "PARI/GP": 1,
+   "Macaulay2": 1
   }
  },
  "cooccurrence": [

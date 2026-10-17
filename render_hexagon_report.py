@@ -141,9 +141,11 @@ def main():
         f"<td>{c['works']}</td></tr>"
         for c in co)
     tool_with = tools.get("works_also_listing_llm", {})
+    tool_prov = tools.get("prov_by_works", {})
     tool_rows = "".join(
         f"<tr><td>{esc(t)}</td><td>{c}</td>"
-        f"<td>{tool_with.get(t, 0)}</td></tr>"
+        f"<td>{tool_with.get(t, 0)}</td>"
+        f"<td>{tool_prov.get(t, 0)}</td></tr>"
         for t, c in sorted(tools["by_works"].items(), key=lambda kv: -kv[1]))
 
     per_rows = "".join(
@@ -263,9 +265,9 @@ entry. Poe-style aggregators make exact model attribution impossible.</li>
 <table><thead><tr><th>Subject</th><th>Works</th><th>With LLM</th><th>LLM share (%)</th><th>Prose LLM</th></tr></thead>
 <tbody>{subj_rows}</tbody></table>
 
-<h3 id="nonllm">Non-LLM tooling (works, of which also list an LLM)</h3>
+<h3 id="nonllm">Non-LLM tooling (works, of which also list an LLM, prose works)</h3>
 
-<table><thead><tr><th>Tool family</th><th>Works</th><th>Also LLM</th></tr></thead>
+<table><thead><tr><th>Tool family</th><th>Works</th><th>Also LLM</th><th>Prose works</th></tr></thead>
 <tbody>{tool_rows}</tbody></table>
 
 <h2 id="caveats">4. Caveats</h2>
