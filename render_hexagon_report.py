@@ -241,7 +241,7 @@ two labs cover {big_cover} of the {any_model} works that name any model.</li>
 <li><strong>Multi-model workflows are normal.</strong> Claude Opus and ChatGPT co-occur on
 {co_oc} works in the structured field; ChatGPT and Codex on {co_cc}. Depositors routinely draft with one system and code or
 formalize with another.</li>
-<li><strong>Lean almost never walks alone.</strong> {lean_works} works list Lean or Mathlib, and {lean_llm} of them
+<li><strong>Lean rarely walks alone.</strong> {lean_works} works list Lean or Mathlib, and {lean_llm} of them
 also list an LLM assistant. Machine-checked proof on Hexagon currently arrives bundled with AI
 assistance, not instead of it.</li>
 <li><strong>One subject hides in prose.</strong> Only {qa["llm_works"]} of {qa["works"]} quantum-algebra works list
